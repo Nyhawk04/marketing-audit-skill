@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Audit Marketing — {{COMPANY}}</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --text: #e4e4e7;
+    --text-muted: #71717a;
+    --text-heading: #fafafa;
+    --primary: #FF6B35;
+    --primary-glow: rgba(255,107,53,0.15);
+    --green: #22c55e;
+    --yellow: #eab308;
+    --orange: #f97316;
+    --red: #ef4444;
+    --lime: #84cc16;
+    --radius: 16px;
+    --radius-sm: 8px;
+    --sidebar-w: 260px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    letter-spacing: -0.02em;
+  }
+
+  /* ========== SIDEBAR ========== */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-w);
+    height: 100vh;
+    background: rgba(10,10,15,0.95);
+    border-right: 1px solid var(--border);
+    padding: 28px 0;
+    overflow-y: auto;
+    z-index: 100;
+    backdrop-filter: blur(12px);
+  }
+
+  .sidebar-logo {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-heading);
+    padding: 0 24px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+
+  .sidebar-logo span { color: var(--primary); }
+
+  .sidebar-score {
+    text-align: center;
+    padding: 20px 24px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 16px;
+  }
+
+  .sidebar-score-number {
+    font-size: 48px;
+    font-weight: 800;
+    line-height: 1;
+  }
+
+  .sidebar-score-label {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+  }
+
+  .sidebar-grade {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 14px;
+    border-radius: 20px;
+    margin-top: 8px;
+  }
+
+  .nav-list { list-style: none; }
+
+  .nav-item a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 24px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.15s;
+    border-left: 3px solid transparent;
+  }
+
+  .nav-item a:hover,
+  .nav-item a.active {
+    color: var(--text-heading);
+    background: var(--bg-card);
+    border-left-color: var(--primary);
+  }
+
+  .nav-score-pill {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.06);
+  }
+
+  /* ========== MAIN CONTENT ========== */
+  .content {
+    margin-left: var(--sidebar-w);
+    padding: 48px 56px 120px;
+    max-width: 900px;
+  }
+
+  /* ========== REPORT HEADER ========== */
+  .report-header {
+    margin-bottom: 56px;
+  }
+
+  .report-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+
+  .report-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 12px;
+  }
+
+  .report-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .report-meta-item strong { color: var(--text); }
+
+  /* ========== GAUGES ========== */
+  .gauges-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 48px;
+  }
+
+  .gauge-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 20px;
+    text-align: center;
+  }
+
+  .gauge-svg { width: 72px; height: 72px; margin: 0 auto 10px; }
+  .gauge-label { font-size: 12px; color: var(--text-muted); font-weight: 500; }
+  .gauge-value { font-size: 18px; font-weight: 700; color: var(--text-heading); margin-top: 2px; }
+
+  /* ========== RADAR ========== */
+  .radar-wrap {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 48px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ========== SECTION ========== */
+  .section {
+    margin-bottom: 48px;
+    scroll-margin-top: 32px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--text-heading);
+  }
+
+  .section-badges {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .badge-score {
+    font-size: 14px;
+    font-weight: 700;
+    padding: 4px 14px;
+    border-radius: 20px;
+  }
+
+  .badge-conf {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 12px;
+  }
+
+  .conf-complet { background: rgba(34,197,94,0.1); color: var(--green); }
+  .conf-partiel { background: rgba(234,179,8,0.1); color: var(--yellow); }
+  .conf-limite { background: rgba(239,68,68,0.1); color: var(--red); }
+
+  /* ========== SUBSECTION ========== */
+  .subsection {
+    margin-bottom: 28px;
+  }
+
+  .subsection h4 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 12px;
+  }
+
+  .subsection p {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  /* ========== FINDINGS TABLE ========== */
+  .checks-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13px;
+  }
+
+  .checks-table th {
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .checks-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+
+  .checks-table tr:last-child td { border-bottom: none; }
+
+  .result-pass { color: var(--green); font-weight: 600; }
+  .result-warning { color: var(--yellow); font-weight: 600; }
+  .result-fail { color: var(--red); font-weight: 600; }
+
+  .sev-tag {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 6px;
+    border-radius: 3px;
+    text-transform: uppercase;
+  }
+
+  .sev-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+  .sev-high { background: rgba(249,115,22,0.15); color: var(--orange); }
+  .sev-medium { background: rgba(234,179,8,0.15); color: var(--yellow); }
+  .sev-low { background: rgba(113,113,122,0.15); color: var(--text-muted); }
+
+  /* ========== FINDING CARDS ========== */
+  .finding-card {
+    padding: 16px 20px;
+    border-left: 3px solid var(--border);
+    margin-bottom: 10px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .finding-card.critical { border-left-color: var(--red); }
+  .finding-card.high { border-left-color: var(--orange); }
+  .finding-card.medium { border-left-color: var(--yellow); }
+  .finding-card.low { border-left-color: var(--text-muted); }
+  .finding-card.pass { border-left-color: var(--green); }
+
+  .finding-card-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 6px;
+  }
+
+  .finding-card-title { font-weight: 600; font-size: 14px; color: var(--text-heading); }
+  .finding-card-desc { font-size: 13px; color: var(--text-muted); }
+
+  /* ========== REWRITE BLOCKS ========== */
+  .rewrite-block {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin: 20px 0;
+  }
+
+  .rewrite-block h5 {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 12px;
+  }
+
+  .rewrite-before, .rewrite-after {
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .rewrite-before {
+    background: rgba(239,68,68,0.06);
+    border: 1px solid rgba(239,68,68,0.15);
+    color: var(--text-muted);
+    text-decoration: line-through;
+  }
+
+  .rewrite-after {
+    background: rgba(34,197,94,0.06);
+    border: 1px solid rgba(34,197,94,0.15);
+    color: var(--text);
+  }
+
+  .rewrite-label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 4px;
+  }
+
+  .rewrite-label.before { color: var(--red); }
+  .rewrite-label.after { color: var(--green); }
+
+  /* ========== ACTION PLAN TABLE ========== */
+  .action-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+  }
+
+  .action-table th {
+    text-align: left;
+    padding: 10px 12px;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .action-table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .action-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  .effort-tag, .impact-tag {
+    font-size: 11px;
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+
+  .impact-very-high { background: rgba(34,197,94,0.15); color: var(--green); }
+  .impact-high { background: rgba(132,204,22,0.15); color: var(--lime); }
+  .impact-medium { background: rgba(234,179,8,0.15); color: var(--yellow); }
+  .impact-low { background: rgba(113,113,122,0.15); color: var(--text-muted); }
+
+  /* ========== QUICK WINS ========== */
+  .quickwin {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .quickwin:last-child { border-bottom: none; }
+
+  .quickwin-number {
+    min-width: 28px;
+    height: 28px;
+    background: var(--primary-glow);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  .quickwin-text { flex: 1; }
+  .quickwin-title { font-weight: 600; font-size: 14px; color: var(--text-heading); }
+  .quickwin-desc { font-size: 13px; color: var(--text-muted); margin-top: 2px; }
+  .quickwin-meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; display: flex; gap: 16px; }
+
+  /* ========== LEAD MAGNET CARDS ========== */
+  .lm-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    margin-bottom: 16px;
+  }
+
+  .lm-card h5 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+
+  .lm-type {
+    font-size: 12px;
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+
+  .lm-card ul {
+    list-style: none;
+    margin: 12px 0;
+  }
+
+  .lm-card ul li {
+    padding: 4px 0;
+    padding-left: 16px;
+    position: relative;
+    font-size: 14px;
+  }
+
+  .lm-card ul li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--primary);
+  }
+
+  /* ========== CALENDAR TABLE ========== */
+  .calendar-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+    margin: 16px 0;
+  }
+
+  .calendar-table th {
+    padding: 8px 10px;
+    text-align: left;
+    color: var(--text-muted);
+    font-weight: 600;
+    font-size: 11px;
+    text-transform: uppercase;
+    border-bottom: 1px solid var(--border);
+    background: rgba(255,255,255,0.02);
+  }
+
+  .calendar-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    vertical-align: top;
+  }
+
+  .pillar-tag {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background: var(--primary-glow);
+    color: var(--primary);
+  }
+
+  /* ========== STRATEGIC QUESTIONS ========== */
+  .strat-question {
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+  }
+
+  .strat-question p {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-heading);
+    font-style: italic;
+  }
+
+  .strat-question .strat-context {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-top: 6px;
+    font-style: normal;
+  }
+
+  /* ========== FOOTER ========== */
+  .report-footer {
+    margin-top: 64px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .report-footer a { color: var(--primary); text-decoration: none; }
+  .report-footer a:hover { text-decoration: underline; }
+
+  .confidence-legend {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 16px;
+    font-size: 12px;
+  }
+
+  .confidence-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .conf-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+
+  .conf-dot.full { background: var(--green); }
+  .conf-dot.partial { background: var(--yellow); }
+  .conf-dot.limited { background: var(--red); }
+
+  /* ========== GRADE COLORS ========== */
+  .grade-A, .score-A { color: var(--green); }
+  .grade-B, .score-B { color: var(--lime); }
+  .grade-C, .score-C { color: var(--yellow); }
+  .grade-D, .score-D { color: var(--orange); }
+  .grade-F, .score-F { color: var(--red); }
+
+  .bg-grade-A { background: rgba(34,197,94,0.1); color: var(--green); }
+  .bg-grade-B { background: rgba(132,204,22,0.1); color: var(--lime); }
+  .bg-grade-C { background: rgba(234,179,8,0.1); color: var(--yellow); }
+  .bg-grade-D { background: rgba(249,115,22,0.1); color: var(--orange); }
+  .bg-grade-F { background: rgba(239,68,68,0.1); color: var(--red); }
+
+  /* ========== RESPONSIVE ========== */
+  @media (max-width: 1024px) {
+    .sidebar { display: none; }
+    .content { margin-left: 0; padding: 32px 20px 80px; }
+    .gauges-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  /* ========== PRINT ========== */
+  @media print {
+    :root {
+      --bg: #ffffff;
+      --bg-card: #f8f8f8;
+      --border: #e0e0e0;
+      --text: #1a1a1a;
+      --text-muted: #666666;
+      --text-heading: #000000;
+    }
+
+    body { background: white; color: #1a1a1a; }
+    .sidebar { display: none; }
+    .content { margin-left: 0; padding: 20px; max-width: 100%; }
+    .section { page-break-inside: avoid; }
+    .gauges-grid { grid-template-columns: repeat(4, 1fr); }
+    .finding-card, .rewrite-block, .lm-card { break-inside: avoid; }
+    .radar-wrap { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ========== SIDEBAR ========== -->
+<nav class="sidebar" id="sidebar">
+  <div class="sidebar-logo">Copy <span>House</span></div>
+
+  <div class="sidebar-score">
+    <div class="sidebar-score-number" id="nav-score">--</div>
+    <div class="sidebar-score-label">Score Global</div>
+    <span class="sidebar-grade" id="nav-grade">--</span>
+  </div>
+
+  <ul class="nav-list" id="nav-list">
+    <!-- Generated by JS -->
+  </ul>
+</nav>
+
+<!-- ========== CONTENT ========== -->
+<div class="content">
+
+  <!-- Report Header -->
+  <div class="report-header">
+    <h1 id="report-title">Audit Marketing</h1>
+    <div class="report-meta">
+      <div class="report-meta-item"><strong>Date :</strong> <span id="report-date">--</span></div>
+      <div class="report-meta-item"><strong>Site :</strong> <span id="report-url">--</span></div>
+      <div class="report-meta-item"><strong>Industrie :</strong> <span id="report-industry">--</span></div>
+    </div>
+  </div>
+
+  <!-- Gauges -->
+  <div class="gauges-grid" id="gauges-grid"></div>
+
+  <!-- Radar -->
+  <div class="radar-wrap">
+    <svg id="radar-chart" width="380" height="380" viewBox="0 0 380 380"></svg>
+  </div>
+
+  <!-- Sections container -->
+  <div id="sections-container"></div>
+
+  <!-- Footer -->
+  <div class="report-footer">
+    <div class="confidence-legend">
+      <div class="confidence-legend-item"><span class="conf-dot full"></span> Complet</div>
+      <div class="confidence-legend-item"><span class="conf-dot partial"></span> Partiel</div>
+      <div class="confidence-legend-item"><span class="conf-dot limited"></span> Limite</div>
+    </div>
+    <p>
+      Construit par <a href="https://www.copyhouse.fr/communaute" target="_blank">Copy House</a>
+      — Rejoins la communaute AI Marketing
+      — <a href="https://www.copyhouse.fr/newsletter" target="_blank">Newsletter</a>
+    </p>
+  </div>
+</div>
+
+<script>
+// ==================================================================
+// AUDIT REPORT RENDERER
+// Receives a DATA object (injected by generate_report_html.py)
+// and renders the complete report.
+// ==================================================================
+
+// {{DATA_INJECTION_POINT}} — replaced by Python script with:
+// const AUDIT_DATA = { ... };
+const AUDIT_DATA = window.__AUDIT_DATA__ || null;
+
+function gradeFor(score) {
+  if (score >= 90) return 'A';
+  if (score >= 75) return 'B';
+  if (score >= 60) return 'C';
+  if (score >= 40) return 'D';
+  return 'F';
+}
+
+function gradeColor(grade) {
+  return { A: '#22c55e', B: '#84cc16', C: '#eab308', D: '#f97316', F: '#ef4444' }[grade] || '#71717a';
+}
+
+function confClass(conf) {
+  if (conf === 'Complet') return 'conf-complet';
+  if (conf === 'Partiel') return 'conf-partiel';
+  return 'conf-limite';
+}
+
+function sevClass(sev) {
+  return { CRITICAL: 'sev-critical', HIGH: 'sev-high', MEDIUM: 'sev-medium', LOW: 'sev-low' }[sev] || 'sev-low';
+}
+
+function resultClass(result) {
+  return { PASS: 'result-pass', WARNING: 'result-warning', FAIL: 'result-fail' }[result] || '';
+}
+
+function findingBorderClass(result, sev) {
+  if (result === 'PASS') return 'pass';
+  return { CRITICAL: 'critical', HIGH: 'high', MEDIUM: 'medium', LOW: 'low' }[sev] || '';
+}
+
+function impactClass(impact) {
+  const map = { 'Tres fort': 'impact-very-high', 'Fort': 'impact-high', 'Moyen': 'impact-medium', 'Faible': 'impact-low' };
+  return map[impact] || 'impact-medium';
+}
+
+// --- RENDER GAUGE ---
+function renderGauge(name, score) {
+  const grade = gradeFor(score);
+  const color = gradeColor(grade);
+  const circ = 2 * Math.PI * 28;
+  const offset = circ * (1 - score / 100);
+  return `
+    <div class="gauge-card">
+      <svg class="gauge-svg" viewBox="0 0 72 72">
+        <circle cx="36" cy="36" r="28" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="5"/>
+        <circle cx="36" cy="36" r="28" fill="none" stroke="${color}" stroke-width="5"
+          stroke-dasharray="${circ}" stroke-dashoffset="${offset}"
+          stroke-linecap="round" transform="rotate(-90 36 36)"/>
+        <text x="36" y="40" text-anchor="middle" fill="${color}" font-size="15" font-weight="700">${score}</text>
+      </svg>
+      <div class="gauge-label">${name}</div>
+    </div>`;
+}
+
+// --- RENDER RADAR ---
+function renderRadar(categories) {
+  const svg = document.getElementById('radar-chart');
+  const cx = 190, cy = 190, r = 150;
+  const n = categories.length;
+  if (n < 3) { svg.style.display = 'none'; return; }
+
+  let html = '';
+
+  [0.25, 0.5, 0.75, 1].forEach(level => {
+    const pts = [];
+    for (let i = 0; i < n; i++) {
+      const a = (Math.PI * 2 * i / n) - Math.PI / 2;
+      pts.push(`${cx + r * level * Math.cos(a)},${cy + r * level * Math.sin(a)}`);
+    }
+    html += `<polygon points="${pts.join(' ')}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+  });
+
+  for (let i = 0; i < n; i++) {
+    const a = (Math.PI * 2 * i / n) - Math.PI / 2;
+    html += `<line x1="${cx}" y1="${cy}" x2="${cx + r * Math.cos(a)}" y2="${cy + r * Math.sin(a)}" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+    const lx = cx + (r + 24) * Math.cos(a);
+    const ly = cy + (r + 24) * Math.sin(a);
+    html += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="#71717a" font-size="10" font-weight="500">${categories[i].name}</text>`;
+  }
+
+  const dataPts = [];
+  for (let i = 0; i < n; i++) {
+    const a = (Math.PI * 2 * i / n) - Math.PI / 2;
+    const v = (categories[i].score || 0) / 100;
+    dataPts.push(`${cx + r * v * Math.cos(a)},${cy + r * v * Math.sin(a)}`);
+  }
+  html += `<polygon points="${dataPts.join(' ')}" fill="rgba(255,107,53,0.15)" stroke="#FF6B35" stroke-width="2"/>`;
+  dataPts.forEach(p => {
+    const [x, y] = p.split(',');
+    html += `<circle cx="${x}" cy="${y}" r="4" fill="#FF6B35"/>`;
+  });
+
+  svg.innerHTML = html;
+}
+
+// --- RENDER CHECKS TABLE ---
+function checksTableHTML(checks) {
+  if (!checks || !checks.length) return '';
+  let html = `<table class="checks-table"><thead><tr>
+    <th>#</th><th>Check</th><th>Severite</th><th>Resultat</th><th>Commentaire</th>
+  </tr></thead><tbody>`;
+  checks.forEach((c, i) => {
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td>${c.title}</td>
+      <td><span class="sev-tag ${sevClass(c.severity)}">${c.severity}</span></td>
+      <td><span class="${resultClass(c.result)}">${c.result}</span></td>
+      <td style="color:var(--text-muted)">${c.comment || ''}</td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  return html;
+}
+
+// --- RENDER FINDINGS CARDS ---
+function findingsHTML(findings) {
+  if (!findings || !findings.length) return '';
+  return findings.map(f => `
+    <div class="finding-card ${findingBorderClass(f.result, f.severity)}">
+      <div class="finding-card-head">
+        <span class="finding-card-title">${f.title}</span>
+        <span class="sev-tag ${f.result === 'PASS' ? 'sev-pass' : sevClass(f.severity)}">${f.result}</span>
+      </div>
+      <div class="finding-card-desc">${f.description || ''}</div>
+    </div>`).join('');
+
+  function sevPassClass() { return { background: 'rgba(34,197,94,0.15)', color: 'var(--green)' }; }
+}
+
+// --- RENDER REWRITES ---
+function rewritesHTML(rewrites) {
+  if (!rewrites || !rewrites.length) return '';
+  return rewrites.map(rw => `
+    <div class="rewrite-block">
+      <h5>${rw.label || 'Rewrite'}</h5>
+      <div class="rewrite-label before">Avant</div>
+      <div class="rewrite-before">${rw.before}</div>
+      <div class="rewrite-label after">Apres</div>
+      <div class="rewrite-after">${rw.after}</div>
+      ${rw.justification ? `<p style="font-size:13px;color:var(--text-muted);margin-top:8px;">${rw.justification}</p>` : ''}
+    </div>`).join('');
+}
+
+// --- RENDER ACTION TABLE ---
+function actionTableHTML(actions, priority) {
+  if (!actions || !actions.length) return '';
+  let html = `<h4 style="margin:20px 0 8px;">Priorite ${priority}</h4>`;
+  html += `<table class="action-table"><thead><tr>
+    <th>#</th><th>Action</th><th>Categorie</th><th>Effort</th><th>Impact</th>
+  </tr></thead><tbody>`;
+  actions.forEach((a, i) => {
+    html += `<tr>
+      <td>${i + 1}</td>
+      <td style="color:var(--text-heading)">${a.action}</td>
+      <td>${a.category || ''}</td>
+      <td><span class="effort-tag">${a.effort || ''}</span></td>
+      <td><span class="impact-tag ${impactClass(a.impact)}">${a.impact || ''}</span></td>
+    </tr>`;
+  });
+  html += '</tbody></table>';
+  return html;
+}
+
+// --- RENDER QUICK WINS ---
+function quickWinsHTML(wins) {
+  if (!wins || !wins.length) return '';
+  return wins.map((w, i) => `
+    <div class="quickwin">
+      <div class="quickwin-number">${i + 1}</div>
+      <div class="quickwin-text">
+        <div class="quickwin-title">${w.title}</div>
+        <div class="quickwin-desc">${w.description || ''}</div>
+        <div class="quickwin-meta">
+          <span>${w.time || ''}</span>
+          <span>${w.category || ''}</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+// --- RENDER LEAD MAGNET CARDS ---
+function leadMagnetsHTML(magnets) {
+  if (!magnets || !magnets.length) return '';
+  return magnets.map(m => `
+    <div class="lm-card">
+      <div class="lm-type">${m.type || ''} — Conversion estimee : ${m.conversion || '?'}%</div>
+      <h5>${m.title}</h5>
+      <p style="font-size:14px;color:var(--text-muted);margin-bottom:8px;">${m.why || ''}</p>
+      ${m.outline ? `<ul>${m.outline.map(o => `<li>${o}</li>`).join('')}</ul>` : ''}
+      ${m.headline ? `<div style="margin-top:12px;padding:12px 16px;background:var(--primary-glow);border-radius:var(--radius-sm);">
+        <div style="font-size:11px;font-weight:600;color:var(--primary);margin-bottom:4px;">PAGE OPT-IN</div>
+        <div style="font-size:15px;font-weight:700;color:var(--text-heading);">${m.headline}</div>
+        ${m.cta ? `<div style="margin-top:8px;font-size:13px;color:var(--primary);">${m.cta}</div>` : ''}
+      </div>` : ''}
+    </div>`).join('');
+}
+
+// --- RENDER CALENDAR ---
+function calendarHTML(weeks) {
+  if (!weeks || !weeks.length) return '';
+  return weeks.map(w => {
+    let html = `<h4 style="margin:20px 0 8px;">${w.title}</h4>`;
+    html += `<table class="calendar-table"><thead><tr>
+      <th>Jour</th><th>Plateforme</th><th>Format</th><th>Pilier</th><th>Sujet / Hook</th>
+    </tr></thead><tbody>`;
+    (w.days || []).forEach(d => {
+      html += `<tr>
+        <td style="font-weight:600;color:var(--text-heading)">${d.day}</td>
+        <td>${d.platform || ''}</td>
+        <td>${d.format || ''}</td>
+        <td>${d.pillar ? `<span class="pillar-tag">${d.pillar}</span>` : ''}</td>
+        <td style="color:var(--text-muted)">${d.hook || ''}</td>
+      </tr>`;
+    });
+    html += '</tbody></table>';
+    return html;
+  }).join('');
+}
+
+// --- MAIN RENDER ---
+function render(data) {
+  if (!data) return;
+
+  const score = data.score || 0;
+  const grade = gradeFor(score);
+
+  // Header
+  document.getElementById('report-title').textContent = `Audit Marketing : ${data.company || ''}`;
+  document.getElementById('report-date').textContent = data.date || '';
+  document.getElementById('report-url').textContent = data.url || '';
+  document.getElementById('report-industry').textContent = data.industry || '';
+  document.title = `Audit Marketing — ${data.company || ''}`;
+
+  // Sidebar score
+  const navScore = document.getElementById('nav-score');
+  navScore.textContent = score;
+  navScore.className = `sidebar-score-number grade-${grade}`;
+  const navGrade = document.getElementById('nav-grade');
+  navGrade.textContent = `Grade ${grade}`;
+  navGrade.className = `sidebar-grade bg-grade-${grade}`;
+
+  // Gauges
+  const gaugesGrid = document.getElementById('gauges-grid');
+  gaugesGrid.innerHTML = (data.categories || []).map(c => renderGauge(c.name, c.score)).join('');
+
+  // Radar
+  renderRadar(data.categories || []);
+
+  // Sidebar nav + sections
+  const navList = document.getElementById('nav-list');
+  const container = document.getElementById('sections-container');
+  navList.innerHTML = '';
+  container.innerHTML = '';
+
+  (data.sections || []).forEach((section, i) => {
+    const sGrade = gradeFor(section.score || 0);
+
+    // Nav item
+    navList.innerHTML += `
+      <li class="nav-item">
+        <a href="#section-${i}" onclick="setActiveNav(this)">
+          ${section.title}
+          ${section.score != null ? `<span class="nav-score-pill score-${sGrade}">${section.score}</span>` : ''}
+        </a>
+      </li>`;
+
+    // Section
+    let sectionHTML = `<div class="section" id="section-${i}">
+      <div class="section-header">
+        <span class="section-title">${section.title}</span>
+        <div class="section-badges">
+          ${section.score != null ? `<span class="badge-score bg-grade-${sGrade}">${section.score}/100</span>` : ''}
+          ${section.confidence ? `<span class="badge-conf ${confClass(section.confidence)}">${section.confidence}</span>` : ''}
+        </div>
+      </div>`;
+
+    // Content blocks
+    if (section.summary) {
+      sectionHTML += `<div class="subsection"><p>${section.summary}</p></div>`;
+    }
+
+    if (section.checks) {
+      sectionHTML += checksTableHTML(section.checks);
+    }
+
+    if (section.findings) {
+      sectionHTML += findingsHTML(section.findings);
+    }
+
+    if (section.subsections) {
+      section.subsections.forEach(sub => {
+        sectionHTML += `<div class="subsection"><h4>${sub.title}</h4>`;
+        if (sub.content) sectionHTML += `<p>${sub.content}</p>`;
+        if (sub.checks) sectionHTML += checksTableHTML(sub.checks);
+        if (sub.findings) sectionHTML += findingsHTML(sub.findings);
+        sectionHTML += '</div>';
+      });
+    }
+
+    if (section.rewrites) {
+      sectionHTML += rewritesHTML(section.rewrites);
+    }
+
+    if (section.lead_magnets) {
+      sectionHTML += leadMagnetsHTML(section.lead_magnets);
+    }
+
+    if (section.calendar) {
+      sectionHTML += calendarHTML(section.calendar);
+    }
+
+    if (section.actions) {
+      if (section.actions.critical) sectionHTML += actionTableHTML(section.actions.critical, 'Critique');
+      if (section.actions.high) sectionHTML += actionTableHTML(section.actions.high, 'Haute');
+      if (section.actions.medium) sectionHTML += actionTableHTML(section.actions.medium, 'Moyenne');
+      if (section.actions.low) sectionHTML += actionTableHTML(section.actions.low, 'Basse');
+    }
+
+    if (section.quick_wins) {
+      sectionHTML += quickWinsHTML(section.quick_wins);
+    }
+
+    if (section.questions) {
+      sectionHTML += section.questions.map(q => `
+        <div class="strat-question">
+          <p>${q.question}</p>
+          ${q.context ? `<div class="strat-context">${q.context}</div>` : ''}
+        </div>`).join('');
+    }
+
+    if (section.content_html) {
+      sectionHTML += `<div class="subsection">${section.content_html}</div>`;
+    }
+
+    sectionHTML += '</div>';
+    container.innerHTML += sectionHTML;
+  });
+}
+
+// --- NAV HELPERS ---
+function setActiveNav(el) {
+  document.querySelectorAll('.nav-item a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// Intersection observer for nav highlight
+function setupScrollSpy() {
+  const sections = document.querySelectorAll('.section');
+  const navLinks = document.querySelectorAll('.nav-item a');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+
+  sections.forEach(s => observer.observe(s));
+}
+
+// --- INIT ---
+if (AUDIT_DATA) {
+  render(AUDIT_DATA);
+  setupScrollSpy();
+}
+</script>
+
+</body>
+</html>

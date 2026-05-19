@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Copy House — Marketing Audit Dashboard</title>
+<style>
+  :root {
+    --bg: #0a0a0f;
+    --bg-card: rgba(255,255,255,0.04);
+    --bg-card-hover: rgba(255,255,255,0.07);
+    --border: rgba(255,255,255,0.08);
+    --text: #e4e4e7;
+    --text-muted: #71717a;
+    --text-heading: #fafafa;
+    --primary: #FF6B35;
+    --primary-glow: rgba(255,107,53,0.15);
+    --green: #22c55e;
+    --yellow: #eab308;
+    --orange: #f97316;
+    --red: #ef4444;
+    --lime: #84cc16;
+    --radius: 16px;
+    --radius-sm: 8px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    letter-spacing: -0.02em;
+    min-height: 100vh;
+  }
+
+  /* --- HEADER --- */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 20px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,10,15,0.85);
+  }
+
+  .logo {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-heading);
+  }
+
+  .logo span { color: var(--primary); }
+
+  /* --- TABS --- */
+  .tabs {
+    display: flex;
+    gap: 4px;
+    background: var(--bg-card);
+    padding: 4px;
+    border-radius: var(--radius-sm);
+  }
+
+  .tab {
+    padding: 8px 20px;
+    border: none;
+    background: none;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: all 0.2s;
+  }
+
+  .tab.active {
+    background: var(--primary);
+    color: white;
+  }
+
+  .tab:hover:not(.active) {
+    color: var(--text);
+    background: rgba(255,255,255,0.04);
+  }
+
+  /* --- MAIN --- */
+  main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 40px 32px;
+  }
+
+  .panel { display: none; }
+  .panel.active { display: block; }
+
+  /* --- FORM --- */
+  h2 {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 8px;
+  }
+
+  .section-desc {
+    color: var(--text-muted);
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .form-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    margin-bottom: 20px;
+  }
+
+  .form-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-heading);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .form-section h3 .badge {
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+
+  .badge-required { background: var(--primary-glow); color: var(--primary); }
+  .badge-optional { background: rgba(113,113,122,0.15); color: var(--text-muted); }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-grid.single { grid-template-columns: 1fr; }
+
+  .field { display: flex; flex-direction: column; gap: 6px; }
+  .field.full { grid-column: 1 / -1; }
+
+  label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  input, select, textarea {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 10px 14px;
+    color: var(--text);
+    font-size: 14px;
+    font-family: inherit;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px var(--primary-glow);
+  }
+
+  textarea { resize: vertical; min-height: 80px; }
+
+  select { cursor: pointer; }
+
+  .social-row {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .social-label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+  }
+
+  .toggle-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .toggle-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .toggle-btn.active {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-glow);
+  }
+
+  .toggle-btn:hover:not(.active) {
+    border-color: rgba(255,255,255,0.15);
+    color: var(--text);
+  }
+
+  /* --- BUTTONS --- */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 28px;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover { filter: brightness(1.1); transform: translateY(-1px); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .btn-secondary:hover { background: var(--bg-card-hover); }
+
+  .actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 32px;
+    justify-content: flex-end;
+  }
+
+  /* --- RESULTS PANEL --- */
+  .results-header {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .score-big {
+    font-size: 72px;
+    font-weight: 800;
+    line-height: 1;
+    margin: 16px 0 8px;
+  }
+
+  .grade-label {
+    font-size: 16px;
+    font-weight: 600;
+    padding: 4px 16px;
+    border-radius: 20px;
+    display: inline-block;
+  }
+
+  .grade-A { color: var(--green); background: rgba(34,197,94,0.1); }
+  .grade-B { color: var(--lime); background: rgba(132,204,22,0.1); }
+  .grade-C { color: var(--yellow); background: rgba(234,179,8,0.1); }
+  .grade-D { color: var(--orange); background: rgba(249,115,22,0.1); }
+  .grade-F { color: var(--red); background: rgba(239,68,68,0.1); }
+
+  /* --- GAUGE --- */
+  .gauges-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 40px;
+  }
+
+  .gauge-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    transition: all 0.2s;
+  }
+
+  .gauge-card:hover {
+    background: var(--bg-card-hover);
+    border-color: rgba(255,255,255,0.12);
+  }
+
+  .gauge-svg { width: 80px; height: 80px; margin: 0 auto 12px; }
+
+  .gauge-card .gauge-label {
+    font-size: 13px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  .gauge-card .gauge-score {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-top: 4px;
+  }
+
+  /* --- RADAR CHART --- */
+  .radar-container {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* --- SECTIONS NAV --- */
+  .sections-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 32px;
+  }
+
+  .nav-pill {
+    padding: 8px 16px;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: none;
+    color: var(--text-muted);
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .nav-pill.active, .nav-pill:hover {
+    border-color: var(--primary);
+    color: var(--primary);
+    background: var(--primary-glow);
+  }
+
+  /* --- REPORT SECTION --- */
+  .report-section {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px;
+    margin-bottom: 16px;
+  }
+
+  .report-section h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-heading);
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .confidence-badge {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 600;
+  }
+
+  .conf-full { background: rgba(34,197,94,0.1); color: var(--green); }
+  .conf-partial { background: rgba(234,179,8,0.1); color: var(--yellow); }
+  .conf-limited { background: rgba(239,68,68,0.1); color: var(--red); }
+
+  .finding {
+    padding: 12px 16px;
+    border-left: 3px solid var(--border);
+    margin-bottom: 8px;
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    background: rgba(255,255,255,0.02);
+  }
+
+  .finding.critical { border-left-color: var(--red); }
+  .finding.high { border-left-color: var(--orange); }
+  .finding.medium { border-left-color: var(--yellow); }
+  .finding.low { border-left-color: var(--text-muted); }
+
+  .finding-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+
+  .finding-title { font-weight: 600; font-size: 14px; color: var(--text-heading); }
+  .severity-tag { font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 4px; }
+  .sev-critical { background: rgba(239,68,68,0.15); color: var(--red); }
+  .sev-high { background: rgba(249,115,22,0.15); color: var(--orange); }
+  .sev-medium { background: rgba(234,179,8,0.15); color: var(--yellow); }
+  .sev-pass { background: rgba(34,197,94,0.15); color: var(--green); }
+
+  .finding-desc { font-size: 13px; color: var(--text-muted); }
+
+  /* --- COMMAND OUTPUT --- */
+  .command-box {
+    background: #1a1a2e;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    padding: 20px;
+    margin-top: 24px;
+    position: relative;
+  }
+
+  .command-box code {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 14px;
+    color: var(--green);
+    word-break: break-all;
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    padding: 6px 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    color: var(--text-muted);
+    font-size: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .copy-btn:hover { color: var(--text); background: var(--bg-card-hover); }
+  .copy-btn.copied { color: var(--green); border-color: var(--green); }
+
+  /* --- EMPTY STATE --- */
+  .empty-state {
+    text-align: center;
+    padding: 80px 40px;
+    color: var(--text-muted);
+  }
+
+  .empty-state svg { width: 48px; height: 48px; margin-bottom: 16px; opacity: 0.4; }
+  .empty-state h3 { color: var(--text); margin-bottom: 8px; }
+
+  /* --- FOOTER --- */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 32px;
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-top: 64px;
+  }
+
+  footer a { color: var(--primary); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* --- RESPONSIVE --- */
+  @media (max-width: 768px) {
+    .form-grid { grid-template-columns: 1fr; }
+    .gauges-grid { grid-template-columns: repeat(2, 1fr); }
+    main { padding: 24px 16px; }
+    header { padding: 16px; }
+    .score-big { font-size: 48px; }
+  }
+
+  /* --- TOAST --- */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    right: 24px;
+    padding: 12px 20px;
+    background: var(--green);
+    color: white;
+    border-radius: var(--radius-sm);
+    font-size: 14px;
+    font-weight: 500;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 1000;
+  }
+
+  .toast.show { transform: translateY(0); opacity: 1; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Copy <span>House</span> — Audit Marketing</div>
+  <div class="tabs">
+    <button class="tab active" onclick="switchTab('intake')">Intake</button>
+    <button class="tab" onclick="switchTab('results')">Resultats</button>
+  </div>
+</header>
+
+<main>
+  <!-- ========== INTAKE PANEL ========== -->
+  <div id="panel-intake" class="panel active">
+    <h2>Nouveau Audit Marketing</h2>
+    <p class="section-desc">Remplis les informations ci-dessous, puis copie la commande Claude Code generee en bas de page.</p>
+
+    <!-- Batch 0A -->
+    <div class="form-section">
+      <h3>Identite de l'entreprise <span class="badge badge-required">Requis</span></h3>
+      <div class="form-grid">
+        <div class="field">
+          <label for="company">Nom de l'entreprise</label>
+          <input type="text" id="company" placeholder="Ex: Copy House">
+        </div>
+        <div class="field">
+          <label for="url">URL du site web</label>
+          <input type="url" id="url" placeholder="https://www.example.com">
+        </div>
+        <div class="field">
+          <label for="industry">Industrie</label>
+          <select id="industry">
+            <option value="">-- Selectionner --</option>
+            <option value="saas">SaaS / Tech</option>
+            <option value="ecommerce">E-commerce</option>
+            <option value="infoproduit">Infoproduit / Formation</option>
+            <option value="coaching">Coaching / Consulting</option>
+            <option value="agence">Agence</option>
+            <option value="local">Service local</option>
+            <option value="b2b">B2B Services</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="offer">Offre principale + prix</label>
+          <input type="text" id="offer" placeholder="Ex: Formation copywriting - 997 EUR">
+        </div>
+        <div class="field full">
+          <label for="audience">Audience cible</label>
+          <input type="text" id="audience" placeholder="Ex: Freelances marketing qui veulent integrer l'IA dans leur workflow">
+        </div>
+      </div>
+    </div>
+
+    <!-- Batch 0B -->
+    <div class="form-section">
+      <h3>Reseaux sociaux <span class="badge badge-optional">Optionnel</span></h3>
+      <div class="form-grid single" style="gap: 12px;">
+        <div class="social-row">
+          <span class="social-label">Instagram</span>
+          <input type="text" id="social-ig" placeholder="@handle">
+        </div>
+        <div class="social-row">
+          <span class="social-label">LinkedIn</span>
+          <input type="text" id="social-li" placeholder="URL page entreprise ou profil">
+        </div>
+        <div class="social-row">
+          <span class="social-label">YouTube</span>
+          <input type="text" id="social-yt" placeholder="@handle ou URL chaine">
+        </div>
+        <div class="social-row">
+          <span class="social-label">X / Twitter</span>
+          <input type="text" id="social-x" placeholder="@handle">
+        </div>
+        <div class="social-row">
+          <span class="social-label">Pinterest</span>
+          <input type="text" id="social-pin" placeholder="@handle ou URL profil">
+        </div>
+      </div>
+    </div>
+
+    <!-- Batch 0B suite -->
+    <div class="form-section">
+      <h3>Canaux marketing <span class="badge badge-optional">Optionnel</span></h3>
+      <div class="form-grid">
+        <div class="field">
+          <label>Newsletter</label>
+          <select id="newsletter">
+            <option value="">Aucune</option>
+            <option value="beehiiv">beehiiv</option>
+            <option value="mailchimp">Mailchimp</option>
+            <option value="convertkit">ConvertKit</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Acces Meta Business Manager ?</label>
+          <select id="meta-access">
+            <option value="non">Non</option>
+            <option value="oui">Oui</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label>Publicite payante — plateformes actives</label>
+          <div class="toggle-group" id="ad-platforms">
+            <button class="toggle-btn" data-val="meta" onclick="toggleBtn(this)">Meta Ads</button>
+            <button class="toggle-btn" data-val="google" onclick="toggleBtn(this)">Google Ads</button>
+            <button class="toggle-btn" data-val="linkedin" onclick="toggleBtn(this)">LinkedIn Ads</button>
+            <button class="toggle-btn" data-val="tiktok" onclick="toggleBtn(this)">TikTok Ads</button>
+            <button class="toggle-btn" data-val="aucune" onclick="toggleBtn(this)">Aucune</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Batch 0C -->
+    <div class="form-section">
+      <h3>Donnees supplementaires <span class="badge badge-optional">Optionnel</span></h3>
+      <div class="form-grid">
+        <div class="field">
+          <label>Google Search Console / Analytics ?</label>
+          <select id="gsc-access">
+            <option value="non">Non</option>
+            <option value="oui">Oui</option>
+          </select>
+        </div>
+        <div class="field full">
+          <label for="competitors">Concurrents directs (noms + URLs, separes par des virgules)</label>
+          <textarea id="competitors" placeholder="Ex: Competitor A (https://competitor-a.com), Competitor B (https://competitor-b.com)"></textarea>
+        </div>
+        <div class="field full">
+          <label for="notes">Notes supplementaires (brand guide, contexte, audits passes...)</label>
+          <textarea id="notes" placeholder="Toute info utile pour l'audit..."></textarea>
+        </div>
+      </div>
+    </div>
+
+    <!-- Command generation -->
+    <div class="actions">
+      <button class="btn-secondary" onclick="resetForm()">Reinitialiser</button>
+      <button class="btn-primary" onclick="generateCommand()">Generer la commande</button>
+    </div>
+
+    <div id="command-output" style="display:none;">
+      <div class="command-box">
+        <button class="copy-btn" onclick="copyCommand()">Copier</button>
+        <code id="command-text"></code>
+      </div>
+      <p style="margin-top: 12px; font-size: 13px; color: var(--text-muted);">
+        Colle cette commande dans Claude Code pour lancer l'audit.
+      </p>
+    </div>
+  </div>
+
+  <!-- ========== RESULTS PANEL ========== -->
+  <div id="panel-results" class="panel">
+
+    <div id="results-empty" class="empty-state">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M9 17H5a2 2 0 00-2 2 2 2 0 002 2h2a2 2 0 002-2zm12-2h-4a2 2 0 00-2 2 2 2 0 002 2h2a2 2 0 002-2zM9 1v6M15 5v4M5 5a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2H7a2 2 0 01-2-2zM11 13a2 2 0 012-2h4a2 2 0 012 2v4a2 2 0 01-2 2h-4a2 2 0 01-2-2z"/>
+      </svg>
+      <h3>Aucun resultat d'audit</h3>
+      <p>Lance un audit depuis l'onglet Intake ou charge un fichier JSON de resultats.</p>
+      <br>
+      <label class="btn-secondary" style="cursor:pointer;">
+        Charger un fichier JSON
+        <input type="file" accept=".json" style="display:none" onchange="loadResults(this)">
+      </label>
+    </div>
+
+    <div id="results-content" style="display:none;">
+      <div class="results-header">
+        <p style="color: var(--text-muted); font-size: 14px;" id="result-company-name">Entreprise</p>
+        <div class="score-big" id="result-score">--</div>
+        <span class="grade-label" id="result-grade">--</span>
+      </div>
+
+      <!-- Gauges grid -->
+      <div class="gauges-grid" id="gauges-container"></div>
+
+      <!-- Radar -->
+      <div class="radar-container">
+        <svg id="radar-chart" width="360" height="360" viewBox="0 0 360 360"></svg>
+      </div>
+
+      <!-- Section nav -->
+      <div class="sections-nav" id="sections-nav"></div>
+
+      <!-- Report sections -->
+      <div id="report-sections"></div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  Construit par <a href="https://www.copyhouse.fr/communaute" target="_blank">Copy House</a>
+  — Rejoins la communaute AI Marketing
+  — <a href="https://www.copyhouse.fr/newsletter" target="_blank">Newsletter</a>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// --- TAB SWITCHING ---
+function switchTab(tab) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+  document.querySelector(`.tab[onclick*="${tab}"]`).classList.add('active');
+  document.getElementById(`panel-${tab}`).classList.add('active');
+}
+
+// --- TOGGLE BUTTONS ---
+function toggleBtn(btn) {
+  if (btn.dataset.val === 'aucune') {
+    document.querySelectorAll('#ad-platforms .toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+  } else {
+    document.querySelector('#ad-platforms .toggle-btn[data-val="aucune"]')?.classList.remove('active');
+    btn.classList.toggle('active');
+  }
+}
+
+// --- GENERATE COMMAND ---
+function generateCommand() {
+  const company = document.getElementById('company').value.trim();
+  const url = document.getElementById('url').value.trim();
+
+  if (!company || !url) {
+    showToast('Nom et URL requis');
+    return;
+  }
+
+  let cmd = `/marketing-audit "${company}" ${url}`;
+
+  const socials = [];
+  const ig = document.getElementById('social-ig').value.trim();
+  const li = document.getElementById('social-li').value.trim();
+  const yt = document.getElementById('social-yt').value.trim();
+  const x = document.getElementById('social-x').value.trim();
+  const pin = document.getElementById('social-pin').value.trim();
+  if (ig) socials.push(`instagram:${ig}`);
+  if (li) socials.push(`linkedin:${li}`);
+  if (yt) socials.push(`youtube:${yt}`);
+  if (x) socials.push(`x:${x}`);
+  if (pin) socials.push(`pinterest:${pin}`);
+
+  const industry = document.getElementById('industry').value;
+  const offer = document.getElementById('offer').value.trim();
+  const audience = document.getElementById('audience').value.trim();
+  const newsletter = document.getElementById('newsletter').value;
+  const metaAccess = document.getElementById('meta-access').value;
+  const gscAccess = document.getElementById('gsc-access').value;
+  const competitors = document.getElementById('competitors').value.trim();
+  const notes = document.getElementById('notes').value.trim();
+
+  const adPlatforms = Array.from(document.querySelectorAll('#ad-platforms .toggle-btn.active'))
+    .map(b => b.dataset.val).filter(v => v !== 'aucune');
+
+  let context = `\n\nContexte intake :\n`;
+  if (industry) context += `- Industrie : ${industry}\n`;
+  if (offer) context += `- Offre : ${offer}\n`;
+  if (audience) context += `- Audience : ${audience}\n`;
+  if (socials.length) context += `- Reseaux : ${socials.join(', ')}\n`;
+  if (newsletter) context += `- Newsletter : ${newsletter}\n`;
+  if (adPlatforms.length) context += `- Pubs : ${adPlatforms.join(', ')}\n`;
+  if (metaAccess === 'oui') context += `- Acces Meta Business Manager : oui\n`;
+  if (gscAccess === 'oui') context += `- Acces Google Search Console : oui\n`;
+  if (competitors) context += `- Concurrents : ${competitors}\n`;
+  if (notes) context += `- Notes : ${notes}\n`;
+
+  cmd += context;
+
+  document.getElementById('command-text').textContent = cmd;
+  document.getElementById('command-output').style.display = 'block';
+  document.getElementById('command-output').scrollIntoView({ behavior: 'smooth' });
+}
+
+// --- COPY COMMAND ---
+function copyCommand() {
+  const text = document.getElementById('command-text').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.copy-btn');
+    btn.textContent = 'Copie !';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copier'; btn.classList.remove('copied'); }, 2000);
+  });
+}
+
+// --- RESET FORM ---
+function resetForm() {
+  document.querySelectorAll('input, textarea').forEach(el => el.value = '');
+  document.querySelectorAll('select').forEach(el => el.selectedIndex = 0);
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('command-output').style.display = 'none';
+}
+
+// --- LOAD RESULTS ---
+function loadResults(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try {
+      const data = JSON.parse(e.target.result);
+      renderResults(data);
+    } catch (err) {
+      showToast('Fichier JSON invalide');
+    }
+  };
+  reader.readAsText(file);
+}
+
+// --- RENDER RESULTS ---
+function renderResults(data) {
+  document.getElementById('results-empty').style.display = 'none';
+  document.getElementById('results-content').style.display = 'block';
+
+  // Header
+  document.getElementById('result-company-name').textContent = data.company || 'Entreprise';
+  document.getElementById('result-score').textContent = data.score || '--';
+  const gradeEl = document.getElementById('result-grade');
+  const grade = data.grade || '--';
+  gradeEl.textContent = grade;
+  gradeEl.className = `grade-label grade-${grade}`;
+
+  // Gauges
+  const gaugesContainer = document.getElementById('gauges-container');
+  gaugesContainer.innerHTML = '';
+  const categories = data.categories || [];
+  categories.forEach(cat => {
+    gaugesContainer.innerHTML += createGaugeCard(cat.name, cat.score, cat.grade);
+  });
+
+  // Radar chart
+  if (categories.length >= 3) {
+    drawRadar(categories);
+  }
+
+  // Section nav + sections
+  const navContainer = document.getElementById('sections-nav');
+  const sectionsContainer = document.getElementById('report-sections');
+  navContainer.innerHTML = '';
+  sectionsContainer.innerHTML = '';
+
+  const sections = data.sections || [];
+  sections.forEach((section, i) => {
+    navContainer.innerHTML += `<button class="nav-pill${i===0?' active':''}" onclick="scrollToSection('section-${i}', this)">${section.title}</button>`;
+    sectionsContainer.innerHTML += createReportSection(section, i);
+  });
+
+  switchTab('results');
+}
+
+// --- CREATE GAUGE ---
+function createGaugeCard(name, score, grade) {
+  const color = getGradeColor(grade);
+  const pct = score / 100;
+  const circumference = 2 * Math.PI * 32;
+  const offset = circumference * (1 - pct);
+
+  return `
+    <div class="gauge-card">
+      <svg class="gauge-svg" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="32" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="6"/>
+        <circle cx="40" cy="40" r="32" fill="none" stroke="${color}" stroke-width="6"
+          stroke-dasharray="${circumference}" stroke-dashoffset="${offset}"
+          stroke-linecap="round" transform="rotate(-90 40 40)"/>
+        <text x="40" y="44" text-anchor="middle" fill="${color}" font-size="16" font-weight="700">${score}</text>
+      </svg>
+      <div class="gauge-label">${name}</div>
+    </div>`;
+}
+
+// --- DRAW RADAR ---
+function drawRadar(categories) {
+  const svg = document.getElementById('radar-chart');
+  const cx = 180, cy = 180, r = 140;
+  const n = categories.length;
+  let html = '';
+
+  // Grid
+  [0.25, 0.5, 0.75, 1].forEach(level => {
+    const points = [];
+    for (let i = 0; i < n; i++) {
+      const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+      points.push(`${cx + r * level * Math.cos(angle)},${cy + r * level * Math.sin(angle)}`);
+    }
+    html += `<polygon points="${points.join(' ')}" fill="none" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+  });
+
+  // Axes
+  for (let i = 0; i < n; i++) {
+    const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+    const x2 = cx + r * Math.cos(angle);
+    const y2 = cy + r * Math.sin(angle);
+    html += `<line x1="${cx}" y1="${cy}" x2="${x2}" y2="${y2}" stroke="rgba(255,255,255,0.06)" stroke-width="1"/>`;
+    const lx = cx + (r + 20) * Math.cos(angle);
+    const ly = cy + (r + 20) * Math.sin(angle);
+    html += `<text x="${lx}" y="${ly}" text-anchor="middle" dominant-baseline="middle" fill="#71717a" font-size="10">${categories[i].name}</text>`;
+  }
+
+  // Data
+  const dataPoints = [];
+  for (let i = 0; i < n; i++) {
+    const angle = (Math.PI * 2 * i / n) - Math.PI / 2;
+    const val = (categories[i].score || 0) / 100;
+    dataPoints.push(`${cx + r * val * Math.cos(angle)},${cy + r * val * Math.sin(angle)}`);
+  }
+  html += `<polygon points="${dataPoints.join(' ')}" fill="rgba(255,107,53,0.15)" stroke="#FF6B35" stroke-width="2"/>`;
+  dataPoints.forEach(p => {
+    const [x, y] = p.split(',');
+    html += `<circle cx="${x}" cy="${y}" r="4" fill="#FF6B35"/>`;
+  });
+
+  svg.innerHTML = html;
+}
+
+// --- CREATE REPORT SECTION ---
+function createReportSection(section, index) {
+  const confClass = section.confidence === 'Complet' ? 'conf-full' : section.confidence === 'Partiel' ? 'conf-partial' : 'conf-limited';
+  let findingsHtml = '';
+
+  if (section.findings) {
+    section.findings.forEach(f => {
+      const sevClass = f.severity === 'CRITICAL' ? 'critical' : f.severity === 'HIGH' ? 'high' : f.severity === 'MEDIUM' ? 'medium' : 'low';
+      const sevTagClass = f.result === 'PASS' ? 'sev-pass' : f.severity === 'CRITICAL' ? 'sev-critical' : f.severity === 'HIGH' ? 'sev-high' : 'sev-medium';
+      findingsHtml += `
+        <div class="finding ${sevClass}">
+          <div class="finding-header">
+            <span class="finding-title">${f.title}</span>
+            <span class="severity-tag ${sevTagClass}">${f.result}</span>
+          </div>
+          <div class="finding-desc">${f.description || ''}</div>
+        </div>`;
+    });
+  }
+
+  if (section.content) {
+    findingsHtml += `<div style="margin-top:16px; font-size:14px; color:var(--text); white-space:pre-wrap;">${section.content}</div>`;
+  }
+
+  return `
+    <div class="report-section" id="section-${index}">
+      <h3>
+        ${section.title} — ${section.score || '--'}/100
+        <span class="confidence-badge ${confClass}">${section.confidence || 'Partiel'}</span>
+      </h3>
+      ${findingsHtml}
+    </div>`;
+}
+
+// --- HELPERS ---
+function getGradeColor(grade) {
+  const colors = { A: '#22c55e', B: '#84cc16', C: '#eab308', D: '#f97316', F: '#ef4444' };
+  return colors[grade] || '#71717a';
+}
+
+function scrollToSection(id, btn) {
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  document.querySelectorAll('.nav-pill').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  toast.textContent = msg;
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 3000);
+}
+
+// --- DEMO DATA (remove in production) ---
+const demoData = {
+  company: "Demo Corp",
+  score: 62,
+  grade: "C",
+  categories: [
+    { name: "Site & CRO", score: 71, grade: "C" },
+    { name: "SEO", score: 58, grade: "D" },
+    { name: "Copywriting", score: 45, grade: "D" },
+    { name: "Publicite", score: 78, grade: "B" },
+    { name: "Social", score: 65, grade: "C" },
+    { name: "Contenu", score: 52, grade: "D" },
+    { name: "Lead Gen", score: 68, grade: "C" },
+    { name: "Business", score: 72, grade: "C" }
+  ],
+  sections: [
+    {
+      title: "Site & Conversion",
+      score: 71,
+      confidence: "Complet",
+      findings: [
+        { title: "Value proposition visible", severity: "CRITICAL", result: "PASS", description: "La value prop est claire et visible dans les 5 premieres secondes." },
+        { title: "CTA principal", severity: "HIGH", result: "FAIL", description: "Le CTA 'En savoir plus' ne communique pas la valeur. Recommandation : 'Demarrer mon essai gratuit'." },
+        { title: "Mobile responsive", severity: "HIGH", result: "PASS", description: "Le site s'adapte correctement aux ecrans mobiles." },
+        { title: "Trust signals", severity: "MEDIUM", result: "WARNING", description: "Quelques logos clients mais pas de temoignages ni de chiffres de resultats." }
+      ]
+    },
+    {
+      title: "SEO",
+      score: 58,
+      confidence: "Partiel",
+      findings: [
+        { title: "HTTPS", severity: "CRITICAL", result: "PASS", description: "" },
+        { title: "Meta descriptions", severity: "HIGH", result: "FAIL", description: "8 pages sur 12 n'ont pas de meta description." },
+        { title: "Core Web Vitals", severity: "HIGH", result: "WARNING", description: "LCP a 3.2s (seuil: 2.5s). Images non optimisees." }
+      ]
+    }
+  ]
+};
+
+// Uncomment to auto-load demo:
+// renderResults(demoData);
+</script>
+
+</body>
+</html>
