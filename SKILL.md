@@ -44,36 +44,64 @@ Utile pour : premiers audits rapides, demos, entreprises sans presence sociale.
 
 Quand le skill est invoque :
 
-1. Verifier si c'est la premiere utilisation : chercher un dossier `audit-*/` dans le repertoire courant. Si aucun dossier d'audit precedent n'existe ET que l'utilisateur n'a pas passe d'arguments, afficher l'onboarding first-run (voir ci-dessous).
-2. Si des arguments sont passes (nom + URL), les capturer. Detecter `--lite`. Sauter l'onboarding.
-3. Creer le dossier de travail : `audit-<slug-entreprise>/` dans le repertoire courant.
-4. Verifier la presence de `CLAUDE.md` et `/knowledge/` dans le working directory. Si trouves, les utiliser comme contexte.
-5. Commencer **Phase 0**.
+1. **Verifier la config user** : `~/.claude/skills/marketing-audit/user-config/brand.json` existe ?
+   - **NON** → lancer onboarding config (voir Section "Onboarding config user" ci-dessous). OBLIGATOIRE avant tout audit.
+   - **OUI** → charger les valeurs (palette, offre, deploy) en memoire pour Phase 5 + 6.
+2. Verifier si c'est la premiere utilisation du skill : chercher un dossier `audit-*/` dans le repertoire courant. Si aucun dossier d'audit precedent n'existe ET que l'utilisateur n'a pas passe d'arguments, afficher l'onboarding workflow (voir plus bas).
+3. Si des arguments sont passes (nom + URL), les capturer. Detecter `--lite`. Sauter l'onboarding workflow.
+4. Creer le dossier de travail : `audit-<slug-entreprise>/` dans le repertoire courant.
+5. Verifier la presence de `CLAUDE.md` et `/knowledge/` dans le working directory. Si trouves, les utiliser comme contexte.
+6. Commencer **Phase 0**.
 
-### Onboarding first-run
+### Onboarding config user (premier usage du skill)
 
-A afficher uniquement si c'est la premiere utilisation detectee :
+OBLIGATOIRE au tout premier lancement du skill (avant le premier audit). Voir `references/user-config-onboarding.md` pour le workflow detaille.
+
+Resume :
+
+1. Detecter absence de `user-config/brand.json`.
+2. Afficher message :
+   ```
+   Premier lancement du skill marketing-audit.
+
+   Avant ton premier audit, je dois savoir 3 choses :
+     1. Ta marque (nom, couleurs, logo)
+     2. Ton offre commerciale (CTA fin de rapport)
+     3. Tes options de deploiement Vercel
+
+   Tout est sauve dans user-config/brand.json (editable ensuite).
+   ```
+3. Poser les questions via AskUserQuestion en 4 batches (voir `references/user-config-onboarding.md`).
+4. Sauver `user-config/brand.json`.
+5. Confirmer et enchainer sur le premier audit.
+
+Reset config : `rm user-config/brand.json`.
+
+L'utilisateur peut aussi pre-creer `brand.json` en copiant `user-config/brand.example.json` et en l'editant (skip onboarding).
+
+### Onboarding workflow (premier audit detecte)
+
+A afficher uniquement si la config user existe MAIS aucun audit n'a encore ete lance :
 
 ```
-Premiere utilisation du skill Marketing Audit — bienvenue.
+Premier audit avec le skill marketing-audit — bienvenue.
 
 Ce skill genere un audit marketing complet pour n'importe quelle entreprise.
 Voici comment ca marche :
 
-  1. Intake     — Je te pose des questions sur l'entreprise (2 min)
-  2. Collecte   — Je scrape le site, les reseaux sociaux, la Meta Ad Library (3-5 min)
-  3. Analyse    — J'audite 8 categories : site, SEO, copy, pubs, social, contenu, lead gen, business model (5-10 min)
-  4. Scoring    — Je calcule un score global sur 100 avec un grade A-F
-  5. Rewrites   — Je reecris les headlines, CTAs, pubs et posts les plus faibles
-  6. Rapport    — Je genere un rapport HTML interactif (10-25 pages)
-  7. PDF        — Une fois valide, je recree le rapport en PDF A4 professionnel
+  1. Intake     — Questions sur l'entreprise (2 min)
+  2. Collecte   — Scraping site + reseaux sociaux + Meta Ad Library (3-5 min)
+  3. Analyse    — Audit 8 categories : site, SEO, copy, pubs, social, contenu, lead gen, business model (5-10 min)
+  4. Scoring    — Score global sur 100 avec grade A-F
+  5. Rewrites   — Reecritures de headlines, CTAs, pubs et posts les plus faibles
+  6. Rapport    — Rapport HTML editorial (style Copy House)
+  7. Deploy     — Hebergement Vercel pour URL partageable
 
-Temps total : ~20 minutes. Mode rapide disponible avec --lite (~10 min, 4 categories).
+Temps total : ~20 minutes. Mode rapide --lite (~10 min, 4 categories).
 
-Prerequis optionnels :
-- agent-browser : scraping avance (Instagram, sites JS-heavy)
-- Meta Business Manager : metriques pubs live (CPA, ROAS)
-- pip install reportlab : generation PDF
+Prerequis :
+- vercel CLI installe (npm install -g vercel) si tu veux deployer
+- agent-browser ou skill `browse` : scraping avance (Instagram, Meta Ad Library JS-heavy)
 
 On commence ?
 ```
@@ -601,79 +629,110 @@ En mode `--lite` : limiter a 5 suggestions max sur les 4 categories actives.
 
 ## Phase 5 — Assemblage du Rapport HTML
 
-**Objectif** : compiler tous les résultats dans un rapport HTML professionnel pour validation.
+**Objectif** : compiler tous les résultats dans un rapport HTML éditorial Copy House, prêt à héberger.
 
-### Structure du rapport
+### Référence GOLD STANDARD
 
-Suivre exactement le template défini dans `references/report-template.md` :
+AVANT de générer, LIRE intégralement :
+- `templates/report-reference-v4.html` (rapport SKL CLUB validé, v4 finale - exemple de structure)
+- `references/html-design-system.md` (DA complète, palette, typo, layout, animations, anti-AI tells)
+- `references/work-together-section.md` (section CTA obligatoire en fin de rapport)
+- `user-config/brand.json` (config personnelle de l'utilisateur - SOURCE DE VÉRITÉ pour palette + offre)
 
-1. **Résumé Exécutif** (1 page) - Score global, radar, top 5 critiques, top 5 quick wins
-2. **Site & Conversion** (2-3 pages) - Hero, value prop, CTA, mobile, trust + rewrites
-3. **Audit SEO** (2-3 pages) - Technique, contenu, on-page, schema, AI readiness
-4. **Copywriting & Messaging** (2-3 pages) - USP, voix, promesses, headlines + rewrites
-5. **Publicité** (2-3 pages) - Ad Library, créas, fatigue, copy + rewrites
-6. **Réseaux Sociaux** (2-3 pages) - Score par plateforme, fréquence, engagement + idées
-7. **Stratégie de Contenu** (1-2 pages) - Piliers, gaps, calendrier 4 semaines
-8. **Lead Generation** (1-2 pages) - Lead magnets, opt-in, funnel + propositions
-9. **Business Model & Stratégie** (1 page) - Positionnement, pricing, différenciation, 3 questions
-10. **Plan d'Action** (1-2 pages) - Prioritisé Critical > High > Medium > Low + effort + impact
-11. **Quick Wins** (1 page) - Fixable en <15 min, triés par impact
+Le nouveau rapport doit REPRODUIRE la structure du template, en injectant :
+1. Les **données de l'audit en cours** (scores, textes, entreprise auditée)
+2. La **DA de l'utilisateur** depuis `user-config/brand.json` (palette, logo, font) - PAS la DA Copy House hardcodée
+3. L'**offre de l'utilisateur** depuis `user-config/brand.json` dans la section #work - PAS l'offre AI-CMO hardcodée
 
-### Design du HTML
+### Structure du rapport (12 sections)
 
-- Dark-mode, palette Copy House
-- Navigation latérale sticky pour jump-to-section
-- Jauges circulaires SVG pour les scores par catégorie
-- Radar chart SVG pour la vue d'ensemble
-- Tables stylisées pour les plans d'action
-- Badges de confiance (Complet / Partiel / Limité) par section
-- Responsive (lisible sur mobile)
-- Footer communauté Copy House
+1. **#cover** - Couverture : score global jauge géante, grade, méta-info date/audit-par
+2. **#executive** - Résumé exécutif : radar SVG 8 axes + table scoring pondéré + barres animées + top 5 problèmes + top 5 quick wins + angle radical
+3. **#cro** - Site & Conversion (score)
+4. **#seo** - SEO (score)
+5. **#copy** - Copywriting (score)
+6. **#ads** - Publicité (score, badge "Données partielles" si pas d'accès Meta)
+7. **#social** - Réseaux Sociaux (score)
+8. **#content** - Stratégie de Contenu (score)
+9. **#leadgen** - Lead Generation (score + 3 lead magnets proposés + séquence email)
+10. **#brand** - Brand & Positionnement (tableau positionnement concurrents)
+11. **#plan** - Plan d'action + roadmap 90 jours + quick wins
+12. **#work** - **Travailler ensemble (AI-CMO)** - OBLIGATOIRE, voir `references/work-together-section.md`
+
+### Design (DA depuis user-config/brand.json - voir html-design-system.md pour patterns CSS)
+
+- **Palette** : lire `palette.*` depuis `brand.json`. JAMAIS `#000` (utiliser `text_primary` = `#212121` par défaut). Fallback Copy House si config absente.
+- **Typo** : lire `typography.stack` depuis `brand.json`. Par défaut Inter system stack.
+- **Logo** : lire `brand.logo_path` depuis `brand.json`. Embed inline (SVG) ou base64 (PNG). Hauteur 30px dans header.
+- **Header sticky CSS Grid 2 lignes** : Row 1 = brand-block + CTA "Travailler ensemble", Row 2 = nav 11 liens numérotés `01/Section`. PAS de tentative 1-ligne (a buggué auparavant).
+- **Scroll progress bar** 2px bronze sous header.
+- **Scroll-spy** : lien actif fond bronze pâle.
+- **IntersectionObserver fade-in** sur sections + score-hero + radar.
+- **Jauges circulaires SVG animées** (stroke-dashoffset au scroll-in).
+- **Barres scoring horizontales animées** dans résumé exécutif.
+- **Cards** : ombres multi-layer douces, hover translateY(-2px).
+- **Footer** : back-to-top + liens copyhouse.fr + ai-cmo.fr.
+
+### Anti-AI tells (scanner avant sauvegarde)
+
+- 0 em-dash (—), 0 en-dash (–) → remplacer par "-"
+- 0 emoji
+- 0 cascade "Pas X. Pas Y. Mais Z."
+- 0 fragment sans verbe en chaîne
+- 0 méta-commentaire vide ("Le résultat est indéniable")
+- 0 opener AI-typique ("Dans un monde où...")
 
 ### Génération
 
-Générer le HTML directement avec l'outil Write. Le fichier doit être self-contained (CSS inline, SVG inline, zero deps).
-
-Sauvegarder dans `audit-<slug>/MARKETING-AUDIT-REPORT.html`.
-
-Ouvrir dans le navigateur : `open audit-<slug>/MARKETING-AUDIT-REPORT.html`
+1. Générer le HTML self-contained via Write (CSS inline, SVG inline, JS vanilla en fin de body, zéro CDN, zéro lib externe).
+2. Sauvegarder dans `audit-<slug>/MARKETING-AUDIT-REPORT.html`. Taille cible 150-200KB.
+3. Ouvrir dans le navigateur : `open audit-<slug>/MARKETING-AUDIT-REPORT.html`.
+4. Présenter à l'utilisateur pour validation.
 
 ---
 
-## Phase 6 — Validation et Recréation PDF
+## Phase 6 — Validation + Déploiement Vercel
 
-**Objectif** : itérer sur le HTML puis recréer le rapport en PDF.
+**Objectif** : itérer sur le HTML, puis publier sur Vercel pour partage URL.
+
+PLUS DE PDF. Le rapport vit en HTML hosté sur Vercel - URL partageable, sommaire cliquable (sticky nav), animations, mise à jour instantanée.
 
 ### Workflow
 
-1. Présenter le rapport HTML à l'utilisateur
-2. Recueillir le feedback (AskUserQuestion ou discussion libre)
-3. Itérer sur les sections à améliorer
-4. Une fois validé : **recréer** le rapport en PDF
+1. Présenter le rapport HTML local à l'utilisateur (`open` navigateur).
+2. Recueillir le feedback. Itérer si nécessaire (modifier le HTML, recharger).
+3. Une fois validé : déployer sur Vercel (voir `references/deploy-vercel.md` pour détails).
 
-### Recréation PDF (pas conversion)
+### Déploiement Vercel
 
-Le PDF n'est PAS une conversion du HTML. C'est une **régénération complète** :
-- Relire toutes les instructions et données
-- Reproduire le contenu en suivant la même DA
-- Adapter le format au PDF (pas de navigation interactive, mise en page A4)
-- Utiliser `scripts/generate_report_pdf.py` si disponible, sinon invoquer le skill `make-pdf`
+Voir `references/deploy-vercel.md` pour le workflow complet. Commande de base :
+
+```bash
+cd <chemin>/audit-<slug>/
+cp MARKETING-AUDIT-REPORT.html index.html
+vercel --prod --yes
+```
+
+URL stable : `https://audit-<slug>.vercel.app`.
+
+### Hooks Bash bloquants
+
+Si l'environnement de l'utilisateur a un `pre-commit.sh` dans `.claude/hooks/` qui bloque Bash : demander à l'utilisateur de le neutraliser temporairement via `mv ...sh ...sh.bak` (l'agent ne peut pas le faire seul, classifier de sécurité bloque).
 
 ### Fichiers de sortie finaux
 
 ```
 audit-<slug>/
-├── MARKETING-AUDIT-REPORT.html     # Rapport HTML (validation)
-├── MARKETING-AUDIT-REPORT.pdf      # Rapport PDF (final)
+├── MARKETING-AUDIT-REPORT.html     # Rapport HTML (servi par Vercel)
+├── MARKETING-AUDIT-REPORT.v4.html  # Backup avant deep polish (optionnel)
+├── index.html                       # Copie pour Vercel
 ├── MARKETING-ACTION-PLAN.md        # Plan d'action priorisé
 ├── MARKETING-QUICK-WINS.md         # Quick wins (<15 min)
+├── MARKETING-REWRITES.md           # Hero, hooks, lead magnets, calendrier
+├── MARKETING-SYNTHESE.md           # Synthèse + angle radical
 ├── marketing-audit-context.md      # Contexte de l'intake
-└── _research/                      # Données brutes collectées
-    ├── collect-website.md
-    ├── collect-social-ig.md
-    ├── collect-social-li.md
-    ├── collect-meta-adlib.md
-    └── ...
+├── _research/                       # Données brutes collectées
+└── _analysis/                       # Analyses par catégorie
 ```
 
 ---
@@ -694,6 +753,11 @@ audit-<slug>/
 | `references/lead-magnet-framework.md` | Framework pour propositions de lead magnets + sequence email |
 | `references/anti-ai-tells.md` | Regles anti-AI-tells et self-check obligatoire sur tous les outputs |
 | `references/ab-test-suggestions.md` | Framework de suggestions A/B tests par categorie et score |
+| `references/html-design-system.md` | **DA Copy House complète + patterns CSS + JS minimal pour le rapport HTML Phase 5** |
+| `references/work-together-section.md` | **Section AI-CMO obligatoire en fin de rapport (pitch + CTA vers ai-cmo.fr)** |
+| `references/deploy-vercel.md` | **Workflow Phase 6 - hébergement Vercel (remplace PDF)** |
+| `templates/report-reference-v4.html` | **Gold standard SKL CLUB - structure et style à reproduire** |
+| `templates/copyhouse-logo.svg` | Logo Copy House Logo_05 (wordmark + monogramme) à embed inline dans header |
 
 ---
 

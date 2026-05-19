@@ -1,0 +1,11 @@
+# User-specific config (chaque user a la sienne)
+user-config/brand.json
+user-config/profiles/
+
+# OS / IDE
+.DS_Store
+.vscode/
+.idea/
+
+# Audits générés locaux (si testés depuis le repo skill)
+audit-*/

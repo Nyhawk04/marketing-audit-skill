@@ -1,0 +1,4566 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audit Marketing SKL CLUB . Copy House</title>
+    <meta
+      name="description"
+      content="Audit Marketing SKL CLUB par Copy House - score global 46/100, plan d'action 90 jours, rewrites prêts à publier."
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 88px;
+        -webkit-text-size-adjust: 100%;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after {
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+      }
+      body {
+        margin: 0;
+        font-family:
+          -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", Roboto,
+          "Helvetica Neue", sans-serif;
+        background: #f9f9f2;
+        background-image:
+          radial-gradient(at 8% 12%, rgba(176,124,94,0.025) 0, transparent 45%),
+          radial-gradient(at 92% 88%, rgba(33,33,33,0.018) 0, transparent 50%);
+        color: #212121;
+        font-size: 16px;
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-feature-settings: "ss01", "cv02", "cv03", "cv04", "cv11";
+        font-variant-numeric: oldstyle-nums proportional-nums;
+      }
+      /* Tabular numerics where appropriate */
+      .value, .gauge-number, .num, .badge, .sec-score, td, th, .score-bar-value,
+      .scoring-row .pct, time, .terminal-body, .checks .value {
+        font-variant-numeric: tabular-nums;
+      }
+      ::selection {
+        background: rgba(176, 124, 94, 0.35);
+        color: #212121;
+      }
+
+      a {
+        color: #b07c5e;
+        text-decoration: none;
+      }
+      a:hover {
+        color: #8e5f44;
+      }
+
+      /* Sticky top navigation - compact single-line */
+      .topnav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(249, 249, 242, 0.88);
+        backdrop-filter: saturate(180%) blur(14px);
+        -webkit-backdrop-filter: saturate(180%) blur(14px);
+        border-bottom: 1px solid rgba(229, 229, 220, 0.6);
+        box-shadow: 0 1px 0 rgba(33, 33, 33, 0.04);
+      }
+      .scroll-progress {
+        position: absolute;
+        left: 0;
+        bottom: -1px;
+        height: 2px;
+        width: 0%;
+        background: linear-gradient(90deg, #b07c5e 0%, #d8945a 100%);
+        transition: width 0.08s ease-out;
+        pointer-events: none;
+      }
+      .topnav-inner {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 10px 32px 12px;
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        grid-template-rows: auto auto;
+        align-items: center;
+        column-gap: 24px;
+        row-gap: 6px;
+      }
+      .brand-block {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-shrink: 0;
+        grid-column: 1;
+        grid-row: 1;
+      }
+      .topnav-cta-wrap {
+        grid-column: 3;
+        grid-row: 1;
+        justify-self: end;
+      }
+      .topnav-links {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding-top: 4px;
+        border-top: 1px solid rgba(229, 229, 220, 0.5);
+      }
+      .brand-block .ch-logo {
+        height: 30px;
+        width: auto;
+        display: block;
+      }
+      .page-footer .ch-logo {
+        height: 26px;
+        width: auto;
+      }
+      .brand-block .brand-meta {
+        font-size: 10.5px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #6b6b63;
+        font-weight: 600;
+      }
+      .topnav-links {
+        display: flex;
+        gap: 2px 4px;
+        align-items: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        min-width: 0;
+        row-gap: 2px;
+      }
+      .topnav-links a {
+        display: inline-flex;
+        align-items: baseline;
+        gap: 5px;
+        padding: 6px 10px;
+        font-size: 12.5px;
+        font-weight: 500;
+        color: #212121;
+        border-radius: 6px;
+        white-space: nowrap;
+        transition:
+          color 0.18s ease,
+          background 0.18s ease;
+      }
+      .topnav-links a .num {
+        color: #b5b5ac;
+        font-weight: 400;
+        font-variant-numeric: tabular-nums;
+        font-size: 11px;
+      }
+      .topnav-links a .sep {
+        color: #b5b5ac;
+        font-size: 11px;
+      }
+      .topnav-links a:hover {
+        color: #b07c5e;
+        background: rgba(176, 124, 94, 0.08);
+      }
+      .topnav-links a:hover .num,
+      .topnav-links a:hover .sep {
+        color: #b07c5e;
+      }
+      .topnav-links a.is-active {
+        color: #b07c5e;
+        background: rgba(176, 124, 94, 0.12);
+      }
+      .topnav-links a.is-active .num,
+      .topnav-links a.is-active .sep {
+        color: #b07c5e;
+      }
+      .topnav-cta-wrap {
+        flex-shrink: 0;
+      }
+      .topnav-links a.cta-nav,
+      .topnav-cta-wrap a.cta-nav {
+        background: #b07c5e;
+        color: #f9f9f2;
+        padding: 8px 14px;
+        font-size: 12.5px;
+        font-weight: 600;
+        border-radius: 999px;
+        display: inline-flex;
+        align-items: center;
+        transition: background 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+        box-shadow: 0 2px 8px rgba(176, 124, 94, 0.18);
+      }
+      .topnav-links a.cta-nav .num,
+      .topnav-links a.cta-nav .sep,
+      .topnav-cta-wrap a.cta-nav .num,
+      .topnav-cta-wrap a.cta-nav .sep { display: none; }
+      .topnav-links a.cta-nav:hover,
+      .topnav-cta-wrap a.cta-nav:hover {
+        background: #8e5f44;
+        color: #f9f9f2;
+        transform: translateY(-1px);
+        box-shadow: 0 4px 14px rgba(176, 124, 94, 0.28);
+      }
+      .topnav-links a.cta-nav::after,
+      .topnav-cta-wrap a.cta-nav::after {
+        content: " \2192";
+        margin-left: 4px;
+      }
+      @media (max-width: 900px) {
+        .topnav-inner {
+          padding: 10px 20px 12px;
+          column-gap: 16px;
+        }
+        .brand-block .brand-meta { display: none; }
+      }
+      @media (max-width: 600px) {
+        .topnav-inner { padding: 8px 16px 10px; }
+        .topnav-links {
+          flex-wrap: nowrap;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          scrollbar-width: none;
+        }
+        .topnav-links::-webkit-scrollbar { display: none; }
+        .topnav-links a { font-size: 12px; padding: 6px 8px; }
+      }
+
+      /* Work-together section */
+      .work-section {
+        background: #212121;
+        color: #f9f9f2;
+        margin: 80px -32px 0;
+        padding: 88px 32px 96px;
+        border-radius: 24px;
+        border-bottom: none;
+      }
+      .work-section h2,
+      .work-section h3 { color: #f9f9f2; }
+      .work-tag {
+        display: inline-block;
+        font-size: 11px;
+        letter-spacing: 0.22em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        font-weight: 700;
+        padding: 6px 12px;
+        border: 1px solid rgba(176, 124, 94, 0.4);
+        border-radius: 999px;
+        margin-bottom: 24px;
+      }
+      .work-title {
+        font-size: clamp(32px, 5vw, 52px);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        margin: 0 0 24px;
+        font-weight: 700;
+      }
+      .work-lede {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #d7d7cf;
+        max-width: 720px;
+        margin: 0 0 56px;
+      }
+      .work-lede strong { color: #b07c5e; font-weight: 700; }
+      .work-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin-bottom: 48px;
+      }
+      .work-card {
+        background: #2a2a2a;
+        border: 1px solid #3a3a3a;
+        border-radius: 16px;
+        padding: 28px 24px;
+      }
+      .work-card h3 {
+        font-size: 15px;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        margin: 0 0 14px;
+        font-weight: 700;
+      }
+      .work-card p {
+        font-size: 15px;
+        line-height: 1.6;
+        color: #e5e5dc;
+        margin: 0;
+      }
+      .work-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+      .work-list li {
+        padding: 8px 0;
+        font-size: 15px;
+        color: #e5e5dc;
+        border-bottom: 1px solid #3a3a3a;
+      }
+      .work-list li:last-child { border-bottom: none; }
+      .work-list li::before {
+        content: "\2022";
+        color: #b07c5e;
+        font-weight: 700;
+        margin-right: 10px;
+      }
+      .work-target {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 20px 24px;
+        background: rgba(176, 124, 94, 0.08);
+        border-left: 3px solid #b07c5e;
+        border-radius: 8px;
+        margin-bottom: 56px;
+      }
+      .work-target-label {
+        font-size: 11px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+      .work-target-value {
+        font-size: 17px;
+        font-weight: 500;
+        color: #f9f9f2;
+      }
+      .work-cta-block {
+        text-align: center;
+        padding: 32px 0 8px;
+      }
+      .work-cta-text {
+        font-size: 16px;
+        color: #d7d7cf;
+        margin: 0 0 24px;
+      }
+      .work-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: #b07c5e;
+        color: #f9f9f2;
+        padding: 18px 36px;
+        border-radius: 999px;
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.01em;
+        text-decoration: none;
+        transition: transform .15s ease, background .15s ease, box-shadow .15s ease;
+        box-shadow: 0 6px 24px rgba(176, 124, 94, 0.25);
+      }
+      .work-cta:hover {
+        background: #c08c6e;
+        color: #f9f9f2;
+        transform: translateY(-1px);
+        box-shadow: 0 10px 32px rgba(176, 124, 94, 0.35);
+      }
+      .work-cta-arrow { font-size: 20px; }
+      .work-cta-sub {
+        margin: 16px 0 0;
+        font-size: 13px;
+        color: #b5b5ac;
+        letter-spacing: 0.04em;
+      }
+      @media (max-width: 880px) {
+        .work-grid { grid-template-columns: 1fr; }
+        .work-section { margin: 48px -20px 0; padding: 56px 24px 72px; border-radius: 16px; }
+        .work-target { flex-direction: column; align-items: flex-start; gap: 8px; }
+      }
+      /* legacy classes (no-op safety) */
+      .topnav-brandline,
+      .topnav-badge,
+      .topnav-row1 { display: none !important; }
+
+      /* Layout */
+      .shell {
+        max-width: 1280px;
+        margin: 0 auto;
+        padding: 0 32px;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 0 0 120px;
+      }
+      @media (max-width: 720px) {
+        .shell,
+        main {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+      }
+
+      section {
+        padding: 80px 0;
+        border-bottom: 1px solid #e5e5dc;
+      }
+      section:last-of-type {
+        border-bottom: none;
+      }
+      section:first-of-type {
+        padding-top: 48px;
+      }
+
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #212121;
+        font-weight: 700;
+        letter-spacing: -0.02em;
+      }
+      h1 {
+        font-size: clamp(40px, 6vw, 64px);
+        line-height: 1.04;
+        letter-spacing: -0.025em;
+        margin: 0 0 24px;
+      }
+      h2 {
+        font-size: clamp(28px, 4vw, 40px);
+        line-height: 1.12;
+        letter-spacing: -0.022em;
+        margin: 0 0 24px;
+      }
+      h3 {
+        font-size: 22px;
+        line-height: 1.3;
+        margin: 32px 0 12px;
+        letter-spacing: -0.01em;
+      }
+      h4 {
+        font-size: 17px;
+        line-height: 1.35;
+        margin: 0 0 8px;
+        letter-spacing: -0.005em;
+      }
+      p {
+        margin: 0 0 16px;
+        color: #3a3a3a;
+      }
+      strong {
+        color: #212121;
+        font-weight: 700;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        margin-bottom: 16px;
+      }
+
+      .lead {
+        font-size: 19px;
+        line-height: 1.55;
+        color: #212121;
+        max-width: 78ch;
+      }
+
+      .subtitle {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #3a3a3a;
+        max-width: 70ch;
+        margin: 0 0 40px;
+      }
+
+      /* Inline highlight */
+      mark,
+      .mark-bronze {
+        background: rgba(176, 124, 94, 0.22);
+        color: inherit;
+        padding: 0 4px;
+        border-radius: 2px;
+      }
+
+      /* Cover */
+      .cover {
+        padding-top: 56px !important;
+        border-bottom: 1px solid #e5e5dc;
+      }
+      .cover-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 24px;
+        font-size: 13px;
+        color: #6b6b63;
+        margin-bottom: 32px;
+        letter-spacing: 0.02em;
+      }
+      .cover-meta strong {
+        color: #212121;
+        font-weight: 700;
+      }
+      .score-hero {
+        display: grid;
+        grid-template-columns: 280px 1fr;
+        gap: 56px;
+        align-items: center;
+        margin-top: 40px;
+        padding: 40px;
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow:
+          0 1px 2px rgba(33, 33, 33, 0.04),
+          0 16px 48px -16px rgba(33, 33, 33, 0.12);
+        border: 1px solid #e5e5dc;
+      }
+      .score-hero .gauge-progress {
+        stroke-dasharray: 628.32;
+        stroke-dashoffset: 628.32;
+        transition: stroke-dashoffset 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      .score-hero.is-visible .gauge-progress {
+        stroke-dashoffset: var(--dash-target, 339.44);
+      }
+      .gauge {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+      }
+      .gauge svg {
+        display: block;
+      }
+      .gauge-label {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #6b6b63;
+        font-weight: 600;
+      }
+      .score-hero-text h3 {
+        margin-top: 16px;
+        font-size: 24px;
+      }
+      .score-hero-text p {
+        color: #3a3a3a;
+      }
+
+      .grade-tag {
+        display: inline-block;
+        padding: 6px 14px;
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        border-radius: 999px;
+        background: #c04a3a;
+        color: #f9f9f2;
+      }
+      .grade-tag.grade-D {
+        background: #c04a3a;
+      }
+      .grade-tag.grade-C {
+        background: #d8945a;
+      }
+      .grade-tag.grade-B {
+        background: #b07c5e;
+      }
+      .grade-tag.grade-A {
+        background: #5c8b5c;
+      }
+
+      @media (max-width: 720px) {
+        .score-hero {
+          grid-template-columns: 1fr;
+          gap: 32px;
+          padding: 24px;
+        }
+      }
+
+      /* Radar wrap */
+      .radar-wrap {
+        background: #ffffff;
+        border: 1px solid #e5e5dc;
+        border-radius: 16px;
+        padding: 24px;
+        margin: 24px 0 32px;
+        display: flex;
+        justify-content: center;
+        box-shadow: 0 4px 24px rgba(33, 33, 33, 0.05);
+      }
+      .radar-wrap svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      /* Tables */
+      .table-wrap {
+        border: 1px solid #e5e5dc;
+        border-radius: 14px;
+        background: #ffffff;
+        overflow-x: auto;
+        margin: 16px 0 32px;
+        box-shadow: 0 2px 16px rgba(33, 33, 33, 0.04);
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+      }
+      thead th {
+        text-align: left;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        padding: 16px 18px;
+        background: #f9f9f2;
+        border-bottom: 1px solid #e5e5dc;
+      }
+      tbody td {
+        padding: 14px 18px;
+        border-bottom: 1px solid #efefe6;
+        color: #3a3a3a;
+      }
+      tbody tr:nth-child(even) td {
+        background: #fafaf4;
+      }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      tbody tr:last-child td strong {
+        color: #212121;
+      }
+
+      /* Toplist (Top 5 problèmes) */
+      .toplist {
+        counter-reset: tl;
+        list-style: none;
+        padding: 0;
+        margin: 24px 0 32px;
+        display: grid;
+        gap: 12px;
+      }
+      .toplist li {
+        counter-increment: tl;
+        display: grid;
+        grid-template-columns: 48px 1fr;
+        align-items: start;
+        gap: 18px;
+        padding: 22px 24px;
+        background: #ffffff;
+        border: 1px solid #e5e5dc;
+        border-left: 4px solid #b07c5e;
+        border-radius: 12px;
+        box-shadow:
+          0 1px 2px rgba(33, 33, 33, 0.04),
+          0 8px 20px -8px rgba(33, 33, 33, 0.06);
+        transition: transform 0.22s ease, box-shadow 0.22s ease, border-left-width 0.22s ease;
+      }
+      .toplist li:hover {
+        transform: translateY(-2px);
+        border-left-width: 6px;
+        box-shadow:
+          0 2px 4px rgba(33, 33, 33, 0.05),
+          0 16px 32px -8px rgba(33, 33, 33, 0.12);
+      }
+      .toplist.danger li {
+        border-left-color: #c04a3a;
+      }
+      .toplist li::before {
+        content: counter(tl, decimal-leading-zero);
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        font-size: 20px;
+        color: #b07c5e;
+        letter-spacing: -0.02em;
+      }
+      .toplist.danger li::before {
+        color: #c04a3a;
+      }
+      .toplist h4 {
+        margin: 0 0 6px;
+      }
+      .toplist p {
+        margin: 0;
+        color: #3a3a3a;
+      }
+
+      /* Cards grid */
+      .cards {
+        display: grid;
+        gap: 16px;
+        margin: 16px 0 32px;
+      }
+      .cards-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .cards-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      @media (max-width: 900px) {
+        .cards-2,
+        .cards-3 {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .card {
+        background: #ffffff;
+        border: 1px solid #e5e5dc;
+        border-radius: 14px;
+        padding: 22px 22px;
+        box-shadow:
+          0 1px 2px rgba(33, 33, 33, 0.04),
+          0 8px 24px -8px rgba(33, 33, 33, 0.06);
+        transition:
+          transform 0.22s ease,
+          box-shadow 0.22s ease,
+          border-color 0.22s ease;
+        position: relative;
+      }
+      .card:hover {
+        transform: translateY(-2px);
+        border-color: #d6d6cb;
+        box-shadow:
+          0 2px 4px rgba(33, 33, 33, 0.05),
+          0 16px 32px -8px rgba(33, 33, 33, 0.12);
+      }
+      .card.card-accent:hover { border-left-color: #8e5f44; }
+      .card.card-success:hover { border-left-color: #4a7a4a; }
+      .card.card-warn:hover { border-left-color: #c47e4a; }
+      .card.card-danger:hover { border-left-color: #a83a2a; }
+      .card .num {
+        display: inline-block;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        margin-bottom: 10px;
+      }
+      .card h4 {
+        margin: 0 0 8px;
+        font-size: 16px;
+      }
+      .card p {
+        margin: 0;
+        color: #3a3a3a;
+        font-size: 14.5px;
+      }
+
+      .card-accent {
+        border-left: 4px solid #b07c5e;
+      }
+      .card-success {
+        border-left: 4px solid #5c8b5c;
+      }
+      .card-success .num {
+        color: #5c8b5c;
+      }
+      .card-warn {
+        border-left: 4px solid #d8945a;
+      }
+      .card-warn .num {
+        color: #d8945a;
+      }
+      .card-danger {
+        border-left: 4px solid #c04a3a;
+      }
+      .card-danger .num {
+        color: #c04a3a;
+      }
+
+      /* Highlight callout block */
+      .highlight {
+        background: #212121;
+        color: #f9f9f2;
+        padding: 32px 32px;
+        border-radius: 16px;
+        margin: 32px 0;
+        border-left: 4px solid #b07c5e;
+        box-shadow: 0 6px 32px rgba(33, 33, 33, 0.12);
+      }
+      .highlight h3 {
+        color: #f9f9f2;
+        margin-top: 0;
+      }
+      .highlight p {
+        color: rgba(249, 249, 242, 0.88);
+      }
+      .highlight strong {
+        color: #f9f9f2;
+      }
+      .highlight a {
+        color: #d8945a;
+      }
+      .highlight mark {
+        background: rgba(176, 124, 94, 0.45);
+        color: #f9f9f2;
+      }
+
+      /* Dual columns: forces / faiblesses */
+      .dual {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 24px 0 32px;
+      }
+      @media (max-width: 900px) {
+        .dual {
+          grid-template-columns: 1fr;
+        }
+      }
+      .dual-box {
+        background: #ffffff;
+        border: 1px solid #e5e5dc;
+        border-radius: 14px;
+        padding: 24px;
+        box-shadow: 0 2px 16px rgba(33, 33, 33, 0.04);
+      }
+      .dual-box.forces {
+        border-top: 4px solid #5c8b5c;
+      }
+      .dual-box.faiblesses {
+        border-top: 4px solid #c04a3a;
+      }
+      .dual-box h4 {
+        font-size: 12px;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        margin: 0 0 16px;
+      }
+      .dual-box.forces h4 {
+        color: #5c8b5c;
+      }
+      .dual-box.faiblesses h4 {
+        color: #c04a3a;
+      }
+      .dual-box ul {
+        padding-left: 18px;
+        margin: 0;
+      }
+      .dual-box li {
+        margin-bottom: 10px;
+        color: #3a3a3a;
+      }
+      .dual-box li strong {
+        color: #212121;
+      }
+
+      /* Checks list */
+      .checks {
+        list-style: none;
+        padding: 0;
+        margin: 16px 0 24px;
+        display: grid;
+        gap: 6px;
+      }
+      .checks li.check {
+        display: grid;
+        grid-template-columns: 24px 1fr auto;
+        align-items: center;
+        gap: 12px;
+        padding: 10px 14px;
+        background: #ffffff;
+        border: 1px solid #e5e5dc;
+        border-radius: 8px;
+        font-size: 14px;
+      }
+      .checks li.check::before {
+        content: "";
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #b07c5e;
+      }
+      .checks li .field {
+        color: #3a3a3a;
+      }
+      .checks li .value {
+        color: #212121;
+        font-weight: 600;
+        font-variant-numeric: tabular-nums;
+      }
+
+      /* Badges */
+      .badge {
+        display: inline-block;
+        padding: 3px 10px;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        border-radius: 999px;
+        font-variant-numeric: tabular-nums;
+      }
+      .badge-pass {
+        background: rgba(92, 139, 92, 0.15);
+        color: #5c8b5c;
+      }
+      .badge-warn {
+        background: rgba(216, 148, 90, 0.18);
+        color: #b66a2d;
+      }
+      .badge-fail {
+        background: rgba(192, 74, 58, 0.15);
+        color: #c04a3a;
+      }
+      .badge-critical {
+        background: #c04a3a;
+        color: #f9f9f2;
+      }
+      .badge-high {
+        background: #b07c5e;
+        color: #f9f9f2;
+      }
+      .badge-medium {
+        background: #d8945a;
+        color: #f9f9f2;
+      }
+
+      /* Section head */
+      .sec-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+      }
+      .sec-head .sub {
+        font-size: 13px;
+        color: #6b6b63;
+        letter-spacing: 0.04em;
+      }
+      .label {
+        font-size: 12px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        font-weight: 700;
+        color: #6b6b63;
+      }
+      .value {
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        color: #212121;
+      }
+      .value.headline {
+        font-size: 36px;
+        letter-spacing: -0.03em;
+        color: #b07c5e;
+      }
+
+      /* Terminal / code card */
+      .terminal {
+        background: #212121;
+        border-radius: 12px;
+        margin: 16px 0 24px;
+        overflow: hidden;
+        border: 1px solid #3a3a3a;
+        box-shadow: 0 8px 32px rgba(33, 33, 33, 0.18);
+      }
+      .terminal-head {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 12px 16px;
+        background: #1a1a1a;
+        border-bottom: 1px solid #3a3a3a;
+      }
+      .terminal-dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .terminal-dot.red {
+        background: #c04a3a;
+      }
+      .terminal-dot.amber {
+        background: #d8945a;
+      }
+      .terminal-dot.green {
+        background: #5c8b5c;
+      }
+      .terminal-head .label {
+        margin-left: 10px;
+        color: #b07c5e;
+        font-size: 11px;
+      }
+      .terminal-body {
+        padding: 22px 24px;
+        color: #f9f9f2;
+        font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+        font-size: 14px;
+        line-height: 1.65;
+      }
+      .terminal-body strong {
+        color: #d8945a;
+        font-weight: 700;
+      }
+      .terminal-body em {
+        color: #b07c5e;
+        font-style: normal;
+      }
+      .terminal-body p {
+        color: #f9f9f2;
+        margin: 0 0 12px;
+      }
+      .terminal-body p:last-child {
+        margin-bottom: 0;
+      }
+      .terminal-body .label {
+        color: #b07c5e;
+        font-family: -apple-system, Inter, sans-serif;
+      }
+
+      /* Blockquote */
+      blockquote {
+        margin: 24px 0;
+        padding: 12px 22px;
+        border-left: 4px solid #b07c5e;
+        color: #3a3a3a;
+        font-style: italic;
+      }
+
+      /* Misc */
+      hr {
+        border: none;
+        border-top: 1px solid #e5e5dc;
+        margin: 40px 0;
+      }
+      ul,
+      ol {
+        color: #3a3a3a;
+      }
+      ul li,
+      ol li {
+        margin-bottom: 6px;
+      }
+
+      /* Footer */
+      .page-footer {
+        border-top: 1px solid #e5e5dc;
+        padding: 56px 0 80px;
+        margin-top: 0;
+        text-align: center;
+        font-size: 13px;
+        color: #6b6b63;
+      }
+      .page-footer strong {
+        color: #212121;
+        display: block;
+        margin-bottom: 6px;
+        font-size: 14px;
+        letter-spacing: 0.04em;
+      }
+      .page-footer .sub {
+        color: #8a8a82;
+      }
+      .page-footer .ch-logo {
+        height: 22px;
+        margin-bottom: 14px;
+      }
+      .footer-links {
+        display: flex;
+        gap: 18px;
+        justify-content: center;
+        margin: 18px 0 22px;
+        flex-wrap: wrap;
+      }
+      .footer-links a {
+        font-size: 12.5px;
+        font-weight: 600;
+        color: #6b6b63;
+        letter-spacing: 0.04em;
+        padding: 4px 0;
+        transition: color 0.18s ease;
+      }
+      .footer-links a:hover { color: #b07c5e; }
+      .footer-back-top {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #b07c5e;
+        padding: 8px 16px;
+        border: 1px solid rgba(176, 124, 94, 0.3);
+        border-radius: 999px;
+        margin-bottom: 28px;
+        transition: background 0.18s ease, color 0.18s ease, border-color 0.18s ease;
+      }
+      .footer-back-top:hover {
+        background: rgba(176, 124, 94, 0.08);
+        border-color: rgba(176, 124, 94, 0.5);
+        color: #8e5f44;
+      }
+
+      /* Reveal-on-scroll */
+      .reveal {
+        opacity: 0;
+        transform: translateY(16px);
+        transition:
+          opacity 0.55s ease-out,
+          transform 0.55s ease-out;
+        will-change: opacity, transform;
+      }
+      .reveal.is-visible {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+      }
+
+      /* Animated underline on body links */
+      main p a:not(.cta-nav):not(.work-cta) {
+        background-image: linear-gradient(currentColor, currentColor);
+        background-size: 0% 1.5px;
+        background-position: 0 100%;
+        background-repeat: no-repeat;
+        transition: background-size 0.28s ease, color 0.18s ease;
+        padding-bottom: 1px;
+      }
+      main p a:not(.cta-nav):not(.work-cta):hover {
+        background-size: 100% 1.5px;
+      }
+
+      /* Scoring bars (executive summary inline visual) */
+      .scoring-bars {
+        margin: 20px 0 28px;
+        display: grid;
+        gap: 10px;
+      }
+      .scoring-row {
+        display: grid;
+        grid-template-columns: 140px 1fr 56px;
+        align-items: center;
+        gap: 14px;
+        font-size: 13px;
+      }
+      .scoring-row .lbl {
+        color: #3a3a3a;
+        font-weight: 600;
+      }
+      .scoring-row .bar {
+        height: 6px;
+        background: #efefe6;
+        border-radius: 999px;
+        overflow: hidden;
+        position: relative;
+      }
+      .scoring-row .bar > span {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: linear-gradient(90deg, #b07c5e, #d8945a);
+        border-radius: 999px;
+        transition: width 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+      }
+      .scoring-row.low .bar > span { background: linear-gradient(90deg, #c04a3a, #d8945a); }
+      .scoring-row.mid .bar > span { background: linear-gradient(90deg, #d8945a, #b07c5e); }
+      .scoring-row.high .bar > span { background: linear-gradient(90deg, #b07c5e, #5c8b5c); }
+      .scoring-row .pct {
+        text-align: right;
+        font-variant-numeric: tabular-nums;
+        font-weight: 700;
+        color: #212121;
+      }
+      @media (max-width: 600px) {
+        .scoring-row { grid-template-columns: 100px 1fr 44px; gap: 10px; font-size: 12px; }
+      }
+
+      /* Print */
+      @media print {
+        body {
+          background: #ffffff;
+          background-image: none;
+        }
+        .topnav,
+        .scroll-progress,
+        .footer-back-top {
+          display: none !important;
+        }
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+        .scoring-row .bar > span { width: var(--print-w, 100%) !important; }
+        .gauge-progress { stroke-dashoffset: 339.44 !important; }
+        section {
+          page-break-inside: avoid;
+          padding: 40px 0;
+          border-bottom: 1px solid #e5e5dc;
+        }
+        .card,
+        .toplist li,
+        .radar-wrap,
+        .table-wrap,
+        .dual-box,
+        .score-hero {
+          box-shadow: none;
+        }
+        .highlight {
+          background: #f9f9f2;
+          color: #212121;
+          border: 1px solid #b07c5e;
+        }
+        .highlight h3,
+        .highlight p,
+        .highlight strong {
+          color: #212121;
+        }
+        .terminal {
+          background: #ffffff;
+          border: 1px solid #212121;
+        }
+        .terminal-head {
+          background: #f9f9f2;
+        }
+        .terminal-body {
+          color: #212121;
+        }
+        .terminal-body p {
+          color: #212121;
+        }
+        a {
+          color: #b07c5e;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a id="top"></a>
+    <header class="topnav">
+      <div class="topnav-inner">
+        <div class="brand-block" aria-label="Copy House">
+            <svg
+              class="ch-logo"
+              preserveAspectRatio="xMinYMid meet"
+              width="377"
+              height="258"
+              viewBox="0 0 377 258"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <g clip-path="url(#clip0_2105_66)">
+                <path
+                  d="M12.9272 235.709C8.84641 233.736 5.66931 230.971 3.39587 227.415C1.13195 223.849 -0.00952148 219.797 -0.00952148 215.249C-0.00952148 210.454 1.23659 206.125 3.73832 202.293C6.23053 198.451 9.70251 195.447 14.1352 193.274C18.568 191.1 23.5619 190.013 29.1076 190.013C31.5807 190.013 34.2156 190.232 37.0123 190.652C39.8089 191.081 42.4723 191.7 44.993 192.511C45.2404 196.353 45.3735 200.767 45.3735 205.773L43.5567 205.925C42.3486 201.635 40.3796 198.336 37.6591 196.038C34.9386 193.741 31.6378 192.587 27.7568 192.587C24.3229 192.587 21.2504 193.483 18.5299 195.276C15.8094 197.068 13.6786 199.547 12.1472 202.703C10.6062 205.858 9.83568 209.434 9.83568 213.428C9.83568 217.423 10.6157 221.218 12.1757 224.679C13.7357 228.139 15.9045 230.885 18.6821 232.897C21.4502 234.918 24.5512 235.929 27.9851 235.929C31.7615 235.929 35.1954 234.651 38.2679 232.106C41.3403 229.56 43.766 226.004 45.5257 221.456L47.2665 221.99C46.9621 224.259 46.534 226.643 45.9823 229.112C45.4306 231.591 44.8979 233.612 44.3938 235.176C41.8255 236.291 39.0003 237.149 35.9279 237.75C32.8554 238.35 29.8495 238.655 26.9292 238.655C21.688 238.655 17.027 237.673 12.9367 235.7L12.9272 235.709Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M62.5718 236.396C59.975 235.033 57.9488 233.135 56.484 230.714C55.0191 228.292 54.2866 225.556 54.2866 222.533C54.2866 219.511 55.0286 216.689 56.522 214.239C58.0059 211.789 60.0511 209.872 62.6479 208.48C65.2448 207.088 68.1841 206.392 71.4563 206.392C74.7285 206.392 77.5917 207.079 80.1885 208.442C82.7854 209.806 84.802 211.703 86.2384 214.124C87.6747 216.546 88.3976 219.282 88.3976 222.305C88.3976 225.327 87.6652 228.073 86.2098 230.523C84.7449 232.973 82.7188 234.909 80.122 236.32C77.5251 237.731 74.5858 238.446 71.3136 238.446C68.0414 238.446 65.1782 237.759 62.5813 236.396H62.5718ZM78.0293 232.535C79.4371 230.409 80.1505 227.587 80.1505 224.049C80.1505 221.37 79.732 218.901 78.9044 216.622C78.0673 214.353 76.9068 212.542 75.4229 211.207C73.939 209.872 72.2553 209.195 70.3909 209.195C68.0223 209.195 66.1294 210.216 64.7216 212.265C63.3138 214.315 62.6003 217.128 62.6003 220.712C62.6003 223.392 62.9999 225.88 63.8084 228.178C64.617 230.475 65.7584 232.306 67.2518 233.669C68.7358 235.033 70.4385 235.719 72.3599 235.719C74.7285 235.719 76.6214 234.661 78.0293 232.535Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M95.5318 254.32C96.2167 253.843 96.6543 253.042 96.854 251.936C97.0538 250.821 97.1775 248.905 97.2345 246.178C97.3392 242.183 97.3867 236.777 97.3867 229.96C97.3867 225.012 97.3392 221.094 97.2345 218.215C97.187 216.651 97.0823 215.488 96.9301 214.725C96.7779 213.972 96.5687 213.409 96.2833 213.057C96.0074 212.704 95.5699 212.351 94.9611 211.998L93.2964 210.94V209.5L103.275 205.563L104.635 206.097L104.255 210.187C105.815 208.928 107.46 207.975 109.172 207.346C110.885 206.717 112.749 206.402 114.766 206.402C117.534 206.402 119.997 207.05 122.138 208.337C124.278 209.624 125.933 211.407 127.094 213.676C128.254 215.945 128.834 218.577 128.834 221.561C128.834 224.946 128.111 227.92 126.675 230.466C125.239 233.021 123.232 234.985 120.663 236.377C118.095 237.769 115.194 238.465 111.969 238.465C109.296 238.465 106.832 238.007 104.559 237.101L104.711 246.502C104.759 249.181 104.911 251.04 105.168 252.07C105.425 253.1 105.976 253.862 106.832 254.339C107.689 254.816 109.201 255.187 111.37 255.435V257.256C110.01 257.256 108.925 257.228 108.117 257.18L101.163 257.104L94.8089 257.18C94.1525 257.228 93.2489 257.256 92.0884 257.256V255.435C93.7055 255.178 94.8469 254.816 95.5318 254.339V254.32ZM106.423 231.581C107.812 234.337 109.943 235.709 112.816 235.709C115.384 235.709 117.391 234.642 118.827 232.487C120.264 230.342 120.987 227.577 120.987 224.192C120.987 221.418 120.521 219.015 119.588 216.994C118.656 214.973 117.382 213.419 115.774 212.332C114.157 211.245 112.321 210.702 110.257 210.702C108.193 210.702 106.376 211.207 104.664 212.218C104.464 214.897 104.359 217.471 104.359 219.95C104.359 224.955 105.054 228.826 106.442 231.581H106.423Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M133.571 256.78C132.592 255.969 132.097 254.959 132.097 253.748C132.097 252.89 132.363 252.079 132.896 251.326C133.419 250.573 134.094 249.991 134.903 249.581C135.607 250.134 136.406 250.583 137.281 250.907C138.166 251.231 138.955 251.402 139.659 251.402C140.667 251.402 141.628 250.945 142.532 250.039C143.436 249.133 144.292 247.637 145.1 245.568L146.841 240.867C145.176 236.32 143.559 232.039 141.999 228.025C140.439 224.011 139.05 220.636 137.842 217.909C136.882 215.688 136.044 214.01 135.312 212.866C134.58 211.731 133.847 210.883 133.124 210.33C132.392 209.777 131.45 209.348 130.29 209.043V207.298L133.695 207.374L138.908 207.451L144.196 207.374L147.298 207.298V209.043C146.289 209.348 145.519 209.758 144.986 210.292C144.453 210.826 144.196 211.493 144.196 212.303C144.196 213.209 144.501 214.573 145.1 216.394C146.108 219.826 147.944 224.831 150.617 231.4L153.87 222C154.679 219.73 155.231 217.986 155.535 216.765C155.84 215.555 155.992 214.515 155.992 213.657C155.992 212.494 155.725 211.531 155.193 210.778C154.67 210.025 153.842 209.443 152.739 209.033V207.289C153.794 207.289 154.727 207.317 155.535 207.365C156.848 207.365 158.132 207.393 159.388 207.441L163.468 207.365L166.113 207.289V209.033C164.753 209.434 163.621 209.996 162.707 210.702C161.794 211.407 160.957 212.456 160.177 213.848C159.397 215.24 158.551 217.147 157.647 219.568L146.755 248.371C145.547 251.555 144.158 253.948 142.598 255.569C141.038 257.19 139.269 257.99 137.31 257.99C135.797 257.99 134.551 257.59 133.571 256.78Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M209.822 215.402C204.476 215.402 200.471 215.431 197.798 215.478V222.982C197.798 226.767 197.941 229.427 198.217 230.942C198.493 232.458 199.082 233.536 199.996 234.165C200.909 234.794 202.516 235.338 204.837 235.795V237.693C203.173 237.693 201.812 237.664 200.757 237.616L193.651 237.54L186.469 237.616C185.413 237.664 184.053 237.693 182.388 237.693V235.795C184.757 235.338 186.403 234.794 187.344 234.165C188.277 233.536 188.885 232.449 189.161 230.904C189.437 229.36 189.58 226.728 189.58 222.982V205.706C189.58 201.969 189.437 199.328 189.161 197.783C188.885 196.239 188.277 195.161 187.344 194.523C186.412 193.893 184.757 193.35 182.388 192.892V190.995C184.053 190.995 185.413 191.024 186.469 191.071L193.651 191.147L200.757 191.071C201.812 191.024 203.173 190.995 204.837 190.995V192.892C202.516 193.35 200.909 193.893 199.996 194.523C199.092 195.152 198.493 196.229 198.217 197.745C197.941 199.261 197.798 201.911 197.798 205.706V212.446C200.471 212.494 204.476 212.523 209.822 212.523C215.168 212.523 219.296 212.494 221.921 212.446V205.706C221.921 201.921 221.779 199.261 221.503 197.745C221.227 196.229 220.637 195.161 219.724 194.523C218.811 193.893 217.203 193.35 214.882 192.892V190.995C216.547 190.995 217.907 191.024 218.963 191.071L226.069 191.147L233.251 191.071C234.306 191.024 235.667 190.995 237.331 190.995V192.892C234.963 193.35 233.327 193.893 232.413 194.523C231.51 195.152 230.901 196.239 230.597 197.783C230.292 199.328 230.14 201.959 230.14 205.706V222.982C230.14 226.719 230.292 229.36 230.597 230.904C230.901 232.449 231.51 233.536 232.413 234.165C233.317 234.794 234.963 235.338 237.331 235.795V237.693C235.667 237.693 234.306 237.664 233.251 237.616L226.069 237.54L218.963 237.616C217.907 237.664 216.547 237.693 214.882 237.693V235.795C217.203 235.338 218.811 234.794 219.724 234.165C220.628 233.536 221.227 232.458 221.503 230.942C221.779 229.427 221.921 226.776 221.921 222.982V215.478C219.296 215.431 215.263 215.402 209.822 215.402Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M249.25 236.396C246.653 235.033 244.627 233.135 243.162 230.714C241.697 228.292 240.974 225.556 240.974 222.533C240.974 219.511 241.716 216.689 243.2 214.239C244.684 211.789 246.729 209.872 249.326 208.48C251.923 207.088 254.853 206.392 258.135 206.392C261.416 206.392 264.27 207.079 266.867 208.442C269.464 209.806 271.48 211.703 272.917 214.124C274.353 216.546 275.076 219.282 275.076 222.305C275.076 225.327 274.343 228.073 272.879 230.523C271.414 232.973 269.388 234.909 266.791 236.32C264.194 237.731 261.255 238.446 257.982 238.446C254.71 238.446 251.847 237.759 249.25 236.396ZM264.717 232.535C266.125 230.409 266.838 227.587 266.838 224.049C266.838 221.37 266.42 218.901 265.592 216.622C264.765 214.344 263.604 212.542 262.111 211.207C260.627 209.872 258.943 209.195 257.079 209.195C254.71 209.195 252.817 210.216 251.409 212.265C250.002 214.315 249.298 217.128 249.298 220.712C249.298 223.392 249.697 225.88 250.506 228.178C251.314 230.475 252.456 232.306 253.949 233.669C255.433 235.033 257.136 235.719 259.057 235.719C261.426 235.719 263.319 234.661 264.727 232.535H264.717Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M285.701 235.566C284.113 233.65 283.323 230.637 283.323 226.547L283.475 215.783C283.475 214.468 283.399 213.457 283.247 212.752C283.095 212.046 282.857 211.512 282.524 211.159C282.191 210.807 281.677 210.53 280.974 210.33L279.157 209.872V208.051L290.277 206.764L291.332 207.222C291.028 215.354 290.876 221.037 290.876 224.269C290.876 227.501 291.294 229.789 292.122 231.276C292.959 232.763 294.576 233.507 297.002 233.507C298.41 233.507 299.732 233.231 300.968 232.678C302.205 232.125 303.27 231.343 304.184 230.332C304.336 227.806 304.421 225.108 304.45 222.228C304.478 219.349 304.412 216.975 304.26 215.106C304.107 213.39 303.87 212.227 303.537 211.617C303.213 211.007 302.566 210.606 301.606 210.406L299.941 209.949V208.128L310.833 206.764L312.041 207.222C311.841 214.391 311.736 219.702 311.736 223.134C311.736 226.566 311.841 229.15 312.041 230.561C312.24 231.972 312.668 232.964 313.325 233.517C313.981 234.07 315.161 234.527 316.882 234.88V236.701L305.468 238.446L304.412 237.988L304.64 232.687C302.424 234.813 300.417 236.301 298.628 237.159C296.84 238.017 294.938 238.446 292.921 238.446C289.696 238.446 287.29 237.483 285.701 235.566Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M325.729 238.026C324.264 237.75 322.904 237.33 321.648 236.777C321.448 234.403 321.524 231.343 321.876 227.606H323.617C323.969 229.379 324.483 230.876 325.168 232.115C325.843 233.355 326.718 234.289 327.774 234.918C328.83 235.547 330.038 235.862 331.398 235.862C332.758 235.862 333.843 235.547 334.651 234.918C335.46 234.289 335.859 233.364 335.859 232.153C335.859 230.838 335.365 229.636 334.385 228.549C333.405 227.463 331.874 226.309 329.81 225.098C327.336 223.63 325.491 222.181 324.254 220.741C323.018 219.301 322.399 217.566 322.399 215.545C322.399 212.818 323.493 210.606 325.691 208.909C327.879 207.222 330.666 206.373 334.043 206.373C336.516 206.373 339.056 206.879 341.681 207.889C341.576 210.521 341.376 213.266 341.082 216.146H339.341C338.884 213.724 338.114 211.913 337.029 210.73C335.945 209.548 334.594 208.947 332.987 208.947C331.674 208.947 330.628 209.262 329.848 209.891C329.068 210.521 328.678 211.369 328.678 212.427C328.678 213.591 329.172 214.658 330.152 215.65C331.132 216.641 332.587 217.681 334.499 218.796C337.172 220.312 339.151 221.818 340.435 223.306C341.719 224.793 342.366 226.604 342.366 228.721C342.366 231.648 341.234 234.003 338.96 235.767C336.687 237.53 333.748 238.417 330.114 238.417C328.649 238.417 327.194 238.274 325.729 237.998V238.026Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M355.673 236.51C353.41 235.223 351.602 233.431 350.271 231.133C348.939 228.835 348.263 226.242 348.263 223.363C348.263 220.283 349.034 217.442 350.565 214.84C352.106 212.237 354.171 210.177 356.767 208.661C359.364 207.146 362.199 206.392 365.271 206.392C368.601 206.392 371.217 207.279 373.138 209.043C375.05 210.816 376.011 213.19 376.011 216.165C376.011 216.823 375.963 217.576 375.859 218.434L375.326 218.815L355.588 218.739C355.388 221.113 355.721 223.363 356.606 225.48C357.49 227.606 358.813 229.293 360.572 230.561C362.332 231.829 364.406 232.458 366.774 232.458C368.439 232.458 370.037 232.096 371.578 231.362C373.119 230.628 374.536 229.579 375.849 228.216L376.981 229.122C375.364 232.201 373.404 234.527 371.083 236.091C368.762 237.654 366.137 238.436 363.217 238.436C360.449 238.436 357.928 237.788 355.654 236.501L355.673 236.51ZM367.583 215.745C367.764 215.469 367.849 214.973 367.849 214.268C367.849 212.647 367.459 211.35 366.679 210.368C365.899 209.386 364.777 208.89 363.312 208.89C361.6 208.89 360.059 209.548 358.698 210.864C357.338 212.18 356.377 214.02 355.826 216.394L366.489 216.165C367.041 216.165 367.412 216.022 367.583 215.745Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M239.519 49.9773V83.1748C239.519 89.696 239.766 94.2438 240.28 96.8465C240.794 99.4493 241.897 101.27 243.571 102.281C245.236 103.311 248.261 104.245 252.598 105.084V109.536C249.925 109.536 247.471 109.489 245.236 109.393L231.719 109.269L218.373 109.393C216.509 109.489 214.055 109.536 210.992 109.536V105.084C215.358 104.245 218.326 103.311 219.895 102.281C221.465 101.27 222.521 99.4779 223.034 96.9228C223.548 94.3677 223.795 89.7628 223.795 83.1748V69.0835C221.503 69.0358 188.838 83.6991 183.53 85.6822C181.294 86.5212 179.63 87.036 178.821 87.0551V101.146C178.821 107.734 179.088 112.311 179.611 114.866C180.105 117.421 181.18 119.223 182.797 120.253C184.414 121.282 187.411 122.197 191.777 123.027V127.498C188.638 127.498 186.108 127.451 184.272 127.355L170.897 127.231L157.4 127.355C155.44 127.451 152.986 127.498 150.018 127.498V123.027C154.384 122.188 157.428 121.282 159.15 120.253C160.872 119.223 161.946 117.402 162.413 114.818C162.879 112.215 163.097 107.639 163.097 101.146V89.1717C160.348 89.4386 157.599 89.5912 154.898 89.5912C144.957 89.5912 136.149 87.7702 128.492 84.1568C120.834 80.5148 114.899 75.4713 110.675 69.0072C106.452 62.5432 104.34 55.1162 104.34 46.7453C104.34 37.9168 106.699 29.9178 111.379 22.8149C116.04 15.7025 122.566 10.1251 130.936 6.06365C139.279 2.03076 148.648 -0.00952148 159.055 -0.00952148C163.792 -0.00952148 168.776 0.409975 174.027 1.19176C179.249 1.98309 184.262 3.1081 188.999 4.61448C189.437 12.8042 189.684 20.9176 189.684 29.012L185.223 29.3076C183.092 21.6804 179.554 15.8074 174.569 11.7269C169.613 7.64629 163.554 5.57741 156.41 5.57741C150.104 5.57741 144.387 7.24586 139.279 10.5446C134.171 13.8434 130.175 18.3625 127.303 24.0734C124.43 29.8033 122.984 36.2483 122.984 43.4084C122.984 50.5684 124.459 57.2804 127.379 63.5061C130.299 69.7318 134.37 74.699 139.545 78.2838C157.19 90.5541 194.041 75.109 204.647 70.3611C213.455 66.4044 221.598 62.8387 223.786 62.8101V49.9773C223.786 43.3607 223.538 38.7844 223.025 36.2293C222.511 33.6742 221.455 31.8722 219.886 30.8426C218.316 29.8319 215.348 28.8976 210.982 28.0682V23.5967C214.045 23.5967 216.499 23.6444 218.364 23.7397L231.709 23.8827L245.226 23.7397C247.462 23.6444 249.916 23.5967 252.589 23.5967V28.0682C248.242 28.9071 245.226 29.8415 243.562 30.8426C241.897 31.8722 240.794 33.6932 240.27 36.3055C239.757 38.8893 239.51 43.4656 239.51 49.9773H239.519Z"
+                  fill="#212121"
+                />
+                <path
+                  d="M191.777 41.5683V46.0207C187.411 46.8787 184.414 47.794 182.797 48.8237C181.96 49.3671 181.275 50.0822 180.733 51.0165C180.22 51.8746 179.849 52.9328 179.601 54.1913C179.088 56.7751 178.812 61.3514 178.812 67.9394V74.699C178.583 74.7562 170.07 76.3198 163.544 76.3198H163.078V67.9299C163.078 61.4372 162.86 56.8609 162.394 54.2581C161.927 51.6553 160.843 49.8534 159.131 48.8237C157.409 47.794 154.375 46.8787 149.999 46.0207V41.5683C152.967 41.5683 155.421 41.616 157.381 41.7113L170.878 41.8353L184.253 41.7113C186.089 41.616 188.619 41.5683 191.758 41.5683H191.777Z"
+                  fill="#212121"
+                />
+              </g>
+              <defs>
+                <clipPath id="clip0_2105_66">
+                  <rect width="377" height="258" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+          <span class="brand-meta">Audit Marketing</span>
+        </div>
+        <nav class="topnav-links" aria-label="Sections" id="topnav-links">
+          <a href="#cover" data-target="cover"
+            ><span class="num">01</span><span class="sep">/</span>Couverture</a
+          >
+          <a href="#executive" data-target="executive"
+            ><span class="num">02</span><span class="sep">/</span>Résumé</a
+          >
+          <a href="#cro" data-target="cro"
+            ><span class="num">03</span><span class="sep">/</span>CRO</a
+          >
+          <a href="#seo" data-target="seo"
+            ><span class="num">04</span><span class="sep">/</span>SEO</a
+          >
+          <a href="#copy" data-target="copy"
+            ><span class="num">05</span><span class="sep">/</span>Copy</a
+          >
+          <a href="#ads" data-target="ads"
+            ><span class="num">06</span><span class="sep">/</span>Pub</a
+          >
+          <a href="#social" data-target="social"
+            ><span class="num">07</span><span class="sep">/</span>Social</a
+          >
+          <a href="#content" data-target="content"
+            ><span class="num">08</span><span class="sep">/</span>Contenu</a
+          >
+          <a href="#leadgen" data-target="leadgen"
+            ><span class="num">09</span><span class="sep">/</span>Lead Gen</a
+          >
+          <a href="#brand" data-target="brand"
+            ><span class="num">10</span><span class="sep">/</span>Brand</a
+          >
+          <a href="#plan" data-target="plan"
+            ><span class="num">11</span><span class="sep">/</span>Plan 90j</a
+          >
+        </nav>
+        <div class="topnav-cta-wrap">
+          <a href="#work" class="cta-nav">Travailler ensemble</a>
+        </div>
+        <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+      </div>
+    </header>
+
+    <div class="shell">
+      <main>
+        <section id="cover" class="cover">
+          <div class="cover-meta">
+            <span>Date <strong>19 mai 2026</strong></span>
+            <span>Audit par <strong>Copy House</strong></span>
+            <span>Périmètre <strong>Marketing global</strong></span>
+          </div>
+          <h1>Audit Marketing<br />SKL CLUB</h1>
+          <p class="subtitle">
+            Mastermind d'entrepreneurs francophones - Initié par Éric
+            Larchevêque, Aurélien De Nunzio et Charles Baras.
+          </p>
+
+          <div class="score-hero">
+            <div class="gauge">
+              <!-- Big circular gauge -->
+              <svg
+                width="240"
+                height="240"
+                viewBox="0 0 240 240"
+                role="img"
+                aria-label="Score global 46 sur 100, grade D"
+              >
+                <defs>
+                  <linearGradient
+                    id="gradD"
+                    x1="0%"
+                    y1="0%"
+                    x2="100%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stop-color="#C04A3A" />
+                    <stop offset="100%" stop-color="#D8945A" />
+                  </linearGradient>
+                </defs>
+                <circle
+                  cx="120"
+                  cy="120"
+                  r="100"
+                  stroke="#E5E5DC"
+                  stroke-width="18"
+                  fill="none"
+                />
+                <circle
+                  class="gauge-progress"
+                  cx="120"
+                  cy="120"
+                  r="100"
+                  stroke="url(#gradD)"
+                  stroke-width="18"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="628.32"
+                  transform="rotate(-90 120 120)"
+                />
+                <text
+                  x="120"
+                  y="118"
+                  text-anchor="middle"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="72"
+                  font-weight="800"
+                  fill="#212121"
+                  letter-spacing="-3"
+                >
+                  46
+                </text>
+                <text
+                  x="120"
+                  y="148"
+                  text-anchor="middle"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="13"
+                  font-weight="600"
+                  fill="#6B6B63"
+                  letter-spacing="2"
+                >
+                  / 100
+                </text>
+              </svg>
+              <div class="gauge-label">Score global pondéré</div>
+            </div>
+            <div class="score-hero-text">
+              <span class="grade-tag grade-D">Grade D - Faible</span>
+              <h3>Produit leader, exécution marketing à reconstruire.</h3>
+              <p>
+                SKL CLUB a un produit objectivement supérieur sur le segment
+                francophone premium (40 experts, 2 à 3 lives par jour, 4 IA
+                propriétaires, caution Ledger). La marque marche sur une seule
+                jambe : Éric Larchevêque pèse 377 000 followers cumulés quand la
+                marque corporate plafonne à 1 955 sur LinkedIn et 99 sur X. La
+                preuve sociale membre est invisible. Le score remonte à 60 et
+                plus dès que les 3 leviers prioritaires sont actionnés sur 90
+                jours.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 2 : EXECUTIVE SUMMARY                -->
+        <!-- ============================================ -->
+        <section id="executive">
+          <span class="eyebrow">02 - Résumé exécutif</span>
+          <h2>Une promesse trop large pour un produit déjà différencié.</h2>
+          <p class="lead">
+            SKL CLUB a tous les ingrédients d'un leader de catégorie sur le
+            segment francophone premium. Le frein est de communication, pas de
+            produit. La preuve sociale repose à 95 % sur les fondateurs et les
+            invités, presque pas sur les membres. La marque sociale corporate
+            est sous-animée alors que les comptes personnels font 200 fois plus
+            d'audience.
+          </p>
+
+          <!-- Radar chart -->
+          <div class="radar-wrap">
+            <svg
+              width="520"
+              height="460"
+              viewBox="0 0 520 460"
+              role="img"
+              aria-label="Radar des 8 catégories d'audit"
+            >
+              <!-- Concentric polygons (grid) -->
+              <g fill="none" stroke="#D7D7CF" stroke-width="1">
+                <!-- 8 axes, centre (260,230), radius 180 -->
+                <!-- We'll compute manually 8 axes equally spaced -->
+                <!-- Axes angle: -90 + k*45 degrees -->
+                <!-- Grid: 4 levels at 25,50,75,100 % -->
+                <polygon
+                  points="260,80 366.07,123.93 410,230 366.07,336.07 260,380 153.93,336.07 110,230 153.93,123.93"
+                />
+                <polygon
+                  points="260,117.5 339.55,150.45 372.5,230 339.55,309.55 260,342.5 180.45,309.55 147.5,230 180.45,150.45"
+                />
+                <polygon
+                  points="260,155 313.04,176.96 335,230 313.04,283.04 260,305 206.96,283.04 185,230 206.96,176.96"
+                />
+                <polygon
+                  points="260,192.5 286.52,203.48 297.5,230 286.52,256.52 260,267.5 233.48,256.52 222.5,230 233.48,203.48"
+                />
+              </g>
+              <!-- Axes lines -->
+              <g stroke="#D7D7CF" stroke-width="1">
+                <line x1="260" y1="230" x2="260" y2="80" />
+                <line x1="260" y1="230" x2="366.07" y2="123.93" />
+                <line x1="260" y1="230" x2="410" y2="230" />
+                <line x1="260" y1="230" x2="366.07" y2="336.07" />
+                <line x1="260" y1="230" x2="260" y2="380" />
+                <line x1="260" y1="230" x2="153.93" y2="336.07" />
+                <line x1="260" y1="230" x2="110" y2="230" />
+                <line x1="260" y1="230" x2="153.93" y2="123.93" />
+              </g>
+              <!-- Data polygon : scores 62,28,55,38,32,28,62,62 mapped to radius 0-180 -->
+              <!-- Ratios: 0.62, 0.28, 0.55, 0.38, 0.32, 0.28, 0.62, 0.62 -->
+              <!-- Distances: 111.6, 50.4, 99, 68.4, 57.6, 50.4, 111.6, 111.6 -->
+              <!-- Vertex coordinates (cos/sin from angle list) -->
+              <!-- Axis 0 (CRO, up): (260, 230-111.6)=(260,118.4) -->
+              <!-- Axis 1 (SEO, up-right): (260+50.4*0.7071, 230-50.4*0.7071)=(295.64,194.36) -->
+              <!-- Axis 2 (Copy, right): (260+99, 230)=(359,230) -->
+              <!-- Axis 3 (Ads, down-right): (260+68.4*0.7071, 230+68.4*0.7071)=(308.36,278.36) -->
+              <!-- Axis 4 (Social, down): (260, 230+57.6)=(260,287.6) -->
+              <!-- Axis 5 (Content, down-left): (260-50.4*0.7071, 230+50.4*0.7071)=(224.36,265.64) -->
+              <!-- Axis 6 (LeadGen, left): (260-111.6, 230)=(148.4,230) -->
+              <!-- Axis 7 (Brand, up-left): (260-111.6*0.7071, 230-111.6*0.7071)=(181.10,151.10) -->
+              <polygon
+                points="260,118.4 295.64,194.36 359,230 308.36,278.36 260,287.6 224.36,265.64 148.4,230 181.10,151.10"
+                fill="rgba(176, 124, 94, 0.25)"
+                stroke="#B07C5E"
+                stroke-width="2"
+              />
+              <!-- Vertex dots -->
+              <g fill="#B07C5E">
+                <circle cx="260" cy="118.4" r="3.5" />
+                <circle cx="295.64" cy="194.36" r="3.5" />
+                <circle cx="359" cy="230" r="3.5" />
+                <circle cx="308.36" cy="278.36" r="3.5" />
+                <circle cx="260" cy="287.6" r="3.5" />
+                <circle cx="224.36" cy="265.64" r="3.5" />
+                <circle cx="148.4" cy="230" r="3.5" />
+                <circle cx="181.10" cy="151.10" r="3.5" />
+              </g>
+              <!-- Labels -->
+              <g
+                font-family="-apple-system,Inter,sans-serif"
+                font-size="12"
+                fill="#6B6B63"
+                font-weight="600"
+              >
+                <text x="260" y="65" text-anchor="middle">
+                  CRO
+                  <tspan fill="#B07C5E">62</tspan>
+                </text>
+                <text x="378" y="115" text-anchor="start">
+                  SEO
+                  <tspan fill="#C04A3A">28</tspan>
+                </text>
+                <text x="425" y="234" text-anchor="start">
+                  Copy
+                  <tspan fill="#B07C5E">55</tspan>
+                </text>
+                <text x="378" y="350" text-anchor="start">
+                  Pub
+                  <tspan fill="#D8945A">38</tspan>
+                </text>
+                <text x="260" y="403" text-anchor="middle">
+                  Social
+                  <tspan fill="#D8945A">32</tspan>
+                </text>
+                <text x="142" y="350" text-anchor="end">
+                  Contenu
+                  <tspan fill="#C04A3A">28</tspan>
+                </text>
+                <text x="95" y="234" text-anchor="end">
+                  LeadGen
+                  <tspan fill="#B07C5E">62</tspan>
+                </text>
+                <text x="142" y="115" text-anchor="end">
+                  Brand
+                  <tspan fill="#B07C5E">62</tspan>
+                </text>
+              </g>
+            </svg>
+          </div>
+
+          <!-- Visual scoring bars (animated on scroll) -->
+          <div class="scoring-bars" aria-hidden="true">
+            <div class="scoring-row high"><span class="lbl">Site &amp; CRO</span><span class="bar"><span data-pct="62"></span></span><span class="pct">62</span></div>
+            <div class="scoring-row low"><span class="lbl">SEO</span><span class="bar"><span data-pct="28"></span></span><span class="pct">28</span></div>
+            <div class="scoring-row mid"><span class="lbl">Copywriting</span><span class="bar"><span data-pct="55"></span></span><span class="pct">55</span></div>
+            <div class="scoring-row mid"><span class="lbl">Publicité</span><span class="bar"><span data-pct="38"></span></span><span class="pct">38</span></div>
+            <div class="scoring-row low"><span class="lbl">Réseaux sociaux</span><span class="bar"><span data-pct="32"></span></span><span class="pct">32</span></div>
+            <div class="scoring-row low"><span class="lbl">Stratégie contenu</span><span class="bar"><span data-pct="28"></span></span><span class="pct">28</span></div>
+            <div class="scoring-row high"><span class="lbl">Lead Generation</span><span class="bar"><span data-pct="62"></span></span><span class="pct">62</span></div>
+            <div class="scoring-row high"><span class="lbl">Brand</span><span class="bar"><span data-pct="62"></span></span><span class="pct">62</span></div>
+          </div>
+
+          <!-- Scoring table -->
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Catégorie</th>
+                  <th>Score brut</th>
+                  <th>Poids</th>
+                  <th>Contribution</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Site &amp; CRO</td>
+                  <td>62 / 100</td>
+                  <td>20 %</td>
+                  <td>12,4</td>
+                </tr>
+                <tr>
+                  <td>SEO</td>
+                  <td>28 / 100</td>
+                  <td>15 %</td>
+                  <td>4,2</td>
+                </tr>
+                <tr>
+                  <td>Copywriting</td>
+                  <td>55 / 100</td>
+                  <td>15 %</td>
+                  <td>8,25</td>
+                </tr>
+                <tr>
+                  <td>Publicité</td>
+                  <td>38 / 100</td>
+                  <td>15 %</td>
+                  <td>5,7</td>
+                </tr>
+                <tr>
+                  <td>Réseaux sociaux</td>
+                  <td>32 / 100</td>
+                  <td>10 %</td>
+                  <td>3,2</td>
+                </tr>
+                <tr>
+                  <td>Stratégie contenu</td>
+                  <td>28 / 100</td>
+                  <td>10 %</td>
+                  <td>2,8</td>
+                </tr>
+                <tr>
+                  <td>Lead Generation</td>
+                  <td>62 / 100</td>
+                  <td>10 %</td>
+                  <td>6,2</td>
+                </tr>
+                <tr>
+                  <td>Brand &amp; Positionnement</td>
+                  <td>62 / 100</td>
+                  <td>5 %</td>
+                  <td>3,1</td>
+                </tr>
+                <tr>
+                  <td><strong>Total pondéré</strong></td>
+                  <td>-</td>
+                  <td><strong>100 %</strong></td>
+                  <td><strong>45,85 → 46</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Top 5 problèmes -->
+          <h3 style="margin-top: 48px">Top 5 problèmes systémiques</h3>
+          <ol class="toplist danger">
+            <li>
+              <div>
+                <h4>Absence totale de preuve sociale membre</h4>
+                <p>
+                  127 avis 4,1/5 existent en interne, aucun témoignage écrit
+                  visible sur skl.club, go.skl.club ou les comptes sociaux. La
+                  preuve repose à 100 % sur l'autorité des fondateurs et des
+                  invités.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Dépendance critique au fondateur</h4>
+                <p>
+                  377 000 followers cumulés sur les comptes personnels d'Éric
+                  Larchevêque contre 1 955 sur la page LinkedIn entreprise et 99
+                  sur X marque dormant. Si Éric ralentit, le canal d'acquisition
+                  principal s'effondre.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Inventaire de contenu massif non capitalisé</h4>
+                <p>
+                  60 à 90 lives par mois, 700 heures et plus par an de contenu
+                  produit en interne, 40 experts à 300-2 000 € de l'heure - tout
+                  reste verrouillé derrière members.skl.club. Aucun blog, aucune
+                  chaîne YouTube marque.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Promesse positionnement trop large</h4>
+                <p>
+                  "Le club de tous les entrepreneurs" ne crée aucune catégorie
+                  mentale. Le H1 "Accélérez la croissance de votre entreprise"
+                  est interchangeable avec 50 concurrents. Aucun mécanisme
+                  propriétaire nommé.
+                </p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h4>Incohérences premium</h4>
+                <p>
+                  Deadline "16 avril 23h59" affichée le 19 mai (scarcity
+                  factice), double compte Instagram non clarifié, X marque
+                  dormant à 0 post, sous-domaines fragmentés. Une cible 7
+                  chiffres lit ces détails comme des signaux d'amateurisme.
+                </p>
+              </div>
+            </li>
+          </ol>
+
+          <!-- Top 5 quick wins -->
+          <h3 style="margin-top: 48px">
+            Top 5 quick wins (moins de 15 minutes)
+          </h3>
+          <div class="cards cards-2">
+            <div class="card card-accent">
+              <span class="num">QW 01 - 5 MIN</span>
+              <h4>Supprimer la deadline "16 avril 23h59"</h4>
+              <p>
+                Sur go.skl.club/offreeric20. Remplacer par scarcity structurelle
+                vérifiable : "ELITE : 36 places, X disponibles ce trimestre".
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QW 07 - 10 MIN</span>
+              <h4>Bande de chiffres en preuve sociale homepage</h4>
+              <p>
+                Sous le hero : "127 entrepreneurs membres · 60-90 lives/mois ·
+                40+ experts · 4,1/5". Ancre la preuve agrégée qui manque
+                cruellement.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QW 05 - 15 MIN</span>
+              <h4>Réserver la chaîne YouTube SKL CLUB</h4>
+              <p>
+                youtube.com/@sklclub, branding cohérent, ajouter
+                Éric/Aurélien/Charles comme managers. Réserve le handle
+                officiel.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QW 10 - 15 MIN</span>
+              <h4>Lancer la collecte de témoignages Fillout</h4>
+              <p>
+                Dupliquer le formulaire experts, adapter pour case studies
+                membres. Premier retour sous 7 jours, machine de preuve lancée.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QW 09 - 5 MIN</span>
+              <h4>Réécrire la meta description homepage</h4>
+              <p>
+                Intégrer "mastermind", "entrepreneurs francophones", "experts en
+                activité", "Éric Larchevêque". CTR SERP +15 à 25 %.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QW 02 - 10 MIN</span>
+              <h4>Ajouter les icônes sociales en footer</h4>
+              <p>
+                Instagram, LinkedIn, YouTube, X. Signale un écosystème vivant,
+                améliore les signaux off-site SEO vers la marque.
+              </p>
+            </div>
+          </div>
+
+          <!-- Angle radical -->
+          <div class="highlight">
+            <h3>L'angle radical - une seule recommandation</h3>
+            <p>
+              <strong
+                >Stop construire la marque autour d'Éric Larchevêque. Commencer
+                à construire la preuve par les membres.</strong
+              >
+            </p>
+            <p>
+              Verrouiller le H1, la sales page, la chaîne YouTube et le
+              calendrier de contenu sur les membres SKL, leurs résultats
+              chiffrés, leurs visages, leurs noms. Éric Larchevêque devient un
+              signataire d'autorité au service de la preuve membre, pas le sujet
+              principal. Cette inversion résout simultanément les 3 faiblesses
+              structurelles : preuve sociale, dépendance fondateur, et
+              capitalisation de l'inventaire interne. C'est aussi la seule
+              recommandation qui change le positionnement sans toucher au
+              produit.
+            </p>
+            <p>
+              Fenêtre d'action : 90 jours pour publier 10 case studies, 12
+              vidéos YouTube membres, 4 newsletters consécutives signées
+              Charles. À J+90, si le ratio "contenu fondateurs / contenu
+              membres" passe de 100/0 à 50/50, la marque SKL CLUB devient
+              autonome de la personne d'Éric pour la première fois depuis le
+              lancement.
+            </p>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 3 : CRO                              -->
+        <!-- ============================================ -->
+        <section id="cro">
+          <span class="eyebrow">03 - Site &amp; Conversion (CRO)</span>
+          <div class="sec-head">
+            <div>
+              <h2>
+                Architecture funnel propre, hero générique, preuve sociale
+                absente.
+              </h2>
+              <span class="sub"
+                >www.skl.club, go.skl.club/offreeric20,
+                go.skl.club/1-day-to-skl-go</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score CRO 62 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#B07C5E"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="257.20 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  62
+                </text>
+              </svg>
+              <div class="gauge-label">CRO - Poids 20 %</div>
+            </div>
+          </div>
+
+          <p>
+            Architecture funnel propre (homepage marketing → sales page → appel
+            iClosed) avec un CTA unique martelé. Le hero manque de promesse
+            spécifique, la preuve sociale écrite est absente, et le pricing
+            opaque combiné à l'urgence factice crée une friction sérieuse pour
+            une cible sophistiquée.
+          </p>
+
+          <h3>Checks détaillés</h3>
+          <div class="checks">
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Hero clarté.</strong> H1 générique, sous-titre
+                features-only.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>CTA mono-CTA.</strong> "Devenir membre" répété 10 fois
+                sans concurrent.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Value prop.</strong> Implicite, jamais synthétisée en
+                une phrase.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Témoignages clients.</strong> Aucun visible sur
+                homepage ni sales page.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>Autorité fondateur.</strong> Larchevêque, Ledger, TBSO
+                mis en avant tôt.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Pricing.</strong> Aucune fourchette, reveal
+                call-only.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Garantie.</strong> 14 jours mentionnée mais peu mise en
+                scène.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>Mobile.</strong> Framer responsive par défaut.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Urgence crédible.</strong> Deadline 16 avril affichée
+                le 19 mai.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>FAQ.</strong> Existante mais non analysable dans la
+                collecte.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Cohérence cross-pages.</strong> 3 promesses, 3
+                échelles, pas de fil rouge.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Sous-domaines fragmentés.</strong> skl.club + go +
+                iclosed + fillout.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>Single funnel.</strong> 1 CTA payant + 1 CTA gratuit,
+                zéro dispersion.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Liens sociaux footer.</strong> Aucun lien IG, LinkedIn,
+                YouTube, X.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>Garantie 14 jours.</strong> Rare sur le segment, valeur
+                réelle.</span
+              >
+            </div>
+          </div>
+
+          <div class="dual">
+            <div class="dual-box forces">
+              <h4>Forces</h4>
+              <ol>
+                <li>
+                  <strong>Discipline mono-CTA exemplaire.</strong> "Devenir
+                  membre" répété 10 fois sans aucun CTA concurrent.
+                </li>
+                <li>
+                  <strong>Autorité fondateur extrêmement forte.</strong> Éric
+                  Larchevêque (Ledger, licorne crypto FR) crée une asymétrie de
+                  crédibilité rare sur le segment.
+                </li>
+                <li>
+                  <strong>Architecture funnel propre.</strong> Top-of-funnel
+                  gratuit (1 Day to SKL) qui qualifie l'intention avant l'appel
+                  découverte.
+                </li>
+              </ol>
+            </div>
+            <div class="dual-box faiblesses">
+              <h4>Faiblesses</h4>
+              <ol>
+                <li>
+                  <strong
+                    >Aucun témoignage client écrit ni résultat chiffré.</strong
+                  >
+                  La preuve sociale est 100 % empruntée à l'autorité des
+                  fondateurs et des invités experts.
+                </li>
+                <li>
+                  <strong>Hero générique.</strong> "Accélérez la croissance de
+                  votre entreprise" ne dit ni pour qui, ni de combien, ni en
+                  combien de temps, ni avec quelle mécanique.
+                </li>
+                <li>
+                  <strong>Urgence non crédible.</strong> Deadline statique
+                  expirée. Sur cible avertie, ce détail brûle la confiance.
+                </li>
+                <li>
+                  <strong>Pricing opaque sans rationalisation visible.</strong>
+                  Le visiteur quitte sans savoir si c'est 2 k€ ou 30 k€.
+                </li>
+                <li>
+                  <strong>Cohérence cross-pages cassée.</strong> Homepage, sales
+                  page et opt-in proposent 3 promesses différentes.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>Actions prioritaires</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Priorité</th>
+                  <th>Action</th>
+                  <th>Impact</th>
+                  <th>Effort</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>
+                    Ajouter 6 à 12 témoignages clients écrits avec photo, nom,
+                    CA et résultat chiffré sur homepage et sales page
+                  </td>
+                  <td>5 / 5</td>
+                  <td>3 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>
+                    Réécrire le H1 avec promesse spécifique adressant l'audience
+                    explicitement
+                  </td>
+                  <td>5 / 5</td>
+                  <td>1 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Supprimer ou rendre dynamique la deadline et la remplacer
+                    par une rareté structurelle
+                  </td>
+                  <td>3 / 5</td>
+                  <td>1 / 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Rewrites homepage -->
+          <h3 style="margin-top: 48px">Rewrites hero homepage - 3 variantes</h3>
+
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="terminal-dot red"></span
+              ><span class="terminal-dot amber"></span
+              ><span class="terminal-dot green"></span
+              ><span>variante-A - densité-et-acces.tsx</span>
+            </div>
+            <div class="terminal-body">
+              <div class="field">
+                <div class="label">Headline</div>
+                <div class="value headline">
+                  40 experts en activité, 2 à 3 lives par jour, accessibles
+                  toute l'année.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">Sous-titre</div>
+                <div class="value">
+                  Le club des entrepreneurs francophones qui ont une offre
+                  validée et veulent passer le prochain plafond. Initiative
+                  d'Éric Larchevêque (Ledger) et The Bitcoin Society.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">CTA</div>
+                <div class="value">Devenir membre</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="terminal-dot red"></span
+              ><span class="terminal-dot amber"></span
+              ><span class="terminal-dot green"></span
+              ><span>variante-B - categorie-et-mecanique.tsx</span>
+            </div>
+            <div class="terminal-body">
+              <div class="field">
+                <div class="label">Headline</div>
+                <div class="value headline">
+                  Le club des entrepreneurs qui scalent grâce à 40 experts et 4
+                  IA propriétaires.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">Sous-titre</div>
+                <div class="value">
+                  Lives quotidiens, sessions hot seat, plateforme 24/7 et IA
+                  spécialisées sur Scaling, Marketing, Finance et Leadership.
+                  Pour entrepreneurs avec offre validée.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">CTA</div>
+                <div class="value">Voir si SKL est fait pour vous</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="terminal-dot red"></span
+              ><span class="terminal-dot amber"></span
+              ><span class="terminal-dot green"></span
+              ><span>variante-C - anti-isolement-chiffre.tsx</span>
+            </div>
+            <div class="terminal-body">
+              <div class="field">
+                <div class="label">Headline</div>
+                <div class="value headline">
+                  46 % des entrepreneurs se sentent isolés. Les nôtres ont accès
+                  à 40 experts, 7 jours sur 7.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">Sous-titre</div>
+                <div class="value">
+                  Sessions live quotidiennes, hot seat, plateforme privée et IA
+                  propriétaire. Le club fondé par Éric Larchevêque (Ledger) pour
+                  les dirigeants francophones avec offre validée.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">CTA</div>
+                <div class="value">Rejoindre SKL</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Rewrites sales page -->
+          <h3 style="margin-top: 40px">
+            Rewrites sales page (go.skl.club/offreeric20) - 3 variantes
+          </h3>
+
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="terminal-dot red"></span
+              ><span class="terminal-dot amber"></span
+              ><span class="terminal-dot green"></span
+              ><span>sales-A - calcul-economique.tsx</span>
+            </div>
+            <div class="terminal-body">
+              <div class="field">
+                <div class="label">Headline</div>
+                <div class="value headline">
+                  Pour le prix d'une journée d'expert, accédez à 40 experts
+                  pendant un an.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">Sous-titre</div>
+                <div class="value">
+                  300 à 2 000 € de l'heure : c'est ce que facturent en cabinet
+                  les experts du SKL CLUB. En membre, vous les consultez en
+                  illimité, en live ou via la plateforme, 7 jours sur 7.
+                  Garantie satisfait ou remboursé 14 jours.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">CTA</div>
+                <div class="value">Prendre un appel découverte</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="terminal-dot red"></span
+              ><span class="terminal-dot amber"></span
+              ><span class="terminal-dot green"></span
+              ><span>sales-B - pair-network-autorite.tsx</span>
+            </div>
+            <div class="terminal-body">
+              <div class="field">
+                <div class="label">Headline</div>
+                <div class="value headline">
+                  Rejoignez le club privé d'Éric Larchevêque, Aurélien De Nunzio
+                  et Charles Baras.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">Sous-titre</div>
+                <div class="value">
+                  40 spécialistes en activité, 2 à 3 lives par jour, 60 à 90
+                  sessions par mois. Le tier ELITE est limité à 36 entrepreneurs
+                  au-delà de 500k€ de CA. L'accès se valide en appel.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">CTA</div>
+                <div class="value">Demander à rejoindre</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="terminal">
+            <div class="terminal-head">
+              <span class="terminal-dot red"></span
+              ><span class="terminal-dot amber"></span
+              ><span class="terminal-dot green"></span
+              ><span>sales-C - promesse-12-mois.tsx</span>
+            </div>
+            <div class="terminal-body">
+              <div class="field">
+                <div class="label">Headline</div>
+                <div class="value headline">
+                  12 mois pour passer le prochain plafond, entouré de 40 experts
+                  et 200 entrepreneurs.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">Sous-titre</div>
+                <div class="value">
+                  Plateforme 24/7, lives quotidiens, hot seats, événements
+                  physiques à Paris et en Sologne, IA propriétaire sur 4 axes.
+                  Pour entrepreneurs avec offre validée. Garantie 14 jours.
+                </div>
+              </div>
+              <div class="field">
+                <div class="label">CTA</div>
+                <div class="value">Voir si je suis éligible</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 4 : SEO                              -->
+        <!-- ============================================ -->
+        <section id="seo">
+          <span class="eyebrow">04 - Audit SEO</span>
+          <div class="sec-head">
+            <div>
+              <h2>
+                Zéro contenu indexable, zéro AI search readiness, hygiène
+                technique correcte.
+              </h2>
+              <span class="sub"
+                >Posture "dark social + autorité fondateur", pas SEO</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score SEO 28 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#C04A3A"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="116.11 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  28
+                </text>
+              </svg>
+              <div class="gauge-label">SEO - Poids 15 %</div>
+            </div>
+          </div>
+
+          <p>
+            SKL CLUB est en posture "dark social + autorité fondateur", pas SEO.
+            Aucun blog, aucun contenu éditorial, aucune ressource indexable. Les
+            meta sont propres mais l'architecture ne génère aucun signal de
+            fraîcheur ni d'autorité topique. Le score reflète qu'on est
+            essentiellement à zéro acquisition organique.
+          </p>
+
+          <h3>Checks détaillés</h3>
+          <div class="checks">
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>Title homepage.</strong> "SKL CLUB | Le club de tous
+                les entrepreneurs", clair et brand-first.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Meta description.</strong> Longueur OK, mais aucun
+                mot-clé transactionnel.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>H1 unique par page.</strong> Cohérent
+                structurellement.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Structure H2 homepage.</strong> Toute la sémantique est
+                branded.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Blog / contenu éditorial.</strong> /blog, /articles,
+                /ressources inexistantes.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Maillage interne.</strong> 4 pages publiques au total,
+                aucun maillage thématique.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Backlinks.</strong> Profil dominé par le nom du
+                fondateur, pas par la marque.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span><strong>Schema.org.</strong> Aucun balisage détecté.</span>
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>Pages cluster.</strong> Aucune segmentation par persona
+                ou sujet.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-warn">Warn</span
+              ><span
+                ><strong>Core Web Vitals.</strong> Framer correct, non
+                mesuré.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-pass">Pass</span
+              ><span
+                ><strong>HTTPS, URLs propres.</strong> Structure lisible.</span
+              >
+            </div>
+            <div class="check">
+              <span class="badge badge-fail">Fail</span
+              ><span
+                ><strong>YouTube marque.</strong> Aucune chaîne SKL CLUB
+                officielle.</span
+              >
+            </div>
+          </div>
+
+          <div class="dual">
+            <div class="dual-box forces">
+              <h4>Forces</h4>
+              <ol>
+                <li>
+                  <strong>Hygiène technique correcte.</strong> Meta présentes,
+                  H1 unique, HTTPS, URLs propres. Pas de dette technique à
+                  dépiler avant de produire du contenu.
+                </li>
+                <li>
+                  <strong>Marque mémorisable courte.</strong> 3 lettres,
+                  distinctive, défendable.
+                </li>
+                <li>
+                  <strong>Autorité externe forte via Larchevêque.</strong> Tout
+                  contenu créé bénéficierait d'un E-E-A-T immédiat.
+                </li>
+              </ol>
+            </div>
+            <div class="dual-box faiblesses">
+              <h4>Faiblesses</h4>
+              <ol>
+                <li>
+                  <strong>Zéro contenu éditorial indexable.</strong> Pas de
+                  blog, pas de guides, pas de pages ressources.
+                </li>
+                <li>
+                  <strong>Aucune chaîne YouTube SKL CLUB.</strong> 700 heures
+                  par an d'inventaire vidéo non capitalisé en SEO ni AI search.
+                </li>
+                <li>
+                  <strong>Aucun schema.org détecté.</strong> Pas de FAQPage,
+                  Organization, Course, Event balisés.
+                </li>
+                <li>
+                  <strong>Pages clés non SEO-ciblées.</strong> "Une solution à
+                  chacun de vos problèmes" en H2 n'aidera jamais à classer.
+                </li>
+                <li>
+                  <strong>Footprint social marque sous-développé.</strong>
+                  Signaux off-site vers skl.club quasi-nuls hors écosystème
+                  Larchevêque.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>Actions prioritaires</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Priorité</th>
+                  <th>Action</th>
+                  <th>Impact</th>
+                  <th>Effort</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Lancer une chaîne YouTube SKL CLUB et publier 2 à 3 extraits
+                    par semaine issus des 60-90 lives mensuels
+                  </td>
+                  <td>5 / 5</td>
+                  <td>3 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Créer 8 à 12 pages cluster ciblées sur les requêtes
+                    transactionnelles francophones (mastermind, club
+                    entrepreneurs)
+                  </td>
+                  <td>4 / 5</td>
+                  <td>3 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-medium">Medium</span></td>
+                  <td>
+                    Ajouter schema.org Organization, FAQPage, Course/Service sur
+                    homepage et sales page
+                  </td>
+                  <td>3 / 5</td>
+                  <td>1 / 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 5 : COPYWRITING                      -->
+        <!-- ============================================ -->
+        <section id="copy">
+          <span class="eyebrow">05 - Copywriting &amp; Messaging</span>
+          <div class="sec-head">
+            <div>
+              <h2>
+                Voix sobre et anti-guru, mais promesse trop générique et preuve
+                narrative absente.
+              </h2>
+              <span class="sub"
+                >Cible entrepreneurs sophistiqués, ton calme, factuel</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score Copy 55 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#D8945A"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="228.08 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  55
+                </text>
+              </svg>
+              <div class="gauge-label">Copy - Poids 15 %</div>
+            </div>
+          </div>
+
+          <p>
+            La voix est sobre, propre, pas guru - ce qui correspond à l'audience
+            entrepreneurs sophistiqués. Mais le copywriting est trop générique
+            sur la promesse principale et trop dépendant des noms (Larchevêque,
+            Ledger, experts à 300-2 000 € de l'heure) pour porter la vente.
+            Charles Baras est annoncé comme "copy chief 1,5 milliard de dollars"
+            et le copy actuel ne reflète pas ce niveau.
+          </p>
+
+          <div class="dual">
+            <div class="dual-box forces">
+              <h4>Forces</h4>
+              <ol>
+                <li>
+                  <strong>Voix sobre et anti-guru.</strong> Ton calme, factuel,
+                  sans hyperbole. Adapté à la cible qui déteste le marketing de
+                  coach Instagram.
+                </li>
+                <li>
+                  <strong
+                    >Trio fondateur narré avec back-stories de
+                    reconversion.</strong
+                  >
+                  Peintre en bâtiment, pâtissier, cofondateur licorne - couvre
+                  tout le spectre d'identification.
+                </li>
+                <li>
+                  <strong>Architecture problème-solution propre.</strong> Les 3
+                  douleurs (solitude, mauvais conseils, pas de réseau) nommées
+                  avec chiffres Wordmetrics 2024.
+                </li>
+              </ol>
+            </div>
+            <div class="dual-box faiblesses">
+              <h4>Faiblesses</h4>
+              <ol>
+                <li>
+                  <strong>H1 homepage générique.</strong> "Accélérez la
+                  croissance" est interchangeable avec 50 concurrents.
+                </li>
+                <li>
+                  <strong>Aucun mécanisme unique nommé.</strong> Le club est
+                  vendu comme une feature list, pas une méthode brevetée.
+                </li>
+                <li>
+                  <strong>Preuve sociale narrative absente.</strong> Aucun
+                  témoignage cité, aucune histoire de transformation.
+                </li>
+                <li>
+                  <strong>Ciblage trop large dans le copy.</strong> La cible
+                  ELITE 500 k€ et la cible solopreneur 50 k€ ne lisent pas le
+                  même copy.
+                </li>
+                <li>
+                  <strong>Promesse 20-40 % non incarnée.</strong> Chiffre
+                  annoncé dans l'opt-in mais jamais relié à un cas client.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">
+            5 hooks LinkedIn signés Éric, Charles, Aurélien
+          </h3>
+          <div class="cards cards-2">
+            <div class="card">
+              <span class="num">HOOK 01 - ÉRIC</span>
+              <h4>Autorité et vulnérabilité</h4>
+              <p>
+                Quand j'ai cofondé Ledger, j'ai compris une chose : à un certain
+                niveau, les meilleurs conseils ne sont plus dans les livres. Ils
+                sont dans les bons groupes de pairs. C'est ce qu'on a construit
+                avec SKL CLUB.
+              </p>
+            </div>
+            <div class="card">
+              <span class="num">HOOK 02 - CHARLES</span>
+              <h4>Copy chief, données</h4>
+              <p>
+                J'ai passé 6 ans à écrire des sales pages pour une boîte
+                américaine à 1,5 milliard de CA. La leçon qui revient : les gens
+                n'achètent pas une formation, ils achètent un raccourci vers les
+                bonnes personnes. Voilà pourquoi SKL CLUB ne ressemble à aucune
+                formation.
+              </p>
+            </div>
+            <div class="card">
+              <span class="num">HOOK 03 - AURÉLIEN</span>
+              <h4>Terrain coach</h4>
+              <p>
+                10 ans à coacher des entrepreneurs en solo. Le même mur revient
+                toujours : ils n'ont personne à qui parler vraiment de leur
+                business. Le SKL CLUB, c'est la réponse à ce mur.
+              </p>
+            </div>
+            <div class="card">
+              <span class="num">HOOK 04 - ÉRIC</span>
+              <h4>Preuve par les experts</h4>
+              <p>
+                Hier dans SKL, un membre a posé une question à 3 experts en même
+                temps en hot seat : un CFO, un copy chief, un opérationnel
+                scaling. En 25 minutes, il avait sa réponse. Coût marginal pour
+                lui : zéro. Coût en cabinet : 1 800 €.
+              </p>
+            </div>
+            <div class="card">
+              <span class="num">HOOK 05 - CHARLES</span>
+              <h4>Anti-guru</h4>
+              <p>
+                Je n'ai pas créé SKL CLUB pour vendre du rêve aux entrepreneurs
+                qui démarrent. Notre cible est explicite : vous avez une offre
+                validée, vous tournez, vous voulez passer le prochain plafond.
+                Si ce n'est pas vous, ne candidatez pas.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">
+            5 CTA principaux - variantes prêtes à tester
+          </h3>
+          <div class="cards cards-3">
+            <div class="card card-accent">
+              <h4>Devenir membre</h4>
+              <p>CTA neutre, court, dominant. Existant sur le site.</p>
+            </div>
+            <div class="card card-accent">
+              <h4>Prendre un appel découverte</h4>
+              <p>CTA explicite sur la friction. Aligné iClosed.</p>
+            </div>
+            <div class="card card-accent">
+              <h4>Voir si SKL est fait pour vous</h4>
+              <p>CTA qualifiant, baisse la résistance.</p>
+            </div>
+            <div class="card card-accent">
+              <h4>Demander à rejoindre</h4>
+              <p>CTA d'aspiration, signale la sélection.</p>
+            </div>
+            <div class="card card-accent">
+              <h4>Réserver mon appel de candidature</h4>
+              <p>CTA premium, ELITE-ready.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 6 : ADS                              -->
+        <!-- ============================================ -->
+        <section id="ads">
+          <span class="eyebrow"
+            >06 - Publicité
+            <span class="badge badge-medium" style="margin-left: 8px"
+              >Données partielles</span
+            ></span
+          >
+          <div class="sec-head">
+            <div>
+              <h2>
+                Versioning landing actif, Meta désert sur le segment, LinkedIn
+                jamais activé.
+              </h2>
+              <span class="sub"
+                >Meta Ad Library - scope ALL et scope FR, mai 2026</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score Publicité 38 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#D8945A"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="157.58 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  38
+                </text>
+              </svg>
+              <div class="gauge-label">Pub - Poids 15 %</div>
+            </div>
+          </div>
+
+          <p>
+            Score volontairement bas mais pas un échec : il reflète une réalité
+            documentée du segment FR B2B premium (Meta = quasi désert) et une
+            visibilité publique très limitée sur les canaux probablement
+            utilisés (LinkedIn, Google, partenariats). Quand la base de
+            comparaison est elle-même à 0 publicité Meta active, ne pas dépenser
+            sur Meta n'est pas une faute.
+          </p>
+
+          <div class="cards cards-2">
+            <div class="card card-warn">
+              <span class="num">CONSTAT META - SKL</span>
+              <h4>0 publicité active détectée</h4>
+              <p>
+                Recherche le 19 mai 2026, scope ALL et scope FR sur "skl.club"
+                et "SKL CLUB". Aucune campagne visible dans la Meta Ad Library.
+              </p>
+            </div>
+            <div class="card card-warn">
+              <span class="num">CONSTAT META - CONCURRENTS</span>
+              <h4>0 publicité brand-match</h4>
+              <p>
+                Frenchfounders, Equity Mastermind, Galion Project, Ma
+                Trajectoire - tous à zéro publicité Meta active brand-match
+                strict. Segment FR B2B premium = désert Meta.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">SIGNAUX INDIRECTS</span>
+              <h4>Versioning landing détecté</h4>
+              <p>
+                4 URLs internes go.skl.club identifiées : offreeric20,
+                opt-replay-angle2, opt-angle3-off,
+                offer-replay-1-day-to-skl-meta. Le suffixe "meta" prouve qu'une
+                activité paid existe sans être visible.
+              </p>
+            </div>
+            <div class="card card-danger">
+              <span class="num">CARENCE PRINCIPALE</span>
+              <h4>Aucun témoignage exploitable en créa</h4>
+              <p>
+                Sans page Facebook publique identifiable et sans avis client
+                écrit, impossible de produire des UGC ads ou des case study
+                videos. La carence est la plus rapide à corriger.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">5 hooks Meta - prêts à publier</h3>
+          <div class="cards cards-2">
+            <div class="card card-accent">
+              <span class="num">HOOK 01 - STAT + TENSION</span>
+              <h4>46 % d'entrepreneurs isolés</h4>
+              <p>
+                46 % des entrepreneurs se sentent isolés au sommet. Les membres
+                du SKL CLUB ont accès à 40 experts, 2 à 3 lives par jour, et un
+                groupe de pairs qui sait de quoi vous parlez.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">HOOK 02 - CALCUL DIRECT</span>
+              <h4>Le tarif caché du conseil</h4>
+              <p>
+                Un CFO fractional coûte 250 € de l'heure. Un CMO consultant 400
+                € de l'heure. Un advisor M&amp;A 800 € de l'heure. En membre
+                SKL, vous accédez aux 40 en illimité pendant 12 mois.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">HOOK 03 - AUTORITÉ FONDATEUR</span>
+              <h4>Script Éric direct-to-camera 90s</h4>
+              <p>
+                "Je suis Éric Larchevêque. J'ai cofondé Ledger. J'ai vu trop
+                d'entrepreneurs talentueux plafonner par manque d'interlocuteurs
+                au bon niveau. C'est pour ça qu'on a créé le SKL CLUB. 40
+                experts en activité, 2 à 3 lives par jour, une plateforme
+                privée. Si vous avez une offre validée et que vous voulez passer
+                le prochain palier, regardez les détails."
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">HOOK 04 - INVERSION D'OBJECTION</span>
+              <h4>Pas un coach, 40 experts</h4>
+              <p>
+                Vous n'avez pas besoin d'un coach. Vous avez besoin de 40
+                experts spécialisés sur les vrais problèmes de votre entreprise
+                : scaling, marketing, finance, leadership. C'est ce qu'on a
+                construit avec le SKL CLUB.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">HOOK 05 - ANTI-PROMESSE</span>
+              <h4>Le filtre qui repousse</h4>
+              <p>
+                Le SKL CLUB n'est pas pour vous si vous cherchez la motivation.
+                Il est pour vous si vous avez déjà une offre validée et qu'il
+                vous manque seulement les bonnes personnes autour de la table.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">Actions prioritaires</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Priorité</th>
+                  <th>Action</th>
+                  <th>Impact</th>
+                  <th>Effort</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Ouvrir LinkedIn Ads avec 3 angles fondateur (isolement,
+                    valeur expert, 1 Day to SKL)
+                  </td>
+                  <td>4 / 5</td>
+                  <td>2 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Stratégie de testimonials filmés : 10 membres actuels, 90
+                    secondes chacun, 3 versions par membre
+                  </td>
+                  <td>4 / 5</td>
+                  <td>3 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-medium">Medium</span></td>
+                  <td>
+                    Google Ads défensif sur le branded ("skl club", "Éric
+                    Larchevêque mastermind") et offensif sur concurrents
+                  </td>
+                  <td>3 / 5</td>
+                  <td>2 / 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 7 : SOCIAL                           -->
+        <!-- ============================================ -->
+        <section id="social">
+          <span class="eyebrow">07 - Réseaux Sociaux</span>
+          <div class="sec-head">
+            <div>
+              <h2>
+                Marque sociale inanimée derrière 377 000 followers fondateurs.
+              </h2>
+              <span class="sub"
+                >Ratio audience marque / fondateur inférieur à 1 %</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score Social 32 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#C04A3A"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="132.70 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  32
+                </text>
+              </svg>
+              <div class="gauge-label">Social - Poids 10 %</div>
+            </div>
+          </div>
+
+          <p>
+            Le score est tiré vers le bas par trois facteurs structurels :
+            audience de marque marginale face à 377 000 cumulés sur les comptes
+            personnels, deux comptes Instagram marque coexistent sans logique
+            apparente (@skl_club + @club.skl), et plusieurs plateformes
+            attendues sont vides (aucune chaîne YouTube marque, aucun TikTok
+            marque, aucune page Facebook marque, X dormant à 0 post).
+          </p>
+
+          <h3>Tableau par plateforme - compte marque vs fondateur</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Plateforme</th>
+                  <th>Compte marque</th>
+                  <th>Compte fondateur (Éric)</th>
+                  <th>Statut</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Instagram</strong></td>
+                  <td>@skl_club + @club.skl (doublon)</td>
+                  <td>@elarch - 188 K followers</td>
+                  <td><span class="badge badge-fail">Doublon</span></td>
+                </tr>
+                <tr>
+                  <td><strong>LinkedIn</strong></td>
+                  <td>
+                    linkedin.com/company/skl-club - 1 955 followers, 1 post en 5
+                    mois
+                  </td>
+                  <td>41 K followers, classé #103 LinkHub 2025</td>
+                  <td><span class="badge badge-fail">Dormant</span></td>
+                </tr>
+                <tr>
+                  <td><strong>X (Twitter)</strong></td>
+                  <td>@skl_club - 99 followers, 0 post depuis novembre 2025</td>
+                  <td>@EricLarch - 92,5 K, créé 2008</td>
+                  <td><span class="badge badge-fail">Inactif</span></td>
+                </tr>
+                <tr>
+                  <td><strong>YouTube</strong></td>
+                  <td>Aucune chaîne marque</td>
+                  <td>@EricLarcheveque - chaîne personnelle</td>
+                  <td><span class="badge badge-fail">Absent</span></td>
+                </tr>
+                <tr>
+                  <td><strong>Facebook</strong></td>
+                  <td>Non identifiée publiquement</td>
+                  <td>55 K followers (audience QVEMA M6)</td>
+                  <td><span class="badge badge-fail">Absent</span></td>
+                </tr>
+                <tr>
+                  <td><strong>TikTok</strong></td>
+                  <td>Aucun compte marque</td>
+                  <td>-</td>
+                  <td><span class="badge badge-fail">Absent</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dual">
+            <div class="dual-box forces">
+              <h4>Forces</h4>
+              <ol>
+                <li>
+                  <strong
+                    >Caution Éric Larchevêque massive et exploitée.</strong
+                  >
+                  41 K LinkedIn classé #103 créateurs FR, 188 K Instagram, 92,5
+                  K X, 55 K Facebook, posts récurrents orientés SKL CLUB.
+                </li>
+                <li>
+                  <strong>Triangulation founders pertinente.</strong> Éric
+                  (autorité), Aurélien (preuve coaching), Charles (preuve
+                  copy/CMO) couvrent 3 narratifs complémentaires.
+                </li>
+                <li>
+                  <strong>Compte canonique IG identifié.</strong> @skl_club
+                  confirmé via la bio d'Aurélien, ce qui permet une
+                  consolidation propre.
+                </li>
+              </ol>
+            </div>
+            <div class="dual-box faiblesses">
+              <h4>Faiblesses</h4>
+              <ol>
+                <li>
+                  <strong>Aucune chaîne YouTube marque.</strong> 60-90 lives par
+                  mois sans surface YouTube = 100 % de la valeur evergreen sur
+                  la table.
+                </li>
+                <li>
+                  <strong>X dormant.</strong> 0 post depuis création novembre
+                  2025, 99 followers. L'inactivité visible nuit plus qu'elle ne
+                  protège.
+                </li>
+                <li>
+                  <strong>Doublon Instagram non résolu.</strong> @skl_club et
+                  @club.skl coexistent, dilution potentielle de l'algo et
+                  confusion utilisateur.
+                </li>
+                <li>
+                  <strong>Page LinkedIn entreprise quasi morte.</strong> 1 post
+                  en 5 mois sur le canal de prédilection du segment.
+                </li>
+                <li>
+                  <strong>Aucune page Facebook marque, aucun TikTok.</strong> Le
+                  club ne capitalise pas sur l'audience grand public d'Éric.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <h3>Actions prioritaires</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Priorité</th>
+                  <th>Action</th>
+                  <th>Impact</th>
+                  <th>Effort</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>
+                    Lancer la chaîne YouTube SKL CLUB officielle dans les 30
+                    jours, 2 à 3 best-of par semaine
+                  </td>
+                  <td>5 / 5</td>
+                  <td>3 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Résoudre le doublon Instagram, activer @skl_club avec 3-4
+                    posts/semaine
+                  </td>
+                  <td>3 / 5</td>
+                  <td>1 / 5</td>
+                </tr>
+                <tr>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>
+                    Activer la page LinkedIn entreprise - 3 posts/semaine,
+                    protocole employee advocacy
+                  </td>
+                  <td>4 / 5</td>
+                  <td>2 / 5</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 8 : CONTENT STRATEGY                 -->
+        <!-- ============================================ -->
+        <section id="content">
+          <span class="eyebrow">08 - Stratégie de Contenu</span>
+          <div class="sec-head">
+            <div>
+              <h2>Production massive verrouillée, surface publique vide.</h2>
+              <span class="sub"
+                >700 heures par an de contenu derrière members.skl.club</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score Stratégie contenu 28 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#C04A3A"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="116.11 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  28
+                </text>
+              </svg>
+              <div class="gauge-label">Contenu - Poids 10 %</div>
+            </div>
+          </div>
+
+          <p>
+            Le score est plombé par l'absence quasi totale de surface de contenu
+            propriétaire à la marque. Aucun blog, aucune chaîne YouTube marque,
+            aucun podcast marque, aucune newsletter détectée. La machine de
+            production interne (60-90 lives par mois, 40+ experts) tourne
+            uniquement à l'intérieur du portail members.skl.club. Pour un club
+            qui vend la "scalabilité", l'absence de capitalisation publique du
+            contenu produit est l'incohérence stratégique majeure.
+          </p>
+
+          <div class="cards cards-3">
+            <div class="card card-danger">
+              <span class="num">CONSTAT 01</span>
+              <h4>Zéro blog sur skl.club</h4>
+              <p>
+                /blog, /articles, /ressources inexistantes. Zéro ranking
+                probable hors brand search.
+              </p>
+            </div>
+            <div class="card card-danger">
+              <span class="num">CONSTAT 02</span>
+              <h4>Zéro chaîne YouTube marque</h4>
+              <p>
+                700 heures par an de contenu produit, aucune surface publique
+                pour les héberger.
+              </p>
+            </div>
+            <div class="card card-danger">
+              <span class="num">CONSTAT 03</span>
+              <h4>Zéro newsletter détectée</h4>
+              <p>
+                Capture email uniquement via funnel évènement (1 Day to SKL).
+                Pas de relation continue avec les leads.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">
+            Calendrier de contenu 4 semaines - cross-canal
+          </h3>
+          <p>
+            1 live SKL central par semaine, repurpose en 4+ assets. 4 piliers :
+            (P1) sortir de l'isolement, (P2) accéder aux bons experts, (P3)
+            construire son réseau d'entrepreneurs, (P4) outils et méthodes IA.
+          </p>
+
+          <h4 style="margin-top: 24px; color: #b07c5e">
+            Semaine 1 - Pilier P1 (isolement)
+          </h4>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Format</th>
+                  <th>Sujet</th>
+                  <th>Signature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LinkedIn Éric</td>
+                  <td>Post texte 1 200 caractères</td>
+                  <td>
+                    "Ce que personne ne vous dit sur la solitude au sommet"
+                  </td>
+                  <td>Éric</td>
+                </tr>
+                <tr>
+                  <td>LinkedIn corp</td>
+                  <td>Republie reformulée J+1</td>
+                  <td>Variante voix corporate</td>
+                  <td>Page SKL</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Reel 60s extrait live</td>
+                  <td>Aurélien sur le mur de la solitude business</td>
+                  <td>@skl_club</td>
+                </tr>
+                <tr>
+                  <td>YouTube</td>
+                  <td>Vidéo long-form 18 min</td>
+                  <td>
+                    Best-of "Comment sortir de l'isolement quand on dirige"
+                  </td>
+                  <td>Chaîne SKL</td>
+                </tr>
+                <tr>
+                  <td>X @skl_club</td>
+                  <td>Thread 7 tweets</td>
+                  <td>Stat 46 % + 6 conseils concrets</td>
+                  <td>Compte marque</td>
+                </tr>
+                <tr>
+                  <td>Newsletter</td>
+                  <td>Mastermind Letter #1</td>
+                  <td>Le cas Marc + 1 outil IA Scaling</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>Blog skl.club</td>
+                  <td>Article 1 800 mots</td>
+                  <td>
+                    "La solitude entrepreneuriale : pourquoi 46 % la vivent"
+                  </td>
+                  <td>Expert SKL</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="margin-top: 24px; color: #b07c5e">
+            Semaine 2 - Pilier P2 (accès aux experts)
+          </h4>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Format</th>
+                  <th>Sujet</th>
+                  <th>Signature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LinkedIn Charles</td>
+                  <td>Post texte 1 200 caractères</td>
+                  <td>
+                    "300 à 2 000 € de l'heure : le vrai prix d'un expert en
+                    cabinet"
+                  </td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>LinkedIn corp</td>
+                  <td>Carrousel 8 slides</td>
+                  <td>Tarifs benchmarkés + comparaison membre SKL</td>
+                  <td>Page SKL</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Carrousel 7 slides</td>
+                  <td>Mini-bio de 3 experts SKL avec spécialité</td>
+                  <td>@skl_club</td>
+                </tr>
+                <tr>
+                  <td>YouTube</td>
+                  <td>Vidéo long-form 22 min</td>
+                  <td>Interview expert SKL CFO fractional sur scaling cash</td>
+                  <td>Chaîne SKL</td>
+                </tr>
+                <tr>
+                  <td>X @skl_club</td>
+                  <td>Thread 5 tweets</td>
+                  <td>"Comment on sélectionne les 40 experts SKL"</td>
+                  <td>Compte marque</td>
+                </tr>
+                <tr>
+                  <td>Newsletter</td>
+                  <td>Mastermind Letter #2</td>
+                  <td>Live de la semaine + expert highlight</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>Blog skl.club</td>
+                  <td>Article 2 200 mots</td>
+                  <td>
+                    "CFO fractional, advisor M&amp;A, copy chief : qui sert à
+                    quoi quand on scale"
+                  </td>
+                  <td>Expert SKL</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="margin-top: 24px; color: #b07c5e">
+            Semaine 3 - Pilier P3 (réseau)
+          </h4>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Format</th>
+                  <th>Sujet</th>
+                  <th>Signature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LinkedIn Aurélien</td>
+                  <td>Post texte 1 200 caractères</td>
+                  <td>
+                    "10 ans de coaching, une leçon : votre réseau plafonne avant
+                    vous"
+                  </td>
+                  <td>Aurélien</td>
+                </tr>
+                <tr>
+                  <td>LinkedIn corp</td>
+                  <td>Vidéo native 90s</td>
+                  <td>Témoignage membre filmé en event physique</td>
+                  <td>Page SKL</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Reel 60s</td>
+                  <td>Coulisses event Paris ou Sologne</td>
+                  <td>@skl_club</td>
+                </tr>
+                <tr>
+                  <td>YouTube</td>
+                  <td>Vidéo long-form 25 min</td>
+                  <td>
+                    Interview membre "Comment SKL m'a fait rencontrer mon
+                    associé"
+                  </td>
+                  <td>Chaîne SKL</td>
+                </tr>
+                <tr>
+                  <td>X @skl_club</td>
+                  <td>Thread 6 tweets</td>
+                  <td>
+                    "Pourquoi un bon pair-network bat 10 conseils d'expert"
+                  </td>
+                  <td>Compte marque</td>
+                </tr>
+                <tr>
+                  <td>Newsletter</td>
+                  <td>Mastermind Letter #3</td>
+                  <td>Recap event physique + invitation au prochain</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>Blog skl.club</td>
+                  <td>Article 1 600 mots</td>
+                  <td>
+                    "Construire son réseau d'entrepreneurs en France : 4
+                    erreurs"
+                  </td>
+                  <td>Expert SKL</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h4 style="margin-top: 24px; color: #b07c5e">
+            Semaine 4 - Pilier P4 (IA et frameworks)
+          </h4>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Canal</th>
+                  <th>Format</th>
+                  <th>Sujet</th>
+                  <th>Signature</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>LinkedIn Éric</td>
+                  <td>Post texte 1 200 caractères</td>
+                  <td>
+                    "Pourquoi on a entraîné 4 IA propriétaires pour les membres"
+                  </td>
+                  <td>Éric</td>
+                </tr>
+                <tr>
+                  <td>LinkedIn corp</td>
+                  <td>Carrousel 10 slides</td>
+                  <td>Démo IA Scaling SKL en images</td>
+                  <td>Page SKL</td>
+                </tr>
+                <tr>
+                  <td>Instagram</td>
+                  <td>Reel 60s screencast</td>
+                  <td>Démo live de l'IA Marketing SKL en action</td>
+                  <td>@skl_club</td>
+                </tr>
+                <tr>
+                  <td>YouTube</td>
+                  <td>Vidéo long-form 15 min</td>
+                  <td>Walkthrough complet des 4 IA propriétaires</td>
+                  <td>Chaîne SKL</td>
+                </tr>
+                <tr>
+                  <td>X @skl_club</td>
+                  <td>Thread 8 tweets</td>
+                  <td>8 prompts à copier sur l'IA Finance SKL</td>
+                  <td>Compte marque</td>
+                </tr>
+                <tr>
+                  <td>Newsletter</td>
+                  <td>Mastermind Letter #4</td>
+                  <td>Le prompt de la semaine + cas usage</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>Blog skl.club</td>
+                  <td>Article 2 400 mots</td>
+                  <td>
+                    "Les 4 IA propriétaires du SKL CLUB : comment elles ont été
+                    entraînées"
+                  </td>
+                  <td>Charles + dev</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 9 : LEAD GENERATION                  -->
+        <!-- ============================================ -->
+        <section id="leadgen">
+          <span class="eyebrow">09 - Lead Generation &amp; Funnels</span>
+          <div class="sec-head">
+            <div>
+              <h2>
+                Funnel premium cohérent, mais un seul lead magnet event-based.
+              </h2>
+              <span class="sub"
+                >1 Day to SKL → sales page → iClosed call → reveal pricing</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score Lead Generation 62 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#B07C5E"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="257.20 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  62
+                </text>
+              </svg>
+              <div class="gauge-label">Lead Gen - Poids 10 %</div>
+            </div>
+          </div>
+
+          <p>
+            Funnel structurellement solide pour un ticket élevé (1 lead magnet
+            event-based, 1 page de vente, qualif call), mais souffre de manque
+            de variété en lead magnets et de friction unique au point d'entrée.
+          </p>
+
+          <h3>Analyse funnel actuel</h3>
+          <div class="cards cards-3">
+            <div class="card card-success">
+              <span class="num">FORCE 01</span>
+              <h4>Lead magnet event haut signal</h4>
+              <p>
+                "1 Day to SKL" = 6 masterclasses sur une journée. Inscription =
+                engagement réel, pas adresse jetable. Leads chauds et exposés
+                directement à la valeur produit.
+              </p>
+            </div>
+            <div class="card card-success">
+              <span class="num">FORCE 02</span>
+              <h4>Architecture funnel cohérente avec ticket</h4>
+              <p>
+                Reveal pricing call-only. Friction haute alignée sur panier 3-10
+                k€/an. iClosed industrialise la prise de RDV.
+              </p>
+            </div>
+            <div class="card card-success">
+              <span class="num">FORCE 03</span>
+              <h4>Versioning systématique landing</h4>
+              <p>
+                4 variantes détectées (offreeric20, opt-replay-angle2,
+                opt-angle3-off, offer-replay-1-day-to-skl-meta). Culture A/B
+                présente.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 32px">3 lead magnets proposés</h3>
+
+          <div class="cards cards-3">
+            <div class="card card-accent">
+              <span class="num">LEAD MAGNET 01</span>
+              <h4>Le Tarif Caché des Experts - Calculator 2026</h4>
+              <p>
+                <strong>Audience :</strong> dirigeants TPE-PME (BUSINESS) qui
+                hésitent à investir dans du conseil.
+              </p>
+              <p>
+                <strong>Format :</strong> page web interactive Framer + PDF
+                récap 8 pages.
+              </p>
+              <p>
+                <strong>Mécanique :</strong> entrer secteur, heures de conseil
+                annuel par axe → coût marché agrégé vs coût membre SKL.
+              </p>
+              <p>
+                <strong>KPI :</strong> 3 000 utilisations à J+90, 8 % opt-in
+                email, 12 % des opt-ins en appel.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">LEAD MAGNET 02</span>
+              <h4>Les 12 Décisions qui Plafonnent - Diagnostic Éric</h4>
+              <p>
+                <strong>Audience :</strong> dirigeants 100 k€ - 1 M€ CA qui
+                sentent un plafond sans savoir lequel.
+              </p>
+              <p>
+                <strong>Format :</strong> quiz 12 questions (10 min) + score sur
+                4 axes + rapport PDF 15 pages signé Éric.
+              </p>
+              <p>
+                <strong>Mécanique :</strong> Offre, Équipe, Finance, Mindset → 3
+                plafonds + expert SKL spécialisé + action 24h.
+              </p>
+              <p>
+                <strong>KPI :</strong> 5 000 quiz complétés à J+90, 30 % opt-in
+                PDF, 7 % appel booké.
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">LEAD MAGNET 03</span>
+              <h4>Mastermind Letter - Newsletter hebdo signée Charles</h4>
+              <p>
+                <strong>Audience :</strong> entrepreneurs francophones non-prêts
+                à acheter (cycle 6-12 mois).
+              </p>
+              <p>
+                <strong>Format :</strong> email vendredi 7h, 5-7 min de lecture,
+                plateforme beehiiv.
+              </p>
+              <p>
+                <strong>Mécanique :</strong> 5 rubriques - live de la semaine,
+                cas de la semaine, outil IA, chiffre, CTA discret.
+              </p>
+              <p>
+                <strong>KPI :</strong> 5 000 abonnés à J+90, taux d'ouverture
+                &gt;45 %, taux de clic &gt;8 %.
+              </p>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">
+            Séquence email 7 emails - "1 Day to SKL"
+          </h3>
+          <p>
+            Déclenchée à l'inscription au lead magnet. Cadence J+0, J+1, J+3,
+            J+5, J+7, J+10, J+14.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Jour</th>
+                  <th>Objet</th>
+                  <th>Intention</th>
+                  <th>CTA</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>J+0</strong></td>
+                  <td>
+                    Vous êtes inscrit au 1 Day to SKL. Voici comment en tirer le
+                    maximum.
+                  </td>
+                  <td>Confirmation et cadrage</td>
+                  <td>Voir l'agenda complet</td>
+                </tr>
+                <tr>
+                  <td><strong>J+1</strong></td>
+                  <td>
+                    46 % des entrepreneurs francophones sont isolés. Vous l'êtes
+                    ?
+                  </td>
+                  <td>Constat fondateur SKL</td>
+                  <td>Confirmer ma présence</td>
+                </tr>
+                <tr>
+                  <td><strong>J+3</strong></td>
+                  <td>
+                    Vos experts coûtent entre 300 et 2 000 € de l'heure. Comment
+                    on les a réunis.
+                  </td>
+                  <td>Différenciation experts vs coachs</td>
+                  <td>Voir tous les experts</td>
+                </tr>
+                <tr>
+                  <td><strong>J+5</strong></td>
+                  <td>Comment Marc a débloqué son scaling en 60 jours</td>
+                  <td>Cas chiffré incarné</td>
+                  <td>Lire d'autres résultats</td>
+                </tr>
+                <tr>
+                  <td><strong>J+7</strong></td>
+                  <td>Plus que 3 jours - votre 1 Day to SKL approche.</td>
+                  <td>Rappel + checklist</td>
+                  <td>Confirmer ma présence</td>
+                </tr>
+                <tr>
+                  <td><strong>J+10</strong></td>
+                  <td>Vous avez fait le 1 Day to SKL. La suite logique.</td>
+                  <td>Invitation à l'appel découverte</td>
+                  <td>Prendre un appel découverte</td>
+                </tr>
+                <tr>
+                  <td><strong>J+14</strong></td>
+                  <td>Dernier email - et après ?</td>
+                  <td>Sortie élégante, 2 options</td>
+                  <td>Appel découverte OU newsletter</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dual">
+            <div class="dual-box forces">
+              <h4>Forces</h4>
+              <ol>
+                <li>
+                  <strong>Lead magnet event-based haut signal.</strong>
+                  Engagement réel, leads qualifiés, exposition directe à la
+                  valeur produit.
+                </li>
+                <li>
+                  <strong>Architecture cohérente avec ticket.</strong> Friction
+                  haute alignée sur panier 3-10 k€/an. Pas de leakage de prix.
+                </li>
+                <li>
+                  <strong>Versioning systématique.</strong> 4 variantes
+                  détectées, culture A/B rare sur le segment.
+                </li>
+              </ol>
+            </div>
+            <div class="dual-box faiblesses">
+              <h4>Faiblesses</h4>
+              <ol>
+                <li>
+                  <strong>Un seul lead magnet pour tout le funnel.</strong> Tout
+                  repose sur 1 Day to SKL. Visiteur froid sans event proche =
+                  pas de point d'entrée.
+                </li>
+                <li>
+                  <strong>Aucune capture email evergreen.</strong> Pas de
+                  newsletter, pas de checklist, pas de mini-cours email.
+                </li>
+                <li>
+                  <strong
+                    >Friction call-only inadaptée aux profils
+                    intermédiaires.</strong
+                  >
+                  Aucun chemin self-serve discovery.
+                </li>
+                <li>
+                  <strong>Absence de SEO content.</strong> Zéro acquisition
+                  organique compounding.
+                </li>
+                <li>
+                  <strong
+                    >Pas de retargeting visible reposant sur du contenu
+                    social.</strong
+                  >
+                  Les visiteurs non convertis ne sont rebrandés que par paid.
+                </li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 10 : BRAND & COMPETITORS             -->
+        <!-- ============================================ -->
+        <section id="brand">
+          <span class="eyebrow">10 - Brand &amp; Positionnement</span>
+          <div class="sec-head">
+            <div>
+              <h2>
+                Caution fondateur de classe mondiale, promesse de marque trop
+                large.
+              </h2>
+              <span class="sub"
+                >Larchevêque + Ledger + TBSO Euronext + IA propriétaire + 60-90
+                lives/mois</span
+              >
+            </div>
+            <div class="gauge">
+              <svg
+                width="160"
+                height="160"
+                viewBox="0 0 160 160"
+                role="img"
+                aria-label="Score Brand 62 sur 100"
+              >
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#E5E5DC"
+                  stroke-width="14"
+                  fill="none"
+                />
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="66"
+                  stroke="#B07C5E"
+                  stroke-width="14"
+                  fill="none"
+                  stroke-linecap="round"
+                  stroke-dasharray="257.20 414.69"
+                  transform="rotate(-90 80 80)"
+                />
+                <text
+                  x="80"
+                  y="80"
+                  text-anchor="middle"
+                  dy="6"
+                  font-family="-apple-system,Inter,sans-serif"
+                  font-size="36"
+                  font-weight="800"
+                  fill="#212121"
+                >
+                  62
+                </text>
+              </svg>
+              <div class="gauge-label">Brand - Poids 5 %</div>
+            </div>
+          </div>
+
+          <p>
+            SKL CLUB occupe un terrain unique sur le segment francophone premium
+            : la combinaison Larchevêque + Tayninh/TBSO Euronext + IA
+            propriétaire + 60-90 lives par mois n'a aucun équivalent direct. La
+            marque a tous les ingrédients d'un leader de catégorie. Le frein est
+            de communication, pas de produit.
+          </p>
+
+          <h3>Tableau positionnement vs 4 concurrents</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Critère</th>
+                  <th>SKL CLUB</th>
+                  <th>Frenchfounders</th>
+                  <th>Equity Mastermind</th>
+                  <th>Galion Project</th>
+                  <th>Ma Trajectoire</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Prix</strong></td>
+                  <td>3-10 k€/an estimé</td>
+                  <td>~2 000 USD/an</td>
+                  <td>30-40 k€ HT/an</td>
+                  <td>2 500 € + 1 000 € entrée</td>
+                  <td>15-24 k€/an</td>
+                </tr>
+                <tr>
+                  <td><strong>Cible</strong></td>
+                  <td>Tous secteurs, offre validée</td>
+                  <td>CEO francophones internationaux</td>
+                  <td>Scaling + private equity</td>
+                  <td>Fondateurs tech VC-backed</td>
+                  <td>Solo→scaling, équilibre</td>
+                </tr>
+                <tr>
+                  <td><strong>USP unique</strong></td>
+                  <td>2-3 lives/jour + IA + Ledger</td>
+                  <td>Réseau international + 10 K intros/an</td>
+                  <td>Equity + écosystème vendable</td>
+                  <td>Cooptation tech + outils</td>
+                  <td>Méthode O.P.A.L.E.</td>
+                </tr>
+                <tr>
+                  <td><strong>Preuve sociale</strong></td>
+                  <td>Faible publique</td>
+                  <td>Très forte (LVMH, Kering)</td>
+                  <td>Forte (100 M€ CA collectif)</td>
+                  <td>Moyenne (Rudelle)</td>
+                  <td>Moyenne (10x CA)</td>
+                </tr>
+                <tr>
+                  <td><strong>Lead magnet</strong></td>
+                  <td>RDV iClosed + 1 Day to SKL</td>
+                  <td>App gratuite + discovery</td>
+                  <td>Livre blanc "Prendre des parts pour 0 €"</td>
+                  <td>Liste d'attente</td>
+                  <td>Email application</td>
+                </tr>
+                <tr>
+                  <td><strong>Exclusivité</strong></td>
+                  <td>ELITE 36 places, &gt;500k€</td>
+                  <td>Acceptation requise</td>
+                  <td>Implicite (ticket 30 k€)</td>
+                  <td>3 M€ levés + sponsor</td>
+                  <td>Aucune</td>
+                </tr>
+                <tr>
+                  <td><strong>Garantie</strong></td>
+                  <td>14 j remboursé</td>
+                  <td>Aucune</td>
+                  <td>Moyens et résultats</td>
+                  <td>Aucune</td>
+                  <td>Aucune</td>
+                </tr>
+                <tr>
+                  <td><strong>Présence sociale marque</strong></td>
+                  <td>Faible</td>
+                  <td>Forte</td>
+                  <td>Modérée</td>
+                  <td>Moyenne</td>
+                  <td>Modérée</td>
+                </tr>
+                <tr>
+                  <td><strong>Fondateur-star</strong></td>
+                  <td>Éric Larchevêque (~377K)</td>
+                  <td>Buridant / Deruelle</td>
+                  <td>Pas de star publique</td>
+                  <td>JB Rudelle (Criteo)</td>
+                  <td>A-C Coantic</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="dual">
+            <div class="dual-box forces">
+              <h4>Forces</h4>
+              <ol>
+                <li>
+                  <strong
+                    >Caution fondateur de classe mondiale + adossement
+                    coté.</strong
+                  >
+                  Larchevêque/Ledger + TBSO Euronext écrase Frenchfounders,
+                  Galion et Ma Trajectoire sur la dimension "qui porte le
+                  projet".
+                </li>
+                <li>
+                  <strong
+                    >USP de fréquence et de technologie sans équivalent
+                    francophone.</strong
+                  >
+                  2-3 lives quotidiens + 40+ experts en activité + 4 IA
+                  spécialisées.
+                </li>
+                <li>
+                  <strong>Architecture double tier propre.</strong> BUSINESS
+                  (volume) + ELITE (36 places, &gt;500 k€ CA, WhatsApp Éric)
+                  crée une montée en gamme lisible.
+                </li>
+              </ol>
+            </div>
+            <div class="dual-box faiblesses">
+              <h4>Faiblesses</h4>
+              <ol>
+                <li>
+                  <strong>Promesse positionnement trop large.</strong> "Le club
+                  de tous les entrepreneurs" ne crée pas de catégorie mentale.
+                </li>
+                <li>
+                  <strong>Preuve sociale par les membres quasi absente.</strong>
+                  127 avis 4,1/5 introuvables publiquement, aucun cas client
+                  chiffré.
+                </li>
+                <li>
+                  <strong>Marque sociale SKL inanimée.</strong> Page LinkedIn
+                  corporate 1 955 followers et 1 post en 5 mois quand Éric en a
+                  41 K.
+                </li>
+                <li>
+                  <strong>Dépendance unique fondateur.</strong> Si Éric réduit
+                  son temps média, 70 % de la voix de marque s'effondre.
+                </li>
+                <li>
+                  <strong>Escalier de prix vide.</strong> Pas de produit pont
+                  (livre, micro-formation) entre gratuit et adhésion premium.
+                </li>
+              </ol>
+            </div>
+          </div>
+
+          <h3 style="margin-top: 40px">3 questions stratégiques à se poser</h3>
+          <div class="cards cards-3">
+            <div class="card card-accent">
+              <span class="num">QUESTION 01</span>
+              <h4>Quel terrain mental occuper précisément ?</h4>
+              <p>
+                "Le club de tous les entrepreneurs" est un positionnement faible
+                parce qu'il refuse de catégoriser. Si la réponse honnête est
+                "densité quotidienne + IA + caution Ledger", est-ce que l'équipe
+                est prête à la formuler dans le H1, au prix de perdre 30 % de
+                l'audience top-funnel mais d'en gagner 3 fois plus en conversion
+                ?
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QUESTION 02</span>
+              <h4>
+                Quel est le plan de transfert d'autorité d'Éric vers la marque
+                sur 18-24 mois ?
+              </h4>
+              <p>
+                Si Éric réduit sa présence média avant que la marque corporate
+                soit autonome, le canal d'acquisition principal s'éteint.
+                Combien de followers la page LinkedIn entreprise doit-elle avoir
+                dans 18 mois pour que le pipeline tienne sans qu'Éric poste plus
+                de 2 fois par mois ?
+              </p>
+            </div>
+            <div class="card card-accent">
+              <span class="num">QUESTION 03</span>
+              <h4>Pourquoi les 127 avis 4,1/5 ne sont-ils pas visibles ?</h4>
+              <p>
+                La question la plus dérangeante de l'audit. Soit c'est un choix
+                commercial, soit c'est un signal que les résultats moyens ne
+                sont pas assez forts pour être affichés. Dans les deux cas, le
+                statu quo est intenable : un club premium doit pouvoir afficher
+                10 case studies chiffrés.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================ -->
+        <!-- SECTION 11 : ACTION PLAN                     -->
+        <!-- ============================================ -->
+        <section id="plan">
+          <span class="eyebrow">11 - Plan d'action 90 jours</span>
+          <h2>Roadmap, actions prioritaires, et quick wins.</h2>
+          <p class="lead">
+            Objectif J+90 : passer de 46/100 (Grade D) à 62/100 (Grade C). 3
+            sprints, 10 actions, 10 quick wins.
+          </p>
+
+          <h3>Roadmap 90 jours - 3 sprints</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Sprint</th>
+                  <th>Objectif</th>
+                  <th>Livrables clés</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <strong>Sprint 1<br />J 0 → J+30</strong>
+                  </td>
+                  <td>Preuves + cohérence + activation marque</td>
+                  <td>
+                    Homepage et sales page rénovées avec 5 case studies.
+                    Deadline supprimée. Doublon IG résolu. Chaîne YouTube live
+                    avec 4 vidéos. Page LinkedIn entreprise réactivée.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Sprint 2<br />J+31 → J+60</strong>
+                  </td>
+                  <td>Capitalisation média + lead magnets</td>
+                  <td>
+                    10 case studies au total. 8 vidéos YouTube + 30 clips
+                    sociaux. 3 lead magnets téléchargeables. Blog avec 8
+                    articles indexés. Pages BUSINESS et ELITE segmentées.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <strong>Sprint 3<br />J+61 → J+90</strong>
+                  </td>
+                  <td>Scaling et paid</td>
+                  <td>
+                    Campagnes LinkedIn Ads validées avec CPL &lt;8 €. Blog à 24
+                    articles. Chaîne YouTube à 500 abonnés. Page LinkedIn
+                    entreprise à 4 000 followers. Mécanique propriétaire nommée
+                    et diffusée.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top: 40px">
+            10 actions prioritaires - impact × effort
+          </h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Action</th>
+                  <th>Priorité</th>
+                  <th>Impact</th>
+                  <th>Effort</th>
+                  <th>Responsable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Collecter et publier 10 case studies membres chiffrés</td>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>5 / 5</td>
+                  <td>3 / 5</td>
+                  <td>Charles + Aurélien</td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>Réécrire le H1 et la value prop sur les 3 pages clés</td>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>5 / 5</td>
+                  <td>1 / 5</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>
+                    Lancer la chaîne YouTube SKL CLUB et le pipeline "1 live = 4
+                    assets"
+                  </td>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>5 / 5</td>
+                  <td>3 / 5</td>
+                  <td>Aurélien + video editor</td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>
+                    Résoudre les incohérences premium (deadline, doublon IG, X
+                    dormant)
+                  </td>
+                  <td><span class="badge badge-critical">Critical</span></td>
+                  <td>4 / 5</td>
+                  <td>1 / 5</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>Publier 3 lead magnets evergreen téléchargeables 24/7</td>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>4 / 5</td>
+                  <td>3 / 5</td>
+                  <td>Charles + Aurélien</td>
+                </tr>
+                <tr>
+                  <td>06</td>
+                  <td>Activer LinkedIn Ads avec 3 angles fondateur</td>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>4 / 5</td>
+                  <td>2 / 5</td>
+                  <td>Charles + media buyer</td>
+                </tr>
+                <tr>
+                  <td>07</td>
+                  <td>
+                    Lancer un blog skl.club/blog aligné sur les 3 douleurs
+                  </td>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>4 / 5</td>
+                  <td>3 / 5</td>
+                  <td>Charles + rédacteur</td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td>Splitter les copies BUSINESS vs ELITE</td>
+                  <td><span class="badge badge-high">High</span></td>
+                  <td>3 / 5</td>
+                  <td>2 / 5</td>
+                  <td>Charles</td>
+                </tr>
+                <tr>
+                  <td>09</td>
+                  <td>Nommer un mécanisme propriétaire SKL</td>
+                  <td><span class="badge badge-medium">Medium</span></td>
+                  <td>3 / 5</td>
+                  <td>2 / 5</td>
+                  <td>Charles + Éric + Aurélien</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>Mettre en ligne schema.org + balises AI search</td>
+                  <td><span class="badge badge-medium">Medium</span></td>
+                  <td>2 / 5</td>
+                  <td>1 / 5</td>
+                  <td>Dev Framer (2 j)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3 style="margin-top: 40px">
+            10 quick wins - moins de 15 minutes chacun
+          </h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Quick Win</th>
+                  <th>Impact</th>
+                  <th>Temps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>01</td>
+                  <td>Supprimer la deadline "16 avril 23h59" expirée</td>
+                  <td>Élevé</td>
+                  <td>5 min</td>
+                </tr>
+                <tr>
+                  <td>02</td>
+                  <td>Ajouter les icônes sociales en footer de skl.club</td>
+                  <td>Moyen</td>
+                  <td>10 min</td>
+                </tr>
+                <tr>
+                  <td>03</td>
+                  <td>Poster un thread d'ouverture sur @skl_club X</td>
+                  <td>Moyen</td>
+                  <td>15 min</td>
+                </tr>
+                <tr>
+                  <td>04</td>
+                  <td>
+                    Mettre à jour la bio Instagram @skl_club et épingler 3 reels
+                  </td>
+                  <td>Moyen</td>
+                  <td>10 min</td>
+                </tr>
+                <tr>
+                  <td>05</td>
+                  <td>
+                    Créer la chaîne YouTube SKL CLUB officielle (squelette)
+                  </td>
+                  <td>Élevé</td>
+                  <td>15 min</td>
+                </tr>
+                <tr>
+                  <td>06</td>
+                  <td>
+                    Republier 1 post d'Éric sur la page LinkedIn entreprise
+                  </td>
+                  <td>Moyen</td>
+                  <td>12 min</td>
+                </tr>
+                <tr>
+                  <td>07</td>
+                  <td>Ajouter la bande de chiffres preuve sociale homepage</td>
+                  <td>Élevé</td>
+                  <td>10 min</td>
+                </tr>
+                <tr>
+                  <td>08</td>
+                  <td>
+                    Ajouter le lien YouTube Éric dans la section fondateur
+                  </td>
+                  <td>Faible</td>
+                  <td>8 min</td>
+                </tr>
+                <tr>
+                  <td>09</td>
+                  <td>Réécrire la meta description homepage</td>
+                  <td>Moyen</td>
+                  <td>5 min</td>
+                </tr>
+                <tr>
+                  <td>10</td>
+                  <td>
+                    Activer la collecte de témoignages via formulaire Fillout
+                  </td>
+                  <td>Élevé</td>
+                  <td>15 min</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p style="margin-top: 16px; color: #6b6b63; font-size: 14px">
+            Temps total cumulé : <strong>105 minutes (1h45)</strong> pour les 10
+            actions.
+          </p>
+
+          <h3 style="margin-top: 40px">Métriques cibles à J+90</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Catégorie</th>
+                  <th>Aujourd'hui</th>
+                  <th>Cible J+90</th>
+                  <th>Progression</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Site &amp; CRO</td>
+                  <td>62</td>
+                  <td>78</td>
+                  <td>+16</td>
+                </tr>
+                <tr>
+                  <td>SEO</td>
+                  <td>28</td>
+                  <td>45</td>
+                  <td>+17</td>
+                </tr>
+                <tr>
+                  <td>Copywriting</td>
+                  <td>55</td>
+                  <td>72</td>
+                  <td>+17</td>
+                </tr>
+                <tr>
+                  <td>Publicité</td>
+                  <td>38</td>
+                  <td>55</td>
+                  <td>+17</td>
+                </tr>
+                <tr>
+                  <td>Réseaux sociaux</td>
+                  <td>32</td>
+                  <td>52</td>
+                  <td>+20</td>
+                </tr>
+                <tr>
+                  <td>Stratégie contenu</td>
+                  <td>28</td>
+                  <td>55</td>
+                  <td>+27</td>
+                </tr>
+                <tr>
+                  <td>Lead Generation</td>
+                  <td>62</td>
+                  <td>75</td>
+                  <td>+13</td>
+                </tr>
+                <tr>
+                  <td>Brand &amp; Positionnement</td>
+                  <td>62</td>
+                  <td>75</td>
+                  <td>+13</td>
+                </tr>
+                <tr>
+                  <td><strong>Score global</strong></td>
+                  <td><strong>46 (Grade D)</strong></td>
+                  <td><strong>62 (Grade C)</strong></td>
+                  <td><strong>+16</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="highlight" style="margin-top: 48px">
+            <h3>La règle d'engagement</h3>
+            <p>
+              Cible de leads mensuels capturés hors funnel event : 0 à 1 000 et
+              plus. Cible de calls iClosed bookés par mois : +50 % vs baseline.
+              Cible de témoignages publics : 0 à 10. Fenêtre d'action sur la
+              dépendance fondateur : 12 à 18 mois maximum. Fenêtre d'action sur
+              la préemption "club augmenté par l'IA" avant qu'un Frenchfounders
+              ne s'y positionne : 6 à 12 mois.
+            </p>
+          </div>
+        </section>
+
+        <section id="work" class="work-section">
+          <div class="work-tag">Travailler ensemble</div>
+          <h2 class="work-title">Vous voulez faire passer SKL CLUB <br/>au niveau supérieur ?</h2>
+          <p class="work-lede">
+            Cet audit liste 10 actions prioritaires et 90 jours de roadmap. Reste à les exécuter.
+            Copy House place un <strong>AI-CMO</strong> dans votre équipe pour porter le marketing
+            de bout en bout, sans empiler les agences.
+          </p>
+
+          <div class="work-grid">
+            <div class="work-card">
+              <h3>L'AI-CMO en 1 phrase</h3>
+              <p>
+                Un bras droit marketing augmenté par IA. Un seul profil hautement
+                qualifié, dédié à votre entreprise, qui gère la stratégie,
+                la production et l'automatisation.
+              </p>
+            </div>
+            <div class="work-card">
+              <h3>Ce qu'il prend en charge</h3>
+              <ul class="work-list">
+                <li>Stratégie et positionnement</li>
+                <li>Production de contenu et copy</li>
+                <li>SEO, ads, lifecycle</li>
+                <li>Site, landing pages, funnels</li>
+                <li>Automatisation et workflows IA</li>
+              </ul>
+            </div>
+            <div class="work-card">
+              <h3>Ce qu'il remplace</h3>
+              <ul class="work-list">
+                <li>Agence marketing</li>
+                <li>Agence SEO</li>
+                <li>Agence publicité</li>
+                <li>Agence site internet</li>
+                <li>Agence automatisation IA</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="work-target">
+            <span class="work-target-label">Pour qui</span>
+            <span class="work-target-value">TPE et PME entre 500 k€ et 30 M€ de CA annuel</span>
+          </div>
+
+          <div class="work-cta-block">
+            <p class="work-cta-text">
+              Découvrir l'offre, remplir le questionnaire de qualification et bloquer un créneau.
+            </p>
+            <a href="https://ai-cmo.fr" target="_blank" rel="noopener" class="work-cta">
+              Découvrir l'AI-CMO
+              <span class="work-cta-arrow">&rarr;</span>
+            </a>
+            <p class="work-cta-sub">ai-cmo.fr · service Copy House</p>
+          </div>
+        </section>
+
+        <footer class="page-footer">
+          <a href="#top" class="footer-back-top" aria-label="Retour en haut de page">
+            <span aria-hidden="true">&uarr;</span> Retour en haut
+          </a>
+          <strong>Copy House . Audit Marketing</strong>
+          Rapport généré le 19 mai 2026 . SKL CLUB
+          <div class="footer-links">
+            <a href="https://copyhouse.fr" target="_blank" rel="noopener noreferrer">copyhouse.fr</a>
+            <span style="color:#d7d7cf">·</span>
+            <a href="https://ai-cmo.fr" target="_blank" rel="noopener noreferrer">ai-cmo.fr</a>
+          </div>
+          <span class="sub">Rapport HTML hosté . Copy House</span>
+        </footer>
+      </main>
+    </div>
+
+    <script>
+      (function () {
+        var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        // 1. Scroll progress bar
+        var progress = document.getElementById('scroll-progress');
+        function updateProgress() {
+          var doc = document.documentElement;
+          var scrollTop = window.scrollY || doc.scrollTop;
+          var height = (doc.scrollHeight - doc.clientHeight) || 1;
+          var pct = Math.min(100, Math.max(0, (scrollTop / height) * 100));
+          if (progress) progress.style.width = pct.toFixed(2) + '%';
+        }
+        var ticking = false;
+        window.addEventListener('scroll', function () {
+          if (!ticking) {
+            window.requestAnimationFrame(function () {
+              updateProgress();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }, { passive: true });
+        updateProgress();
+
+        // 2. Reveal on scroll - tag every <section> with .reveal automatically
+        var sections = document.querySelectorAll('main > section');
+        Array.prototype.forEach.call(sections, function (s) {
+          s.classList.add('reveal');
+        });
+        // Also reveal cards inside the cover & top callout
+        var revealExtras = document.querySelectorAll('.score-hero, .highlight, .radar-wrap');
+        Array.prototype.forEach.call(revealExtras, function (s) {
+          s.classList.add('reveal');
+        });
+
+        if ('IntersectionObserver' in window && !prefersReduced) {
+          var io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                // animate scoring bars inside if any
+                var bars = entry.target.querySelectorAll('.scoring-row .bar > span[data-pct]');
+                Array.prototype.forEach.call(bars, function (b) {
+                  var pct = parseFloat(b.getAttribute('data-pct')) || 0;
+                  b.style.width = pct + '%';
+                });
+                io.unobserve(entry.target);
+              }
+            });
+          }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+          var toObserve = document.querySelectorAll('.reveal');
+          Array.prototype.forEach.call(toObserve, function (el) { io.observe(el); });
+        } else {
+          // Fallback: show everything
+          var toShow = document.querySelectorAll('.reveal');
+          Array.prototype.forEach.call(toShow, function (el) { el.classList.add('is-visible'); });
+          var allBars = document.querySelectorAll('.scoring-row .bar > span[data-pct]');
+          Array.prototype.forEach.call(allBars, function (b) {
+            b.style.width = (parseFloat(b.getAttribute('data-pct')) || 0) + '%';
+          });
+        }
+
+        // 3. Scroll-spy on nav links
+        var navLinks = document.querySelectorAll('#topnav-links a[data-target]');
+        var linkMap = {};
+        Array.prototype.forEach.call(navLinks, function (a) {
+          linkMap[a.getAttribute('data-target')] = a;
+        });
+        var sectionEls = [];
+        Object.keys(linkMap).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) sectionEls.push(el);
+        });
+        function setActive(id) {
+          Array.prototype.forEach.call(navLinks, function (a) {
+            if (a.getAttribute('data-target') === id) a.classList.add('is-active');
+            else a.classList.remove('is-active');
+          });
+        }
+        if ('IntersectionObserver' in window && sectionEls.length) {
+          var spy = new IntersectionObserver(function (entries) {
+            var visible = entries
+              .filter(function (e) { return e.isIntersecting; })
+              .sort(function (a, b) { return b.intersectionRatio - a.intersectionRatio; });
+            if (visible.length) setActive(visible[0].target.id);
+          }, { rootMargin: '-30% 0px -55% 0px', threshold: [0, 0.25, 0.5, 0.75, 1] });
+          sectionEls.forEach(function (el) { spy.observe(el); });
+        }
+      })();
+    </script>
+  </body>
+</html>

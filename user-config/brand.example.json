@@ -1,0 +1,59 @@
+{
+  "brand": {
+    "name": "Copy House",
+    "tagline": "Audit Marketing",
+    "logo_path": "../templates/copyhouse-logo.svg",
+    "website": "https://copyhouse.fr",
+    "report_footer_signature": "Copy House · Audit Marketing"
+  },
+  "palette": {
+    "bg_page":         "#F9F9F2",
+    "text_primary":    "#212121",
+    "accent":          "#B07C5E",
+    "accent_dark":     "#8E5F44",
+    "white":           "#FFFFFF",
+    "success":         "#5C8B5C",
+    "warning":         "#D8945A",
+    "danger":          "#C04A3A",
+    "border_light":    "#E5E5DC",
+    "border_dark":     "#3A3A3A",
+    "text_muted":      "#6B6B63"
+  },
+  "typography": {
+    "stack": "-apple-system, BlinkMacSystemFont, \"SF Pro Text\", \"Inter\", \"Segoe UI\", Roboto, sans-serif",
+    "feature_settings": "'ss01', 'cv02', 'cv03', 'cv04', 'cv11'",
+    "custom_font": null
+  },
+  "offer": {
+    "section_tag":     "Travailler ensemble",
+    "section_title":   "Vous voulez faire passer {ENTREPRISE} au niveau supérieur ?",
+    "service_name":    "AI-CMO",
+    "tagline":         "Un bras droit marketing augmenté par IA.",
+    "one_liner":       "Un seul profil hautement qualifié, dédié à votre entreprise, qui gère la stratégie, la production et l'automatisation.",
+    "handles": [
+      "Stratégie et positionnement",
+      "Production de contenu et copy",
+      "SEO, ads, lifecycle",
+      "Site, landing pages, funnels",
+      "Automatisation et workflows IA"
+    ],
+    "replaces": [
+      "Agence marketing",
+      "Agence SEO",
+      "Agence publicité",
+      "Agence site internet",
+      "Agence automatisation IA"
+    ],
+    "target_label":    "Pour qui",
+    "target_value":    "TPE et PME entre 500 k€ et 30 M€ de CA annuel",
+    "cta_text":        "Découvrir l'offre, remplir le questionnaire de qualification et bloquer un créneau.",
+    "cta_button":      "Découvrir l'AI-CMO",
+    "cta_url":         "https://ai-cmo.fr",
+    "cta_sub":         "ai-cmo.fr · service Copy House"
+  },
+  "deploy": {
+    "platform": "vercel",
+    "team_slug": null,
+    "url_pattern": "https://audit-{slug}.vercel.app"
+  }
+}
