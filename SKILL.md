@@ -44,11 +44,41 @@ Utile pour : premiers audits rapides, demos, entreprises sans presence sociale.
 
 Quand le skill est invoque :
 
-1. Saluer brievement. Annoncer les 7 phases de l'audit.
-2. Si des arguments sont passes (nom + URL), les capturer. Detecter `--lite`.
+1. Verifier si c'est la premiere utilisation : chercher un dossier `audit-*/` dans le repertoire courant. Si aucun dossier d'audit precedent n'existe ET que l'utilisateur n'a pas passe d'arguments, afficher l'onboarding first-run (voir ci-dessous).
+2. Si des arguments sont passes (nom + URL), les capturer. Detecter `--lite`. Sauter l'onboarding.
 3. Creer le dossier de travail : `audit-<slug-entreprise>/` dans le repertoire courant.
 4. Verifier la presence de `CLAUDE.md` et `/knowledge/` dans le working directory. Si trouves, les utiliser comme contexte.
 5. Commencer **Phase 0**.
+
+### Onboarding first-run
+
+A afficher uniquement si c'est la premiere utilisation detectee :
+
+```
+Premiere utilisation du skill Marketing Audit — bienvenue.
+
+Ce skill genere un audit marketing complet pour n'importe quelle entreprise.
+Voici comment ca marche :
+
+  1. Intake     — Je te pose des questions sur l'entreprise (2 min)
+  2. Collecte   — Je scrape le site, les reseaux sociaux, la Meta Ad Library (3-5 min)
+  3. Analyse    — J'audite 8 categories : site, SEO, copy, pubs, social, contenu, lead gen, business model (5-10 min)
+  4. Scoring    — Je calcule un score global sur 100 avec un grade A-F
+  5. Rewrites   — Je reecris les headlines, CTAs, pubs et posts les plus faibles
+  6. Rapport    — Je genere un rapport HTML interactif (10-25 pages)
+  7. PDF        — Une fois valide, je recree le rapport en PDF A4 professionnel
+
+Temps total : ~20 minutes. Mode rapide disponible avec --lite (~10 min, 4 categories).
+
+Prerequis optionnels :
+- agent-browser : scraping avance (Instagram, sites JS-heavy)
+- Meta Business Manager : metriques pubs live (CPA, ROAS)
+- pip install reportlab : generation PDF
+
+On commence ?
+```
+
+Attendre confirmation avant de lancer Phase 0.
 
 ---
 
