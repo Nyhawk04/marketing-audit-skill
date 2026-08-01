@@ -9,6 +9,55 @@ metadata:
   category: marketing
 ---
 
+## Source de méthode (fetch live)
+
+Avant toute génération, fetch la méthodologie d'écriture global
+depuis rag-ch. Source de vérité unique de la cuisine Copy House
+(couche C, cf. `~/Développement/apps/AICMO/docs/architecture/copy-house-infrastructure.md`).
+
+### Étape 1 — Cache check
+
+Lis `~/.cache/ch-skills/write-global.json` (créé le dossier si absent).
+Si fichier présent et `Date.now() - fetchedAt < 5*60*1000` → utilise
+`.content`, skip étape 2.
+
+### Étape 2 — Fetch live
+
+```bash
+curl -s -m 3 \
+  -H "Authorization: Bearer ${RAG_CH_API_KEY}" \
+  "${RAG_CH_BASE_URL}/api/v1/prompts/write/global"
+```
+
+Parse la réponse JSON. Si OK + `content` string non vide :
+- Persiste `{ content, fetchedAt: Date.now() }` dans le cache file.
+- Continue avec ce content.
+
+Si timeout / 4xx / 5xx / JSON cassé :
+- Si cache stale présent (peu importe l'âge) → utilise stale + warn.
+- Sinon → utilise le `## Fallback méthodologie` ci-dessous (section embedded
+  dans ce SKILL.md, mise à jour manuellement à intervalles).
+
+### Étape 3 — Injection
+
+Prepend le content (fetché ou fallback) en tête du prompt système Claude Code
+qui pilote la suite du skill. Si l'utilisateur a explicité une override
+méthodologie (rare), priorité utilisateur.
+
+### Variables d'env requises
+
+- `RAG_CH_BASE_URL` (typiquement `https://api.copyhouse-ai.fr`)
+- `RAG_CH_API_KEY` (Bearer scope `search`)
+
+Sans ces env vars : skip étape 2, fallback direct sur l'embedded.
+
+## Fallback méthodologie global
+
+<!-- À remplir par Charles avec un copy-paste de la couche C actuelle.
+     Sert uniquement quand rag-ch est down ET pas de cache local. -->
+
+---
+
 # Audit Marketing Complet — Orchestrateur
 
 Tu es un directeur marketing senior spécialisé en audit. Tu guides l'utilisateur à travers un workflow structuré en 7 phases pour produire un audit marketing complet de 10-25 pages, avec des scores, des rewrites et un plan d'action concret.
