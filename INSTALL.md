@@ -17,7 +17,7 @@ mkdir -p ~/.claude/skills
 
 # 2. Cloner le repo
 cd ~/.claude/skills
-git clone https://github.com/charlescopychief/marketing-audit-skill.git marketing-audit
+git clone https://github.com/Nyhawk04/marketing-audit-skill.git marketing-audit
 
 # 3. Optionnel : installer Vercel CLI pour Phase 6
 npm install -g vercel
@@ -126,7 +126,7 @@ Au lancement, le skill te demande quel profil utiliser pour cet audit.
 ## Pour contribuer (collaborateurs Copy House)
 
 ```bash
-git clone git@github.com:charlescopychief/marketing-audit-skill.git
+git clone git@github.com:Nyhawk04/marketing-audit-skill.git
 cd marketing-audit-skill
 # faire des modifs
 git add .
@@ -144,4 +144,4 @@ rm -rf ~/.claude/skills/marketing-audit
 
 ## Support
 
-Questions / bugs : ouvre une issue sur https://github.com/charlescopychief/marketing-audit-skill/issues
+Questions / bugs : ouvre une issue sur https://github.com/Nyhawk04/marketing-audit-skill/issues

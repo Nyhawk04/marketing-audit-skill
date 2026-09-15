@@ -9,7 +9,7 @@ Conçu par Copy House. Personnalisable pour ta propre marque et ton offre.
 ```bash
 # Installation
 cd ~/.claude/skills
-git clone https://github.com/charlescopychief/marketing-audit-skill.git marketing-audit
+git clone https://github.com/Nyhawk04/marketing-audit-skill.git marketing-audit
 
 # Premier lancement dans Claude Code
 /marketing-audit "Nom Entreprise" "https://exemple.com"
