@@ -549,13 +549,13 @@ Pour chaque domaine, invoquer le skill correspondant via l'outil **Skill** ou di
 | Domaine | Skill invoqué | Données fournies | Produit | Condition |
 |---------|--------------|------------------|---------|-----------|
 | SEO | `seo-audit` | URL du site | Score SEO 0-100 + findings structurés | Toujours |
-| Site & CRO | `page-cro` | Pages collectées | Analyse conversion + recommandations | Toujours |
+| Site & CRO | `cro` | Pages collectées | Analyse conversion + recommandations | Toujours |
 | Copywriting | `copywriting` (mode analyse) | Textes extraits du site + pubs | Audit messaging/USP/promesses/voix | Toujours |
 | Publicité Meta | `ads-meta` | Données Ad Library + MCP si dispo | Score Ads + analyse créas | Si pubs détectées |
-| Réseaux sociaux | `social-content` (mode analyse) | Données profils collectées | Score par plateforme + recommandations | Si handles fournis |
+| Réseaux sociaux | `social` (mode analyse) | Données profils collectées | Score par plateforme + recommandations | Si handles fournis |
 | Stratégie de contenu | `content-strategy` (mode analyse) | Blog/ressources + données sociales | Piliers, gaps, recommandations | Toujours |
 | Lead Generation | `lead-magnets` (mode analyse) | Opt-in pages, lead magnets existants | Évaluation + propositions | Toujours |
-| Brand & Positionnement | `brand` + `marketing-psychology` | Tout le matériel collecté | Positionnement, leviers psy, identité | Toujours |
+| Brand & Positionnement | `marketing-psychology` + `references/business-model-checklist.md` | Tout le matériel collecté | Positionnement, leviers psy, identité | Toujours |
 | Concurrence | `competitor-profiling` | Données concurrents collectées | Benchmark comparatif | Si concurrents nommés |
 
 ### Extraction des scores
@@ -581,14 +581,14 @@ S_total = Σ(Score_catégorie × Poids) / Σ(Poids_actives) × 100
 
 | Catégorie | Poids | Source |
 |-----------|-------|--------|
-| Site & Conversion (CRO) | 20% | Phase 2 — page-cro |
+| Site & Conversion (CRO) | 20% | Phase 2 — cro |
 | SEO (Technique + Contenu) | 15% | Phase 2 — seo-audit |
 | Copywriting & Messaging | 15% | Phase 2 — copywriting |
 | Publicité payante | 15% | Phase 2 — ads-meta |
-| Réseaux sociaux | 10% | Phase 2 — social-content |
+| Réseaux sociaux | 10% | Phase 2 — social |
 | Stratégie de contenu | 10% | Phase 2 — content-strategy |
 | Lead Generation & Funnels | 10% | Phase 2 — lead-magnets |
-| Business Model & Stratégie | 5% | Phase 2 — brand |
+| Business Model & Stratégie | 5% | Phase 2 — business-model-checklist |
 
 ### Grades
 

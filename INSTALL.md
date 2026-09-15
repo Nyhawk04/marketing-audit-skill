@@ -25,6 +25,49 @@ npm install -g vercel
 
 Le skill apparaît automatiquement dans Claude Code à la prochaine session.
 
+### Installer les neuf commandes que l'audit appelle
+
+**Cette étape n'est pas optionnelle.** `marketing-audit` est un chef d'orchestre : il ne
+note rien lui-même, il invoque neuf commandes spécialisées et agrège leurs scores. Ces
+commandes ne sont PAS dans ce dépôt, elles viennent de deux dépôts publics.
+
+Sans elles, l'audit tourne quand même, sauf qu'il n'a aucune grille de critères pour le
+CRO, la pub ou les réseaux sociaux : il invente les siennes à chaque passage, et deux
+audits du même site ne donnent pas le même score.
+
+```bash
+npx skills@latest add coreyhaines31/marketingskills -g -a claude-code -y \
+  -s cro,copywriting,social,content-strategy,lead-magnets,marketing-psychology,competitor-profiling,seo-audit
+
+npx skills@latest add AgriciDaniel/claude-ads -g -a claude-code -y -s ads-meta
+```
+
+Vérifie qu'elles sont toutes là avant de lancer ton premier audit :
+
+```bash
+for s in cro copywriting social content-strategy lead-magnets \
+         marketing-psychology competitor-profiling seo-audit ads-meta; do
+  if [ -f ~/.claude/skills/$s/SKILL.md ] || [ -f ~/.agents/skills/$s/SKILL.md ]
+    then echo "ok      $s"; else echo "MANQUE  $s"; fi
+done
+```
+
+Neuf lignes `ok`, et tu peux lancer ton audit. Une ligne `MANQUE`, et c'est cette
+catégorie-là que le rapport inventera : relance la commande d'installation avec ce seul
+nom derrière `-s`.
+
+⚠️ **Le contrôle porte sur DEUX dossiers, et ce n'est pas un excès de prudence.** Le
+résumé affiché par `npx skills` annonce `~/.agents/skills/<nom>`, alors qu'avec
+`-a claude-code` il dépose dans `~/.claude/skills/<nom>`. Mesuré le 15/09/2026 : une
+vérification qui ne regardait que `~/.agents/skills/` a conclu « rien n'a été installé »
+juste après un « Installation complete » parfaitement exact.
+
+⚠️ **Les noms de ces commandes bougent.** `coreyhaines31/marketingskills` a renommé
+`page-cro` en `cro` et `social-content` en `social` depuis avril 2026. Si un audit te dit
+qu'il ne trouve pas une commande, compare la liste ci-dessus avec
+`npx skills@latest add coreyhaines31/marketingskills -l`, qui affiche les noms du jour
+sans rien installer.
+
 ### Premier lancement
 
 Dans un projet quelconque, tape :
