@@ -13,7 +13,7 @@ metadata:
 
 Avant toute génération, fetch la méthodologie d'écriture global
 depuis rag-ch. Source de vérité unique de la cuisine Copy House
-(couche C, cf. `~/Développement/apps/AICMO/docs/architecture/copy-house-infrastructure.md`).
+(couche C, cf. `~/Développement/_archive/AICMO/docs/architecture/copy-house-infrastructure.md (projet AICMO archivé le 05/10/2026)`).
 
 ### Étape 1 — Cache check
 
